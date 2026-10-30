@@ -24,6 +24,13 @@ def fraction(eff=False):
     builder=mechanics.fraction3(eff)
     def draw(fig,ss,ctx):
         builder(fig,ss,ctx)
+        if ctx['standalone']:
+            # The combined display supplies this shared key in its row strip.
+            # Each independent export must identify what 150/300/600 measure.
+            for axis in fig.axes:
+                legend=axis.get_legend()
+                if legend is not None:
+                    legend.set_title('Budget (full-schedule\nequivalents)')
         ax=fig.axes[-1];ax.set_ylabel('Efficiency / full' if eff else 'Coverage')
     return draw
 

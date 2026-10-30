@@ -541,8 +541,8 @@
     },
     {
       "path": "plotting/jhm_supporting_panels.py",
-      "bytes": 3381,
-      "sha256": "3a9c2efa8c690e2c3f0204ad4d001205430d3cc70c7f2c7b595013235b5ad456"
+      "bytes": 3757,
+      "sha256": "d81f63d69251eb4514d8bb9a019522533199518574baae610410dff16c7b5efa"
     },
     {
       "path": "plotting/refine_jhm_figures.py",
@@ -611,8 +611,8 @@
     },
     {
       "path": "validation.json",
-      "bytes": 7754,
-      "sha256": "f0cce183deb0bd94e964f1abb647236fda1b31b03498659d902bb589a87cd035"
+      "bytes": 7927,
+      "sha256": "30320c778c44dc85ed8da0b3991c469127ec541ca44effc396c656cf8999c1ed"
     },
     {
       "path": "VALIDATION.md",

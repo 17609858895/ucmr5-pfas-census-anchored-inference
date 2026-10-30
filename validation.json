@@ -323,5 +323,6 @@
   },
   "full_pipeline_retrained": false,
   "independent_field_validation": false,
-  "absolute_private_paths_detected_in_python": false
+  "absolute_private_paths_detected_in_python": false,
+  "standalone_legend_clarification": "Independent FigS1c,d now identify 150/300/600 as full-schedule equivalent budgets; combined display and scientific values unchanged."
 }
