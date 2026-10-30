@@ -1,0 +1,15 @@
+# Public input sources and study snapshots
+
+Raw downloads are intentionally excluded from this code-only repository.
+
+| Input | Official source / identifier | Study version and expected local filename |
+|---|---|---|
+| UCMR5 occurrence tables | [EPA occurrence data](https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule), [ZIP endpoint](https://www.epa.gov/system/files/other-files/2023-08/ucmr5-occurrence-data.zip) | Final occurrence release used in the study; downloaded 2026-10-23. `data/raw/ucmr5-occurrence-data.zip`; SHA-256 `313c88a247ab41c7e0c5da9487241a96f1cb03418c79db50261d6e4e74158f2a`. Required members: `UCMR5_All.txt`, `UCMR5_AddtlDataElem.txt`, `UCMR5_ZIPCodes.txt`. |
+| SDWIS/SDWA inventory and facilities | [EPA SDWIS data](https://www.epa.gov/ground-water-and-drinking-water/safe-drinking-water-information-system-sdwis-federal-reporting), [EPA ECHO SDWA downloads](https://echo.epa.gov/tools/data-downloads/sdwa-download-summary) | 2026Q3 active-system inventory downloaded 2026-10-14/15; ZIP `SDWA_latest_downloads_20261015.zip` with `SDWA_PUB_WATER_SYSTEMS.csv` and `SDWA_FACILITIES.csv`. |
+| ZIP Code Tabulation Area centroids | [U.S. Census Gazetteer files](https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html) | 2023 national ZCTA gazetteer `2023_Gaz_zcta_national.txt`. |
+| State polygons | [U.S. Census cartographic boundaries](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) | 2024 states, 1:20,000,000, KML `cb_2024_us_state_20m.kml`; only needed for maps. |
+| Michigan public-water PFAS results | Michigan EGLE ArcGIS item [90d36aa2964b41f1903d04c61d1de91a](https://www.arcgis.com/home/item.html?id=90d36aa2964b41f1903d04c61d1de91a), layer 1 | Retrieved 2026-10-25. `external_raw/michigan_egle_20261025/mi_pws_pfas_results.csv`; SHA-256 `a871267948c54442da6a7bdf8fad46c981b01eadc8b49b19cdd7e48630411332`. |
+| Minnesota community-water PFAS results | MDH ArcGIS item [39d9652894ed4b61bdc57dc9c935b47b](https://www.arcgis.com/home/item.html?id=39d9652894ed4b61bdc57dc9c935b47b) | Table dated 2023-06-29; retrieved 2026-10-25. `external_raw/minnesota_mdh_20261025/mn_cws_pfas_results.xlsx`, sheet `Table`; SHA-256 `20525af278d0f6b4bfa7e6daecc906df49dfe5625d0db9c289526c463a013f2e`. |
+| New Hampshire PFAS source flags | NHDES ArcGIS Hub dataset `4a2dd7398f10437db99eb16c84ba41e4_8`, PWS PFAS Samples with 1000ft Buffer | Retrieved 2026-10-25. `external_raw/newhampshire_nhdes_20261025/nh_pws_pfas_sources.csv`; SHA-256 `b797699dc12bd1b8558fd8ed56e2ce870e56de487b7bfd3dabdeeb1751f177ba`. |
+
+Michigan uses location means at 4.05 ng/L after treating `<2` as zero. Minnesota uses maximum PFOA/PFOS at 4 ng/L and excludes purchased-water rows; minimum values provide sensitivity checks. New Hampshire flags describe raw-water sources and support discrimination checks. These endpoints are related to, but not identical with, the national UCMR5 endpoint. Source agencies do not endorse the analysis.

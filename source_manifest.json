@@ -1,0 +1,540 @@
+{
+  "scope": "Source-only preparation; no training, simulations or network upload performed",
+  "source_files": [
+    {
+      "release_path": "analysis\\project_paths.py",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "838ef9fca8c39fb2989f522ab73409c6219b7fd218c9c892922d39df2208e53a",
+      "adaptation": "Portable input/output paths and conservative parallel-job default; no numerical rule changed."
+    },
+    {
+      "release_path": "analysis\\anchor_core.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\anchor_core.py",
+      "source_sha256": "6f8a761afe1aa0a5878363a1a40c358b354e02cb7be6570ac85bb6bb06f31738",
+      "release_sha256": "bb34fdf667430cab2230d2b9a89869e151c656d4a9c1f626546879de60d026b6",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\common.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\common.py",
+      "source_sha256": "fdaa4db437dba210b595c0f70e9fc7dae1b198725ee71d946e660891091898fa",
+      "release_sha256": "c6d461b7e256d2db02b8365dd36e2255d2b0b28f4834b58241eb927dfc192242",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s00_load.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s00_load.py",
+      "source_sha256": "e39fa025bf50bf2f0eb67372dd082df96ad3f4b7a031c58fc67b6e57551739e5",
+      "release_sha256": "7651bfcd2f3ffccd65cf44c3547a9d1c6e0f244badda9a0e4d974cb4fe17aaed",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s01_build_tables.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s01_build_tables.py",
+      "source_sha256": "0b591e11dc39e57f58f5bc41d7f86417b2922189f8707389650bcaba6e2b1d6f",
+      "release_sha256": "99960ba1437099071ca6ac5ff29feb724ccb51fd21c6c77ae871262451950b9f",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s03_covariates.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s03_covariates.py",
+      "source_sha256": "f5961829c8eda1e8a35c4d7f87f1cd06208dc99733643a2a0cbccf2f911d0d9f",
+      "release_sha256": "022944a6d6f569f6aef5f3c0cd12a24ca91fbb7ab7e45bbade6d5e0bfcbe17d7",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s07_frame.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s07_frame.py",
+      "source_sha256": "c4c14970f20b769afeec26b94de590a4e1d30a36d53def50e3458d7fd1fe712f",
+      "release_sha256": "e01a4afdff59d579334d55b0d9c92bb75fbac4087ad693598844ff2603db3c02",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s17_census_grid.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s17_census_grid.py",
+      "source_sha256": "4d5ceb37256e65ffa1bedf08cfe157f115bc10cef7da51e7284130968ed96186",
+      "release_sha256": "5d36194ce57f9cef7d3b13fcd5aa0bdd8af91dc0f30c531cdd1651f1ff20b700",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s18_summarize_grid.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s18_summarize_grid.py",
+      "source_sha256": "7d311eac6e86bd48d7aad2b723213d507fec03288b0a2f33f6515d21e504d261",
+      "release_sha256": "7d311eac6e86bd48d7aad2b723213d507fec03288b0a2f33f6515d21e504d261",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s19_small_frame_burden.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s19_small_frame_burden.py",
+      "source_sha256": "0cc9b412792ee6fc48220347fee33b6a46005239d8dd09cd940c35323a86a2cb",
+      "release_sha256": "0cc9b412792ee6fc48220347fee33b6a46005239d8dd09cd940c35323a86a2cb",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s20_small_projection.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s20_small_projection.py",
+      "source_sha256": "e76d3d5c723fbc7cda8d030ff7918145f296b9f8c5ae7d81e2f09bbd6d61cbcd",
+      "release_sha256": "af1ead323f894cd47a7251d3d74b9bf58df4fd3b571fc20f4b399086ba29253b",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s21_external_states.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s21_external_states.py",
+      "source_sha256": "de28803aecb6df4ff50328560db1bc39e504163d6d8d78f5a6698be472ceb71a",
+      "release_sha256": "de28803aecb6df4ff50328560db1bc39e504163d6d8d78f5a6698be472ceb71a",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s22_external_followup.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s22_external_followup.py",
+      "source_sha256": "17c77e6df9881d9565c6cbc7d7de943bfb138270cd3519a2b9dc6a595482b09c",
+      "release_sha256": "faae3c285f92cfbb46e97d338bc12f2f6aafeac385f4506cdd9caf07ebdcfd08",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s23_within_system.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s23_within_system.py",
+      "source_sha256": "85d0847d27b52b5910c460cc32a62a75e34945be0a1ca3512de0942246ac30a7",
+      "release_sha256": "037f4b8b0e47d02de79bdf7e95a76129b6883986b1d357d0bb8b9b89e271fb9b",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s24_two_level.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s24_two_level.py",
+      "source_sha256": "82c6e9a0e0bb338d6fbb1bff35659c6157f64fa6fe933ffcfbeafe92c9866632",
+      "release_sha256": "ff9b7b0730f861baa5fdc58512e733240518dc95dac7bd98157259db05ae7c62",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\f00_figure_data.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\f00_figure_data.py",
+      "source_sha256": "6669744b84899bae1e643b39c644cf53c595ab14e305a931ffda373fa86a16a3",
+      "release_sha256": "7df10b05cf0395225658ebce6feec78be04a479d6d1340f678c6b221f05bf08d",
+      "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
+    },
+    {
+      "release_path": "analysis\\s08_build_features.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s08_probe_ppi.py",
+      "source_sha256": "6153d2e1879acc1f416ac4b3e3a19b7e46fed9e5fc3dc3a48c384ce826a872a1",
+      "release_sha256": "7004ea5c37a6777738b4ce9d7f4ff86ba7214c2c240850334136d2640333d1bd",
+      "adaptation": "Retained feature construction through frame_features.parquet; omitted exploratory fitting/printing after that stage."
+    },
+    {
+      "release_path": "analysis\\model_features.py",
+      "source": "WaterResearch_完整稿_20261025\\scripts\\s12_design_full.py",
+      "source_sha256": "4c640d8c0f37b1891046737813fa3491f1277648050e9af5ae62959a5aca9049",
+      "release_sha256": "9cbca23df376fbc55e532fa59af93fdb31208804d31f4fbfa4c64601f126f787",
+      "adaptation": "Extracted BASE/Q/nb_feats without top-level data loading or exploratory simulation."
+    },
+    {
+      "release_path": "plotting\\f_common.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f_common.py",
+      "source_sha256": "43ad16c4258f31d6d4c251b4d1fc1984747b15d54971485ec4427d81889f92c3",
+      "release_sha256": "cda80e7d1d6900f372a336c49f8ed329b86ebdc26a92bd46fcf9c1c48013a054",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f01_fig1_monitoring_gap.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f01_fig1_monitoring_gap.py",
+      "source_sha256": "fbe2457d6aaa2ec195e3e71a6f3c6d34bd83f957be18a75ba532ab72a911e505",
+      "release_sha256": "6141012ea8f404dd9c29eeee9436b008446ca80153fe795455ae6e7847deed90",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f02_fig2_transfer_bias.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f02_fig2_transfer_bias.py",
+      "source_sha256": "8ccccf5603f91b2b29cdfb2ddb759e2b854b79647998e26df33c702c95323bd6",
+      "release_sha256": "4cc33ff0e21f30b48e1f8a7ea610a3f3a354c0ee90badc405519aeb89f345fa0",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f03_fig3_anchor_method.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f03_fig3_anchor_method.py",
+      "source_sha256": "5deaa21100f99b32732734b3b903173abe79810a4ce773e032fb5dbe1bd5a0dc",
+      "release_sha256": "aaa8ff0780864102e575de50b544b9e90903e67e5e7873e6f5dbdea4e8df4287",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f04_fig4_census_validation.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f04_fig4_census_validation.py",
+      "source_sha256": "3de726fc93762238032f3d24a5cb0c671433ea64989cfd05ec147ef167a86847",
+      "release_sha256": "bca7f409b457da3c70a47f8e296423d798c0eb1075c44c52e9784cf84f3a87ba",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f05_fig5_small_burden.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f05_fig5_small_burden.py",
+      "source_sha256": "687bd9eb554321c6a3affd67b77165a1cc6ef109278551b9e329086637cff86e",
+      "release_sha256": "0996e15ea3e806633c157a79f31376ec4dcd11cf524f3c2261ba3c4d1a9ce819",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f06_fig6_external_validation.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f06_fig6_external_validation.py",
+      "source_sha256": "6c8f9ab138b76b9720be2e9879c35323be024c16b637935abc532f9d9979ce7c",
+      "release_sha256": "26b6d91dc01ecc66fa8b1929dff159f155b02a182786e57f8fa783ae4f2291e8",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f07_fig7_next_round_design.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f07_fig7_next_round_design.py",
+      "source_sha256": "851c6dddee7f92ca6d6e221a4479daf2a6deb81f3134a9a98017738f9dbd87e4",
+      "release_sha256": "87a4bad460060296894a491f5555cb62a1f99dece0ccfad0bce2be13b653ecd2",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\f08_supporting_figures.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f08_supporting_figures.py",
+      "source_sha256": "cb869516d589dc6ba0cda8b53811bcbcb4aa4c1be7e6d5f667faa138ddc6fa1b",
+      "release_sha256": "cb869516d589dc6ba0cda8b53811bcbcb4aa4c1be7e6d5f667faa138ddc6fa1b",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\generate_refined_figures.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\generate_refined_figures.py",
+      "source_sha256": "509a58c8545fe96683e06e07fd2eebf3b0b5211c09f6c9be1247cb03183ec3a9",
+      "release_sha256": "c35c681128c0a947e3395b3d92e1a17af0ee41178b1a4ba4bf6610b02d1a00d7",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\refine_overview_round3.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_overview_round3.py",
+      "source_sha256": "686d0ea12c611971f7f523d29a2dae54c19c71f77298a39f5c6842e781a2ae4c",
+      "release_sha256": "b339b9518c9b581fad44e15abef254425e47b32347f6f9704122a38f5174bec4",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\refine_panels_round3.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_panels_round3.py",
+      "source_sha256": "5af9996170486137e437a4c2a8f3bcaadca62272e5eec4edd82c50285f6363e6",
+      "release_sha256": "6dd3e47b3fdb4b22c94176dde8b01aba123d5d1255937df15be97107b1ed023f",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\refine_mechanism_round3.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_mechanism_round3.py",
+      "source_sha256": "c66e5a18a627a9f2974c29b5a1b198b46950a259534a08b2b4c462fc0b2fba99",
+      "release_sha256": "08cf2f6c4ed0635cf5077323545f8642a2ccc4aa7ae9fd3e5c302ceb940a3d62",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\refine_three_rows_a.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_three_rows_a.py",
+      "source_sha256": "5985fc2f3fe94f67b01700b12553d93b93f62a08d167cc36ab6e7ab5354a6a4c",
+      "release_sha256": "c0935e78df8df6fb29c235814b4a70fe1f3a09628aecf29ed968447bef9c7cb5",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\refine_three_rows_b.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_three_rows_b.py",
+      "source_sha256": "c664c7489bfae9f6623af9ed4eb18a94ada6cf53cf5729022286d00037d3c576",
+      "release_sha256": "4616a3e47ec7905adfda850e252fe354baaf7e27e2c4fd7699477350fa7f2051",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+    },
+    {
+      "release_path": "plotting\\figkit\\figstyle.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\figkit\\figstyle.py",
+      "source_sha256": "dd00fc0d0b86cb9f8004014a6cc4a055d9d0bbf128a9d0734548b679e7c18f26",
+      "release_sha256": "84208c4e62c5dcd9c8c3a1b7ccd6f8a9e0947be9d948086d1fbfada8dab1e30c",
+      "adaptation": "Portable root and boundary-file configuration; numeric projection/style functions unchanged."
+    },
+    {
+      "release_path": "plotting\\figkit\\publication_layout.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\figkit\\publication_layout.py",
+      "source_sha256": "32906a1649d807b3497bc5c0083fc4fd119fff06a751e230c73c3220d7d264dd",
+      "release_sha256": "0d4d31ee595697b48032460369f457d252882af84cf2d512b62acc7905d992bb",
+      "adaptation": "Portable root and boundary-file configuration; numeric projection/style functions unchanged."
+    },
+    {
+      "release_path": "plotting\\figkit\\publication_helpers\\ml_publication_style.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\figkit\\publication_helpers\\ml_publication_style.py",
+      "source_sha256": "6abfd8fd454cf48270b77f36b15d9a5512d402caff6aa3227dafaea3439a96c6",
+      "release_sha256": "d43f8b19a106e84e6fa1fdda76ebf6f90ef641089a8efaa5c7e3464abbf72a32",
+      "adaptation": "Portable root and boundary-file configuration; numeric projection/style functions unchanged."
+    },
+    {
+      "release_path": "plotting\\figkit\\publication_helpers\\scientific_palettes.py",
+      "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\figkit\\publication_helpers\\scientific_palettes.py",
+      "source_sha256": "e16b66e32d24b9c8ee0caeb4fc206a9eed4401b40a140dfbe8705bfddf8f106b",
+      "release_sha256": "6aeea93e17da270b7d93a783ea328f27fc90fcc690ac83bf3af85e7a7f5ede43",
+      "adaptation": "Portable root and boundary-file configuration; numeric projection/style functions unchanged."
+    },
+    {
+      "release_path": ".gitignore",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "26ce18a2074fb00d5eb5ede32dbbe3efea5c6160c23ba51da474de6b7afe8519",
+      "adaptation": ""
+    },
+    {
+      "release_path": "requirements.txt",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "2c65c7d005614757c72e935752c503cf1bd566d1cb647acab3a2fcb462bc2955",
+      "adaptation": ""
+    },
+    {
+      "release_path": "run_pipeline.py",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "eb04e338ca0f51823128256b48ae49e7cad34c4f042ef430a1569d3a059a94b3",
+      "adaptation": ""
+    },
+    {
+      "release_path": "README.md",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "bd3ca233760afe9b9687b3aaf0194661f858c8e194ed2523f765270b83e61333",
+      "adaptation": ""
+    },
+    {
+      "release_path": "DATA_SOURCES.md",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "90a1f3a2dee6b629a0f20647cc5adeec3d6d0e9db5cbf8cb1c882d67bcf35301",
+      "adaptation": ""
+    },
+    {
+      "release_path": "tests\\test_core_identities.py",
+      "source": "release utility",
+      "source_sha256": null,
+      "release_sha256": "3e00f6e2aba4a6d0e07982204bd4b396328429f4a672c1a70f545b29196c9b3b",
+      "adaptation": ""
+    }
+  ],
+  "python_files_parsed": 39,
+  "absolute_private_paths_or_secret_patterns": [],
+  "release_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 171,
+      "sha256": "26ce18a2074fb00d5eb5ede32dbbe3efea5c6160c23ba51da474de6b7afe8519"
+    },
+    {
+      "path": "analysis/anchor_core.py",
+      "bytes": 9222,
+      "sha256": "bb34fdf667430cab2230d2b9a89869e151c656d4a9c1f626546879de60d026b6"
+    },
+    {
+      "path": "analysis/common.py",
+      "bytes": 2041,
+      "sha256": "c6d461b7e256d2db02b8365dd36e2255d2b0b28f4834b58241eb927dfc192242"
+    },
+    {
+      "path": "analysis/f00_figure_data.py",
+      "bytes": 12638,
+      "sha256": "7df10b05cf0395225658ebce6feec78be04a479d6d1340f678c6b221f05bf08d"
+    },
+    {
+      "path": "analysis/model_features.py",
+      "bytes": 1129,
+      "sha256": "9cbca23df376fbc55e532fa59af93fdb31208804d31f4fbfa4c64601f126f787"
+    },
+    {
+      "path": "analysis/project_paths.py",
+      "bytes": 832,
+      "sha256": "838ef9fca8c39fb2989f522ab73409c6219b7fd218c9c892922d39df2208e53a"
+    },
+    {
+      "path": "analysis/s00_load.py",
+      "bytes": 566,
+      "sha256": "7651bfcd2f3ffccd65cf44c3547a9d1c6e0f244badda9a0e4d974cb4fe17aaed"
+    },
+    {
+      "path": "analysis/s01_build_tables.py",
+      "bytes": 2160,
+      "sha256": "99960ba1437099071ca6ac5ff29feb724ccb51fd21c6c77ae871262451950b9f"
+    },
+    {
+      "path": "analysis/s03_covariates.py",
+      "bytes": 2393,
+      "sha256": "022944a6d6f569f6aef5f3c0cd12a24ca91fbb7ab7e45bbade6d5e0bfcbe17d7"
+    },
+    {
+      "path": "analysis/s07_frame.py",
+      "bytes": 4061,
+      "sha256": "e01a4afdff59d579334d55b0d9c92bb75fbac4087ad693598844ff2603db3c02"
+    },
+    {
+      "path": "analysis/s08_build_features.py",
+      "bytes": 2190,
+      "sha256": "7004ea5c37a6777738b4ce9d7f4ff86ba7214c2c240850334136d2640333d1bd"
+    },
+    {
+      "path": "analysis/s17_census_grid.py",
+      "bytes": 11208,
+      "sha256": "5d36194ce57f9cef7d3b13fcd5aa0bdd8af91dc0f30c531cdd1651f1ff20b700"
+    },
+    {
+      "path": "analysis/s18_summarize_grid.py",
+      "bytes": 5681,
+      "sha256": "7d311eac6e86bd48d7aad2b723213d507fec03288b0a2f33f6515d21e504d261"
+    },
+    {
+      "path": "analysis/s19_small_frame_burden.py",
+      "bytes": 6974,
+      "sha256": "0cc9b412792ee6fc48220347fee33b6a46005239d8dd09cd940c35323a86a2cb"
+    },
+    {
+      "path": "analysis/s20_small_projection.py",
+      "bytes": 9497,
+      "sha256": "af1ead323f894cd47a7251d3d74b9bf58df4fd3b571fc20f4b399086ba29253b"
+    },
+    {
+      "path": "analysis/s21_external_states.py",
+      "bytes": 9247,
+      "sha256": "de28803aecb6df4ff50328560db1bc39e504163d6d8d78f5a6698be472ceb71a"
+    },
+    {
+      "path": "analysis/s22_external_followup.py",
+      "bytes": 4532,
+      "sha256": "faae3c285f92cfbb46e97d338bc12f2f6aafeac385f4506cdd9caf07ebdcfd08"
+    },
+    {
+      "path": "analysis/s23_within_system.py",
+      "bytes": 3048,
+      "sha256": "037f4b8b0e47d02de79bdf7e95a76129b6883986b1d357d0bb8b9b89e271fb9b"
+    },
+    {
+      "path": "analysis/s24_two_level.py",
+      "bytes": 9139,
+      "sha256": "ff9b7b0730f861baa5fdc58512e733240518dc95dac7bd98157259db05ae7c62"
+    },
+    {
+      "path": "DATA_SOURCES.md",
+      "bytes": 3031,
+      "sha256": "90a1f3a2dee6b629a0f20647cc5adeec3d6d0e9db5cbf8cb1c882d67bcf35301"
+    },
+    {
+      "path": "plotting/f01_fig1_monitoring_gap.py",
+      "bytes": 3609,
+      "sha256": "6141012ea8f404dd9c29eeee9436b008446ca80153fe795455ae6e7847deed90"
+    },
+    {
+      "path": "plotting/f02_fig2_transfer_bias.py",
+      "bytes": 4351,
+      "sha256": "4cc33ff0e21f30b48e1f8a7ea610a3f3a354c0ee90badc405519aeb89f345fa0"
+    },
+    {
+      "path": "plotting/f03_fig3_anchor_method.py",
+      "bytes": 3960,
+      "sha256": "aaa8ff0780864102e575de50b544b9e90903e67e5e7873e6f5dbdea4e8df4287"
+    },
+    {
+      "path": "plotting/f04_fig4_census_validation.py",
+      "bytes": 7692,
+      "sha256": "bca7f409b457da3c70a47f8e296423d798c0eb1075c44c52e9784cf84f3a87ba"
+    },
+    {
+      "path": "plotting/f05_fig5_small_burden.py",
+      "bytes": 5173,
+      "sha256": "0996e15ea3e806633c157a79f31376ec4dcd11cf524f3c2261ba3c4d1a9ce819"
+    },
+    {
+      "path": "plotting/f06_fig6_external_validation.py",
+      "bytes": 4285,
+      "sha256": "26b6d91dc01ecc66fa8b1929dff159f155b02a182786e57f8fa783ae4f2291e8"
+    },
+    {
+      "path": "plotting/f07_fig7_next_round_design.py",
+      "bytes": 6891,
+      "sha256": "87a4bad460060296894a491f5555cb62a1f99dece0ccfad0bce2be13b653ecd2"
+    },
+    {
+      "path": "plotting/f08_supporting_figures.py",
+      "bytes": 5904,
+      "sha256": "cb869516d589dc6ba0cda8b53811bcbcb4aa4c1be7e6d5f667faa138ddc6fa1b"
+    },
+    {
+      "path": "plotting/f_common.py",
+      "bytes": 1936,
+      "sha256": "cda80e7d1d6900f372a336c49f8ed329b86ebdc26a92bd46fcf9c1c48013a054"
+    },
+    {
+      "path": "plotting/figkit/figstyle.py",
+      "bytes": 22691,
+      "sha256": "84208c4e62c5dcd9c8c3a1b7ccd6f8a9e0947be9d948086d1fbfada8dab1e30c"
+    },
+    {
+      "path": "plotting/figkit/publication_helpers/ml_publication_style.py",
+      "bytes": 5851,
+      "sha256": "d43f8b19a106e84e6fa1fdda76ebf6f90ef641089a8efaa5c7e3464abbf72a32"
+    },
+    {
+      "path": "plotting/figkit/publication_helpers/scientific_palettes.py",
+      "bytes": 5870,
+      "sha256": "6aeea93e17da270b7d93a783ea328f27fc90fcc690ac83bf3af85e7a7f5ede43"
+    },
+    {
+      "path": "plotting/figkit/publication_layout.py",
+      "bytes": 4674,
+      "sha256": "0d4d31ee595697b48032460369f457d252882af84cf2d512b62acc7905d992bb"
+    },
+    {
+      "path": "plotting/generate_refined_figures.py",
+      "bytes": 24739,
+      "sha256": "c35c681128c0a947e3395b3d92e1a17af0ee41178b1a4ba4bf6610b02d1a00d7"
+    },
+    {
+      "path": "plotting/refine_mechanism_round3.py",
+      "bytes": 6971,
+      "sha256": "08cf2f6c4ed0635cf5077323545f8642a2ccc4aa7ae9fd3e5c302ceb940a3d62"
+    },
+    {
+      "path": "plotting/refine_overview_round3.py",
+      "bytes": 8224,
+      "sha256": "b339b9518c9b581fad44e15abef254425e47b32347f6f9704122a38f5174bec4"
+    },
+    {
+      "path": "plotting/refine_panels_round3.py",
+      "bytes": 11077,
+      "sha256": "6dd3e47b3fdb4b22c94176dde8b01aba123d5d1255937df15be97107b1ed023f"
+    },
+    {
+      "path": "plotting/refine_three_rows_a.py",
+      "bytes": 7859,
+      "sha256": "c0935e78df8df6fb29c235814b4a70fe1f3a09628aecf29ed968447bef9c7cb5"
+    },
+    {
+      "path": "plotting/refine_three_rows_b.py",
+      "bytes": 4857,
+      "sha256": "4616a3e47ec7905adfda850e252fe354baaf7e27e2c4fd7699477350fa7f2051"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5550,
+      "sha256": "bd3ca233760afe9b9687b3aaf0194661f858c8e194ed2523f765270b83e61333"
+    },
+    {
+      "path": "requirements-tested.txt",
+      "bytes": 158,
+      "sha256": "741b38e21e04b1df8f5e03caa6b2e0c4e4dc6d32afe48f34b7b58c94726e7368"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 136,
+      "sha256": "2c65c7d005614757c72e935752c503cf1bd566d1cb647acab3a2fcb462bc2955"
+    },
+    {
+      "path": "run_pipeline.py",
+      "bytes": 1465,
+      "sha256": "eb04e338ca0f51823128256b48ae49e7cad34c4f042ef430a1569d3a059a94b3"
+    },
+    {
+      "path": "tests/test_core_identities.py",
+      "bytes": 2169,
+      "sha256": "3e00f6e2aba4a6d0e07982204bd4b396328429f4a672c1a70f545b29196c9b3b"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 1101,
+      "sha256": "946d4dcbcb52e9f795f55fee6abf6763568bd521757e52cb92226cf5e6dbe399"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 1549,
+      "sha256": "5fd3199c7b503a876b6c4f9b461ab3138249499c9704a657d4c6588a478be8af"
+    }
+  ]
+}

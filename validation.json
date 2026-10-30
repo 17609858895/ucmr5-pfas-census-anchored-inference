@@ -1,0 +1,46 @@
+{
+  "python_version": "3.12.3",
+  "deterministic_tests_passed": 5,
+  "scientific_function_ast": {
+    "anchor_core.py": {
+      "functions_compared": 18,
+      "identical": true
+    },
+    "s17_census_grid.py": {
+      "functions_compared": 10,
+      "identical": true
+    },
+    "s19_small_frame_burden.py": {
+      "functions_compared": 3,
+      "identical": true
+    },
+    "s20_small_projection.py": {
+      "functions_compared": 7,
+      "identical": true
+    },
+    "s21_external_states.py": {
+      "functions_compared": 6,
+      "identical": true
+    },
+    "s22_external_followup.py": {
+      "functions_compared": 1,
+      "identical": true
+    },
+    "s23_within_system.py": {
+      "functions_compared": 0,
+      "identical": true
+    },
+    "s24_two_level.py": {
+      "functions_compared": 5,
+      "identical": true
+    },
+    "f00_figure_data.py": {
+      "functions_compared": 7,
+      "identical": true
+    },
+    "model_features.py": {
+      "nb_feats_identical_to_source": true
+    }
+  },
+  "no_real_data_fitting_or_simulations": true
+}
