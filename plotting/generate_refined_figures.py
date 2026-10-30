@@ -25,11 +25,11 @@ import refine_three_rows_a as tr4a
 import refine_three_rows_b as tr4b
 sys.stdout.reconfigure(encoding='utf-8')
 
-fs.MIN_PT=10.5
+fs.MIN_PT=12
 fs.LETTER_PT=12
-plt.rcParams.update({'font.size':10.5,'axes.labelsize':11.5,'axes.labelweight':'normal',
- 'xtick.labelsize':10.5,'ytick.labelsize':10.5,'legend.fontsize':10.5,'legend.title_fontsize':10.5,
- 'lines.linewidth':1.5,'axes.linewidth':.8,'savefig.dpi':600})
+plt.rcParams.update({'font.size':12,'axes.labelsize':13.5,'axes.labelweight':'bold',
+ 'xtick.labelsize':12.5,'ytick.labelsize':12.5,'legend.fontsize':12,'legend.title_fontsize':12,
+ 'lines.linewidth':1.6,'axes.linewidth':1.0,'savefig.dpi':600})
 
 def style(ax,xlabel=None,ylabel=None):
     style_axis(ax,xlabel=xlabel,ylabel=ylabel,tick_size=10.5,label_size=11.5)
@@ -43,6 +43,7 @@ def polish(builder):
         for ax in [a for a in fig.findobj(Axes) if a not in before]:
             for obj in [ax.xaxis.label,ax.yaxis.label]:
                 t=obj.get_text().replace('Small systems above MCL (%)','Exceeding systems (%)').replace('Systems above MCL (%)','Exceeding systems (%)').replace('People above MCL (thousands)','Affected population (thousands)').replace('Above MCL (%)','Exceedance share (%)')
+                if obj is ax.yaxis.label:t=t.replace('People served per system','System size (people)')
                 obj.set_text(t);obj.set_fontsize(11.5)
             for text in ax.findobj(Text):
                 if text.get_text()=='Higher AUC':text.set_text('AUC matched')
@@ -194,7 +195,7 @@ def layout5(fig):
     return [top[0],top[1],low[0],low[1]]
 
 def prevalence_facets(fig,ss,ctx):
-    g=ss.subgridspec(1,2,wspace=.38)
+    g=ss.subgridspec(1,2,wspace=.16)
     for j,(st,name) in enumerate(f6.STATES):
         ax=fig.add_subplot(g[j]);truth=f6.FU.loc[f'{st}: state truth (tested small systems)','value']*100
         ax.axvline(truth,color=INK,lw=.9,ls=(0,(3,2)))
@@ -202,8 +203,9 @@ def prevalence_facets(fig,ss,ctx):
             r=f6.FU.loc[f'{st}: {key}']
             if np.isfinite(r.lo):ax.plot([r.lo*100,r.hi*100],[i,i],color=INK,lw=.9)
             ax.plot(r.value*100,i,ls='',marker=mk,ms=6,color=C[col],mec=INK,mew=.5)
-        ax.set_yticks(range(4),[l for _,l,_,_ in f6.ESTS]);ax.set_ylim(3.55,-.65);ax.set_xlim(0,8);ax.set_xticks([0,2,4,6,8])
-        style(ax,'Exceeding systems (%)',name)
+        ax.set_yticks(range(4),['Model','Ratio','Logit','Additive'] if j==0 else ['']*4);ax.set_ylim(3.55,-.8);ax.set_xlim(0,8);ax.set_xticks([0,2,4,6,8])
+        style(ax,'Exceeding systems (%)')
+        ax.text(.02,.98,name,ha='left',va='top',transform=ax.transAxes,fontsize=12)
         ax.text(.98,.97,f'Observed: {truth:.2f}%',ha='right',va='top',transform=ax.transAxes,fontsize=9)
 
 def auc_forest(fig,ss,ctx):
@@ -230,8 +232,15 @@ def rules(fig,ss,ctx):
 
 def depth_eff(fig,ss,ctx):
     f7.panel_eff(fig,ss,ctx);ax=fig.axes[-1]
-    ax.set_yticks(range(6),['Equal π: R12','ANCHOR: full','R12 stopping','R12 + correction','R1 stopping','R1 + correction'])
-    style(ax,'Efficiency vs full equal-π sampling')
+    ax.set_yticks(range(6),['Equal π: R12','ANCHOR: full','R12','R12 + 2-phase','R1','R1 + 2-phase'])
+    ax.set_xticks([0,1,2,3,4,5])
+    style(ax,'Relative efficiency')
+    # Compact legend; no long handle padding in a half-width panel.
+    for axis in fig.axes:
+        lg=axis.get_legend()
+        if lg is not None and not axis.axison:
+            handles=lg.legend_handles;labels=[t.get_text() for t in lg.get_texts()];lg.remove()
+            axis.legend(handles,labels,ncol=3,loc='center',handlelength=.7,handletextpad=.3,columnspacing=.6)
 
 def projected_cost(fig,ss,ctx):
     f7.panel_small(fig,ss,ctx);ax=fig.axes[-1]

@@ -1,8 +1,8 @@
 """Semi-synthetic projection on the REAL small-system frame (N = 56,591): ANCHOR vs classical risk-stratified Neyman,
-the reconstructed EPA (UCMR5) allocation, population PPS and SRS, for the share of systems and the share of people.
+the observed-cell reference allocation, population PPS and SRS, for the share of systems and the share of people.
 
 Unsampled small systems have no labels, so pseudo-populations are generated from a truth model fitted to the real
-probability sample with design weights:  logit p = a0 + b*logit(f) + size-class and source effects (+ sigma*eps).
+observed cohort with working post-stratification weights:  logit p = a0 + b*logit(f) + size-class and source effects (+ sigma*eps).
 This keeps the observed calibration slope and the size-specific under-prediction of the census model. Scenarios:
   fitted     : the weighted fit as estimated (calibration slope 0.67; frame AUC of f vs pseudo-truth ~0.78, conservative)
   auc-match  : slope scaled so the expected frame AUC equals the AUC observed on the real sample (0.847)
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     agg = df.groupby(["scenario", "estimand", "n", "design", "estimator"]).agg(eff_vs_srs=("eff_vs_srs", "mean"), eff_vs_epa=("eff_vs_epa", "mean"),
                                                                             cov_kg=("cov_kg", "mean"), cov_wald=("cov_wald", "mean"), auc=("auc_f", "mean")).reset_index()
     agg["label"] = agg.design + " + " + agg.estimator
-    lines = ["# Small-frame projection (semi-synthetic truth from the real probability sample)", ""]
+    lines = ["# Small-frame projection (conditional pseudo-truth fitted to the observed cohort)", ""]
     for sg in SCENARIOS:
         lines.append(f"## scenario {sg} (mean AUC of the census prior vs pseudo-truth {agg[agg.scenario == sg].auc.mean():.3f})")
         for est in ["systems", "people"]:

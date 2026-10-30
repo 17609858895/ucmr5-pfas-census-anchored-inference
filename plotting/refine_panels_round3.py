@@ -60,6 +60,9 @@ def auc_forest3(fig, ss, ctx):
         ax.text(1.025, yi, f"{r.auc:.2f}", ha="right", va="center",
                 fontsize=10.5)
     ax.spines["bottom"].set_bounds(.4, 1.0)
+    labels=[t.get_text() for t in ax.get_yticklabels()]
+    labels[0]='UCMR5: development\n(n = 970)'
+    ax.set_yticks(range(len(labels)),labels)
     _style(ax, "AUC")
 
 
@@ -81,7 +84,7 @@ def projected_cost3(fig, ss, ctx):
     """Fig. 7c: all original six cost groups and both scenario markers/ranges."""
     f7.panel_small(fig, ss, ctx)
     ax = fig.axes[-1]
-    ax.set_yticks(range(6), ["Cells: full", "Cells: R12 + correction",
+    ax.set_yticks(range(6), ["Cell ref.: full", "Cell ref.: R12 + correction",
         "ANCHOR: full", "ANCHOR: R12 + correction",
         "ANCHOR: R1 + correction", "Dual: R12 + correction"])
     ax.set_xlabel("Projected analytical samples")
@@ -132,7 +135,7 @@ def shared_coverage3(fig, ss, ctx):
     ax.set_xlim(.915, .965)
     ax.set_xticks([.92, .94, .96])
     ax.axvline(.95, color=MUTED, ls="--", lw=.8, zorder=1)
-    _style(ax, "95% interval coverage")
+    _style(ax, "Coverage")
 
 
 def depth_coverage3(fig, ss, ctx):
@@ -142,9 +145,9 @@ def depth_coverage3(fig, ss, ctx):
                       mfc=f7.RC[rule] if linestyle == "-" else "white",
                       mec=INK, mew=.5, label=label)
                for _, label, rule, linestyle, marker in f7.C_LINES]
-    g = ss.subgridspec(2, 1, height_ratios=[.5, 1], hspace=.07)
-    legend_strip(fig, g[0], handles, 2, handlelength=1.15,
-                 columnspacing=.75, labelspacing=.25)
+    g = ss.subgridspec(2, 1, height_ratios=[.5, 1], hspace=.17)
+    legend_strip(fig, g[0], handles, 2, handlelength=.8,
+                 columnspacing=.45, labelspacing=.25)
     ax = fig.add_subplot(g[1])
     ns = [150, 300, 600]
     for j, (strategy, _, rule, linestyle, marker) in enumerate(f7.C_LINES):
@@ -162,7 +165,7 @@ def depth_coverage3(fig, ss, ctx):
     ax.set_yticks([.4, .6, .8, .95])
     ax.set_xlim(-.35, 2.35)
     ax.set_xticks(range(3), ns)
-    _style(ax, "Budget (system equivalents)", "95% interval coverage")
+    _style(ax, "Budget\n(full-schedule equivalents)", "Coverage")
 
 
 def layout7(fig):
@@ -208,7 +211,7 @@ def _preview():
     """Internal previews only; the main entry point remains authoritative."""
     import generate_refined_figures as base
     from publication_layout import draw_module
-    out = OUTPUT / "checks" / "第三轮草稿"
+    out = OUTPUT / "内部核查" / "第三轮草稿"
     out.mkdir(parents=True, exist_ok=True)
     fs.QA = out / "qa"
     plans = [

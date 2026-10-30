@@ -1,5 +1,5 @@
 {
-  "scope": "Source-only preparation; no training, simulations or network upload performed",
+  "scope": "Portable core statistical and figure source; added review analyses reproduced against frozen inputs; no raw data or manuscripts included.",
   "source_files": [
     {
       "release_path": "analysis\\project_paths.py",
@@ -19,7 +19,7 @@
       "release_path": "analysis\\common.py",
       "source": "WaterResearch_完整稿_20261025\\scripts\\common.py",
       "source_sha256": "fdaa4db437dba210b595c0f70e9fc7dae1b198725ee71d946e660891091898fa",
-      "release_sha256": "c6d461b7e256d2db02b8365dd36e2255d2b0b28f4834b58241eb927dfc192242",
+      "release_sha256": "1de186afeb7ff7931aaed7ef54bcf50a516dac4bc067667704b59282aecb20c3",
       "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
     },
     {
@@ -68,14 +68,14 @@
       "release_path": "analysis\\s19_small_frame_burden.py",
       "source": "WaterResearch_完整稿_20261025\\scripts\\s19_small_frame_burden.py",
       "source_sha256": "0cc9b412792ee6fc48220347fee33b6a46005239d8dd09cd940c35323a86a2cb",
-      "release_sha256": "0cc9b412792ee6fc48220347fee33b6a46005239d8dd09cd940c35323a86a2cb",
+      "release_sha256": "e6244a061d307bfacd2a17e66e3b97d674aa016d585bf53e05f428837d1324de",
       "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
     },
     {
       "release_path": "analysis\\s20_small_projection.py",
       "source": "WaterResearch_完整稿_20261025\\scripts\\s20_small_projection.py",
       "source_sha256": "e76d3d5c723fbc7cda8d030ff7918145f296b9f8c5ae7d81e2f09bbd6d61cbcd",
-      "release_sha256": "af1ead323f894cd47a7251d3d74b9bf58df4fd3b571fc20f4b399086ba29253b",
+      "release_sha256": "a7708d87c5e5cb26b2dc5ed3c3dceb4e1dc724b10336a4288d54381ab8c965ef",
       "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
     },
     {
@@ -103,7 +103,7 @@
       "release_path": "analysis\\s24_two_level.py",
       "source": "WaterResearch_完整稿_20261025\\scripts\\s24_two_level.py",
       "source_sha256": "82c6e9a0e0bb338d6fbb1bff35659c6157f64fa6fe933ffcfbeafe92c9866632",
-      "release_sha256": "ff9b7b0730f861baa5fdc58512e733240518dc95dac7bd98157259db05ae7c62",
+      "release_sha256": "f9bbdccd9875be1dc42d2beb0e3ae67fa3456df2c75ccbaf3016cb9ccbe09a04",
       "adaptation": "Portable file paths/parallel-job selection only; scientific functions and constants retained."
     },
     {
@@ -159,7 +159,7 @@
       "release_path": "plotting\\f04_fig4_census_validation.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f04_fig4_census_validation.py",
       "source_sha256": "3de726fc93762238032f3d24a5cb0c671433ea64989cfd05ec147ef167a86847",
-      "release_sha256": "bca7f409b457da3c70a47f8e296423d798c0eb1075c44c52e9784cf84f3a87ba",
+      "release_sha256": "9b827d6dd7393ab8db50eecafb4a9e63ac7b78af2b41d2d9815426b5617892cf",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
@@ -180,7 +180,7 @@
       "release_path": "plotting\\f07_fig7_next_round_design.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\f07_fig7_next_round_design.py",
       "source_sha256": "851c6dddee7f92ca6d6e221a4479daf2a6deb81f3134a9a98017738f9dbd87e4",
-      "release_sha256": "87a4bad460060296894a491f5555cb62a1f99dece0ccfad0bce2be13b653ecd2",
+      "release_sha256": "fe794f00e16cd259a05c957d4067c7b9d5f74212f50982a3fd59eca8fefd5154",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
@@ -194,49 +194,49 @@
       "release_path": "plotting\\generate_refined_figures.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\generate_refined_figures.py",
       "source_sha256": "509a58c8545fe96683e06e07fd2eebf3b0b5211c09f6c9be1247cb03183ec3a9",
-      "release_sha256": "c35c681128c0a947e3395b3d92e1a17af0ee41178b1a4ba4bf6610b02d1a00d7",
+      "release_sha256": "628734564ef3187b47967b327ab6a8c22a49b36012d9438c54b9b05aae4c74be",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
       "release_path": "plotting\\refine_overview_round3.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_overview_round3.py",
       "source_sha256": "686d0ea12c611971f7f523d29a2dae54c19c71f77298a39f5c6842e781a2ae4c",
-      "release_sha256": "b339b9518c9b581fad44e15abef254425e47b32347f6f9704122a38f5174bec4",
+      "release_sha256": "2f120aa232de6ed1d2c7198df0258db8b88018845d7ebf9d7ef814cd71ad0429",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
       "release_path": "plotting\\refine_panels_round3.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_panels_round3.py",
       "source_sha256": "5af9996170486137e437a4c2a8f3bcaadca62272e5eec4edd82c50285f6363e6",
-      "release_sha256": "6dd3e47b3fdb4b22c94176dde8b01aba123d5d1255937df15be97107b1ed023f",
+      "release_sha256": "b9a4fe0d09ffa809ffa6aac4f6bab86ede5a038243fa32f924212e7cffe2ebc8",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
       "release_path": "plotting\\refine_mechanism_round3.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_mechanism_round3.py",
       "source_sha256": "c66e5a18a627a9f2974c29b5a1b198b46950a259534a08b2b4c462fc0b2fba99",
-      "release_sha256": "08cf2f6c4ed0635cf5077323545f8642a2ccc4aa7ae9fd3e5c302ceb940a3d62",
+      "release_sha256": "d6540b87976e1d60e7d2c389bd737f19e08a29125abdb87a3ee617aa837a6523",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
       "release_path": "plotting\\refine_three_rows_a.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_three_rows_a.py",
       "source_sha256": "5985fc2f3fe94f67b01700b12553d93b93f62a08d167cc36ab6e7ab5354a6a4c",
-      "release_sha256": "c0935e78df8df6fb29c235814b4a70fe1f3a09628aecf29ed968447bef9c7cb5",
+      "release_sha256": "88f5efeadd47a374fd4b6d464fa0390fc6a551c7f9fefc2c74e2d4d4ac713e5f",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
       "release_path": "plotting\\refine_three_rows_b.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_three_rows_b.py",
       "source_sha256": "c664c7489bfae9f6623af9ed4eb18a94ada6cf53cf5729022286d00037d3c576",
-      "release_sha256": "4616a3e47ec7905adfda850e252fe354baaf7e27e2c4fd7699477350fa7f2051",
+      "release_sha256": "b8ec69145cfb8ddced429660b52ba50963b8143d1b28676f2271ce488db097f7",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
     },
     {
       "release_path": "plotting\\figkit\\figstyle.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\figkit\\figstyle.py",
       "source_sha256": "dd00fc0d0b86cb9f8004014a6cc4a055d9d0bbf128a9d0734548b679e7c18f26",
-      "release_sha256": "84208c4e62c5dcd9c8c3a1b7ccd6f8a9e0947be9d948086d1fbfada8dab1e30c",
+      "release_sha256": "ec535cbb20ca8febbbd04d19ebb71f633ff56339eb23dedfa7a876ba18c5d6c3",
       "adaptation": "Portable root and boundary-file configuration; numeric projection/style functions unchanged."
     },
     {
@@ -278,21 +278,21 @@
       "release_path": "run_pipeline.py",
       "source": "release utility",
       "source_sha256": null,
-      "release_sha256": "eb04e338ca0f51823128256b48ae49e7cad34c4f042ef430a1569d3a059a94b3",
+      "release_sha256": "aec567d34edf7d45378b387718d54a72887802da8bd6719caf49f4aa5d403fed",
       "adaptation": ""
     },
     {
       "release_path": "README.md",
       "source": "release utility",
       "source_sha256": null,
-      "release_sha256": "bd3ca233760afe9b9687b3aaf0194661f858c8e194ed2523f765270b83e61333",
+      "release_sha256": "3a9ed32d9b0b496751ce4340fb6c3b63457ade73a90907555e556940a5ecf496",
       "adaptation": ""
     },
     {
       "release_path": "DATA_SOURCES.md",
       "source": "release utility",
       "source_sha256": null,
-      "release_sha256": "90a1f3a2dee6b629a0f20647cc5adeec3d6d0e9db5cbf8cb1c882d67bcf35301",
+      "release_sha256": "a419a5207095e3e557b1d281ff910a084d6fbb77927316f3f456727ca0b94c64",
       "adaptation": ""
     },
     {
@@ -301,10 +301,38 @@
       "source_sha256": null,
       "release_sha256": "3e00f6e2aba4a6d0e07982204bd4b396328429f4a672c1a70f545b29196c9b3b",
       "adaptation": ""
+    },
+    {
+      "release_path": "analysis/s25_weight_sensitivity.py",
+      "source": "weight_sensitivity.py",
+      "source_sha256": "a5222b1899c3b4caa8833c9b37e3ed23ce55e40e3aad39fb4f083383a48ebe21",
+      "release_sha256": "84265e9b903546ce55bd91ddd9413c0560a6b0fe7cc4701a3bf69eb774087644",
+      "adaptation": "Portable CLI and paths; numerical functions retained; reviewed CSV reproduction verified."
+    },
+    {
+      "release_path": "analysis/s26_timing_sensitivity.py",
+      "source": "timing_sensitivity.py",
+      "source_sha256": "367940663484caa6cd2213e22733820b40af22003a466a7ce57777f7329bf1b2",
+      "release_sha256": "e18e73b61f48a353ad81cff471f965048156ce39419ef946e271b60fd0737fe8",
+      "adaptation": "Portable CLI and paths; numerical functions retained; reviewed CSV reproduction verified."
+    },
+    {
+      "release_path": "analysis/s27_direct_budget_check.py",
+      "source": "direct_budget_check.py",
+      "source_sha256": "ab2fbbd4197ffaa7ca0e87ffe413515bcba2f240d8fc4e00298d1e7dec8b08a1",
+      "release_sha256": "598a5886c4a6a623b00b7c45edb629846979c6d4964448eb0c99fedeed3acf29",
+      "adaptation": "Portable CLI and paths; numerical functions retained; reviewed CSV reproduction verified."
+    },
+    {
+      "release_path": "analysis/s28_summarize_direct_budget.py",
+      "source": "summarize_direct_budget.py",
+      "source_sha256": "c3e7facfa5c5d0fa6b6a593559bdda7b194981c8dbe0330671a8aff45e2b8ef1",
+      "release_sha256": "c57d08209311aed4579dde09610cfc9073fd6a9ddce7d99ff00783811460e3f1",
+      "adaptation": "Portable CLI and paths; numerical functions retained; reviewed CSV reproduction verified."
     }
   ],
-  "python_files_parsed": 39,
-  "absolute_private_paths_or_secret_patterns": [],
+  "python_files_parsed": 49,
+  "absolute_private_paths_or_secret_patterns": false,
   "release_files": [
     {
       "path": ".gitignore",
@@ -318,8 +346,8 @@
     },
     {
       "path": "analysis/common.py",
-      "bytes": 2041,
-      "sha256": "c6d461b7e256d2db02b8365dd36e2255d2b0b28f4834b58241eb927dfc192242"
+      "bytes": 2037,
+      "sha256": "1de186afeb7ff7931aaed7ef54bcf50a516dac4bc067667704b59282aecb20c3"
     },
     {
       "path": "analysis/f00_figure_data.py",
@@ -373,13 +401,13 @@
     },
     {
       "path": "analysis/s19_small_frame_burden.py",
-      "bytes": 6974,
-      "sha256": "0cc9b412792ee6fc48220347fee33b6a46005239d8dd09cd940c35323a86a2cb"
+      "bytes": 7078,
+      "sha256": "e6244a061d307bfacd2a17e66e3b97d674aa016d585bf53e05f428837d1324de"
     },
     {
       "path": "analysis/s20_small_projection.py",
-      "bytes": 9497,
-      "sha256": "af1ead323f894cd47a7251d3d74b9bf58df4fd3b571fc20f4b399086ba29253b"
+      "bytes": 9514,
+      "sha256": "a7708d87c5e5cb26b2dc5ed3c3dceb4e1dc724b10336a4288d54381ab8c965ef"
     },
     {
       "path": "analysis/s21_external_states.py",
@@ -398,13 +426,33 @@
     },
     {
       "path": "analysis/s24_two_level.py",
-      "bytes": 9139,
-      "sha256": "ff9b7b0730f861baa5fdc58512e733240518dc95dac7bd98157259db05ae7c62"
+      "bytes": 9175,
+      "sha256": "f9bbdccd9875be1dc42d2beb0e3ae67fa3456df2c75ccbaf3016cb9ccbe09a04"
+    },
+    {
+      "path": "analysis/s25_weight_sensitivity.py",
+      "bytes": 17822,
+      "sha256": "84265e9b903546ce55bd91ddd9413c0560a6b0fe7cc4701a3bf69eb774087644"
+    },
+    {
+      "path": "analysis/s26_timing_sensitivity.py",
+      "bytes": 3464,
+      "sha256": "e18e73b61f48a353ad81cff471f965048156ce39419ef946e271b60fd0737fe8"
+    },
+    {
+      "path": "analysis/s27_direct_budget_check.py",
+      "bytes": 10374,
+      "sha256": "598a5886c4a6a623b00b7c45edb629846979c6d4964448eb0c99fedeed3acf29"
+    },
+    {
+      "path": "analysis/s28_summarize_direct_budget.py",
+      "bytes": 2777,
+      "sha256": "c57d08209311aed4579dde09610cfc9073fd6a9ddce7d99ff00783811460e3f1"
     },
     {
       "path": "DATA_SOURCES.md",
-      "bytes": 3031,
-      "sha256": "90a1f3a2dee6b629a0f20647cc5adeec3d6d0e9db5cbf8cb1c882d67bcf35301"
+      "bytes": 3043,
+      "sha256": "a419a5207095e3e557b1d281ff910a084d6fbb77927316f3f456727ca0b94c64"
     },
     {
       "path": "plotting/f01_fig1_monitoring_gap.py",
@@ -423,8 +471,8 @@
     },
     {
       "path": "plotting/f04_fig4_census_validation.py",
-      "bytes": 7692,
-      "sha256": "bca7f409b457da3c70a47f8e296423d798c0eb1075c44c52e9784cf84f3a87ba"
+      "bytes": 7693,
+      "sha256": "9b827d6dd7393ab8db50eecafb4a9e63ac7b78af2b41d2d9815426b5617892cf"
     },
     {
       "path": "plotting/f05_fig5_small_burden.py",
@@ -438,8 +486,8 @@
     },
     {
       "path": "plotting/f07_fig7_next_round_design.py",
-      "bytes": 6891,
-      "sha256": "87a4bad460060296894a491f5555cb62a1f99dece0ccfad0bce2be13b653ecd2"
+      "bytes": 6907,
+      "sha256": "fe794f00e16cd259a05c957d4067c7b9d5f74212f50982a3fd59eca8fefd5154"
     },
     {
       "path": "plotting/f08_supporting_figures.py",
@@ -453,8 +501,13 @@
     },
     {
       "path": "plotting/figkit/figstyle.py",
-      "bytes": 22691,
-      "sha256": "84208c4e62c5dcd9c8c3a1b7ccd6f8a9e0947be9d948086d1fbfada8dab1e30c"
+      "bytes": 25537,
+      "sha256": "ec535cbb20ca8febbbd04d19ebb71f633ff56339eb23dedfa7a876ba18c5d6c3"
+    },
+    {
+      "path": "plotting/figkit/publication_helpers/audit_palette_usage.py",
+      "bytes": 4997,
+      "sha256": "46e61a472b13ed2ef124ceb304a890a8617f493b8eb7752b1f1985b59ae04322"
     },
     {
       "path": "plotting/figkit/publication_helpers/ml_publication_style.py",
@@ -473,38 +526,58 @@
     },
     {
       "path": "plotting/generate_refined_figures.py",
-      "bytes": 24739,
-      "sha256": "c35c681128c0a947e3395b3d92e1a17af0ee41178b1a4ba4bf6610b02d1a00d7"
+      "bytes": 25310,
+      "sha256": "628734564ef3187b47967b327ab6a8c22a49b36012d9438c54b9b05aae4c74be"
+    },
+    {
+      "path": "plotting/jhm_burden_panels.py",
+      "bytes": 7176,
+      "sha256": "a1d825226988435c72e56ac4b32e21b539122a9036fb9d4e85c1109927186159"
+    },
+    {
+      "path": "plotting/jhm_direct_budget_panels.py",
+      "bytes": 2235,
+      "sha256": "48c028967ffea55f2cf54ad824129bb6becbf90fec840d28507959a48c4ef9e5"
+    },
+    {
+      "path": "plotting/jhm_supporting_panels.py",
+      "bytes": 3381,
+      "sha256": "3a9c2efa8c690e2c3f0204ad4d001205430d3cc70c7f2c7b595013235b5ad456"
+    },
+    {
+      "path": "plotting/refine_jhm_figures.py",
+      "bytes": 3500,
+      "sha256": "f799d182a737705f81fc736075ea87e61fe7522c94b9660ff61a899c859b5d86"
     },
     {
       "path": "plotting/refine_mechanism_round3.py",
-      "bytes": 6971,
-      "sha256": "08cf2f6c4ed0635cf5077323545f8642a2ccc4aa7ae9fd3e5c302ceb940a3d62"
+      "bytes": 6963,
+      "sha256": "d6540b87976e1d60e7d2c389bd737f19e08a29125abdb87a3ee617aa837a6523"
     },
     {
       "path": "plotting/refine_overview_round3.py",
-      "bytes": 8224,
-      "sha256": "b339b9518c9b581fad44e15abef254425e47b32347f6f9704122a38f5174bec4"
+      "bytes": 8403,
+      "sha256": "2f120aa232de6ed1d2c7198df0258db8b88018845d7ebf9d7ef814cd71ad0429"
     },
     {
       "path": "plotting/refine_panels_round3.py",
-      "bytes": 11077,
-      "sha256": "6dd3e47b3fdb4b22c94176dde8b01aba123d5d1255937df15be97107b1ed023f"
+      "bytes": 11218,
+      "sha256": "b9a4fe0d09ffa809ffa6aac4f6bab86ede5a038243fa32f924212e7cffe2ebc8"
     },
     {
       "path": "plotting/refine_three_rows_a.py",
-      "bytes": 7859,
-      "sha256": "c0935e78df8df6fb29c235814b4a70fe1f3a09628aecf29ed968447bef9c7cb5"
+      "bytes": 7856,
+      "sha256": "88f5efeadd47a374fd4b6d464fa0390fc6a551c7f9fefc2c74e2d4d4ac713e5f"
     },
     {
       "path": "plotting/refine_three_rows_b.py",
-      "bytes": 4857,
-      "sha256": "4616a3e47ec7905adfda850e252fe354baaf7e27e2c4fd7699477350fa7f2051"
+      "bytes": 4848,
+      "sha256": "b8ec69145cfb8ddced429660b52ba50963b8143d1b28676f2271ce488db097f7"
     },
     {
       "path": "README.md",
-      "bytes": 5550,
-      "sha256": "bd3ca233760afe9b9687b3aaf0194661f858c8e194ed2523f765270b83e61333"
+      "bytes": 8412,
+      "sha256": "3a9ed32d9b0b496751ce4340fb6c3b63457ade73a90907555e556940a5ecf496"
     },
     {
       "path": "requirements-tested.txt",
@@ -517,9 +590,14 @@
       "sha256": "2c65c7d005614757c72e935752c503cf1bd566d1cb647acab3a2fcb462bc2955"
     },
     {
+      "path": "REVIEW_ANALYSES.md",
+      "bytes": 3327,
+      "sha256": "86eb32b744dda1a5fce495e7098ab177a04008b1e26f7dcf5c0d482a3d4f6ada"
+    },
+    {
       "path": "run_pipeline.py",
-      "bytes": 1465,
-      "sha256": "eb04e338ca0f51823128256b48ae49e7cad34c4f042ef430a1569d3a059a94b3"
+      "bytes": 1663,
+      "sha256": "aec567d34edf7d45378b387718d54a72887802da8bd6719caf49f4aa5d403fed"
     },
     {
       "path": "tests/test_core_identities.py",
@@ -527,14 +605,19 @@
       "sha256": "3e00f6e2aba4a6d0e07982204bd4b396328429f4a672c1a70f545b29196c9b3b"
     },
     {
+      "path": "tests/test_review_sensitivities.py",
+      "bytes": 4808,
+      "sha256": "da916b291ff3cf5189665fae2f12ea59eef04f631c8325c3e72ed9c6d84a2162"
+    },
+    {
       "path": "validation.json",
-      "bytes": 1101,
-      "sha256": "946d4dcbcb52e9f795f55fee6abf6763568bd521757e52cb92226cf5e6dbe399"
+      "bytes": 7754,
+      "sha256": "f0cce183deb0bd94e964f1abb647236fda1b31b03498659d902bb589a87cd035"
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 1549,
-      "sha256": "5fd3199c7b503a876b6c4f9b461ab3138249499c9704a657d4c6588a478be8af"
+      "bytes": 2056,
+      "sha256": "5f6d2170ad356c5ed7b5e2aae206742d3fddedd0c1b41932205e53f1edf247db"
     }
   ]
 }

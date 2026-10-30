@@ -24,9 +24,9 @@ def roc3(fig,ss,ctx):
 
 
 def class_bias3(fig,ss,ctx):
-    g=ss.subgridspec(2,1,height_ratios=[.15,1],hspace=.035)
+    g=ss.subgridspec(2,1,height_ratios=[.23,1],hspace=.10)
     hs=[Line2D([],[],ls='',marker=m,mfc=C[k],mec=INK,mew=.5,ms=5,label=l)
-        for m,k,l in [('o','observed','Design estimate'),('D','plugin','Predicted')]]
+        for m,k,l in [('o','observed','Observed'),('D','plugin','Predicted')]]
     legend_strip(fig,g[0],hs,2,handlelength=1,handletextpad=.25,columnspacing=.7)
     ax=fig.add_subplot(g[1]);d=f2.CLS
     for y,r in enumerate(d.itertuples()):

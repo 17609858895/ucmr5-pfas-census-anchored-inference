@@ -17,12 +17,12 @@ SK = pathlib.Path(__file__).resolve().parent / "publication_helpers"
 sys.path.insert(0, str(SK))
 from ml_publication_style import configure_publication_style, style_axis, numeric_ticks, export_subfigures, save_figure_with_subfigures  # noqa: E402,F401
 from scientific_palettes import get_palette, STYLE_COLORS  # noqa: E402
+from audit_palette_usage import validate_series_colors, audit_series_artists, _series_colours
 
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[2]/"analysis"))
 from project_paths import PROJECT_ROOT, STATE_KML
 OUTPUT = PROJECT_ROOT
 RES = OUTPUT / "results"
-
 FIG = OUTPUT / "figures"
 QA = FIG / "qa"
 PAL = get_palette("nature_new")   # DF9E9B 99BADF D8E7CA 99CDCE 999ACD FFD0E9 F6D58B C7A3CC
@@ -89,19 +89,29 @@ def _normalise_text(fig):
             t.set_fontweight("normal")
             if t.get_gid() != "keep_colour":
                 t.set_color(INK)
+    for ax in fig.findobj(Axes):
+        for label in ax.get_xticklabels()+ax.get_yticklabels():
+            label.set_fontweight('bold');label.set_fontsize(max(12.5,label.get_fontsize()))
+        for label in [ax.xaxis.label,ax.yaxis.label]:
+            label.set_fontweight('bold');label.set_fontsize(max(13.5,label.get_fontsize()))
+        if ax.axison:
+            # Numeric/category axes only; maps have no tick labels.
+            ax.tick_params(which='major',length=4.5,width=1.0,bottom=True,left=True)
+            for side in ['bottom','left']:
+                if ax.spines[side].get_visible():ax.spines[side].set_linewidth(1.0)
 
 
 def refine_layout(fig):
     _normalise_text(fig)
     for a in fig.findobj(Axes):
         for label in a.get_xticklabels()+a.get_yticklabels():
-            label.set_fontweight('normal')
+            label.set_fontweight('bold')
     recs = getattr(fig, "_panel_records", [])
     for r in recs:
         for a in r["axes"]:
             a.set_axes_locator(None)
             for label in a.get_xticklabels() + a.get_yticklabels():
-                label.set_fontweight("normal")
+                label.set_fontweight("bold")
     pt = np.tile(fig.get_size_inches(), 2) * 72
     # maps: width fills the cell, height follows the aspect; same-row panels adopt that outer height
     for r in recs:
@@ -227,18 +237,46 @@ def audit_style(fig):
     txt = [t for t in fig.findobj(Text) if t.get_visible() and t.get_text()]
     return dict(unexpected_colours=bad[:20], n_unexpected=len(bad),
                 min_font_pt=min(t.get_fontsize() for t in txt) if txt else None,
-                regular_tick_labels=all(t.get_fontweight() in ("normal", 400) for a in fig.findobj(Axes) for t in a.get_xticklabels()+a.get_yticklabels() if t.get_visible()),
+                bold_tick_labels=all(t.get_fontweight() in ("bold", 700) for a in fig.findobj(Axes) for t in a.get_xticklabels()+a.get_yticklabels() if t.get_visible()),
                 tick_axes_including_children=len(fig.findobj(Axes)),
                 regular_text=all(t.get_fontweight() in ("normal", 400) for t in txt),
                 nonregular_text=[t.get_text() for t in txt if t.get_fontweight() not in ("normal",400)])
+
+
+def audit_categorical_artists(fig):
+    """Audit actual coloured data marks and legend proxies, with neutral outlines separate.
+
+    Numeric maps/images interpolate the documented palette endpoints. Black/grey
+    intervals, joins, axes and hollow-marker outlines are structural. A coloured
+    data mark is never granted a baseline/control exemption.
+    """
+    from matplotlib.collections import Collection
+    from matplotlib.patches import Patch
+    palette=np.array([to_rgb(c) for c in PAL]);declared={};skipped=[]
+    for i,art in enumerate(fig.findobj(Artist)):
+        if not art.get_visible() or isinstance(art,Text):continue
+        if art.get_gid()=='choropleth':continue
+        if not isinstance(art,(Line2D,Patch,Collection)):continue
+        try:cols=_series_colours(art)
+        except (TypeError,ValueError):continue
+        if not cols:continue
+        visible=[np.asarray(matplotlib.colors.to_rgba(c)) for c in cols if matplotlib.colors.to_rgba(c)[3]>0]
+        if not visible:continue
+        is_palette=[bool(np.any(np.all(np.isclose(palette,c[:3],atol=1e-8,rtol=0),axis=1))) for c in visible]
+        if all(is_palette):declared[f'{type(art).__name__}_{i}']=art
+        elif any(is_palette):
+            # E.g. an ANCHOR palette curve with a hollow, ink-outlined diamond.
+            # Its coloured components were already checked by audit_style.
+            skipped.append({'artist':type(art).__name__,'reason':'palette curve plus structural hollow outline'})
+    result=audit_series_artists('nature_new',declared) if declared else {'passed':True,'checks':[],'scope':'schematic or numerical colour map; no categorical marks'}
+    result['structural_outline_combinations']=skipped
+    return result
 
 
 def audit_overlaps(fig):
     from matplotlib.axes import Axes
     rd = fig.canvas.get_renderer(); axes = fig.findobj(Axes); obst, issues = [], []
     for i, a in enumerate(axes):
-        if not a.axison:
-            continue
         lg = a.get_legend()
         if lg is not None and lg.get_visible():
             obst.append(("legend", i, lg.get_window_extent(rd)))
@@ -257,6 +295,11 @@ def audit_overlaps(fig):
                 w = min(box.x1, b.x1) - max(box.x0, b.x0); h = min(box.y1, b.y1) - max(box.y0, b.y0)
                 if w > 1 and h > 1:
                     issues.append(dict(kind=kind, text=lab.get_text()))
+            if kind=='legend' and not axes[owner].axison and owner!=i:
+                plotbox=a.get_window_extent(rd)
+                w=min(box.x1,plotbox.x1)-max(box.x0,plotbox.x0)
+                h=min(box.y1,plotbox.y1)-max(box.y0,plotbox.y0)
+                if w>1 and h>1:issues.append(dict(kind='legend-strip/data-rectangle',axis=i,overlap_px=[w,h]))
     return issues
 
 
@@ -273,6 +316,7 @@ def _export(fig, folder, stem, letters_on):
     report = refine_layout(fig)
     letters = add_letters(fig, report) if letters_on else []
     style = audit_style(fig)
+    style['actual_categorical_artists']=audit_categorical_artists(fig)
     style.update(alignment_max_residual_pt=max((r["max_residual_pt"] for r in report), default=0),
                  panel_letters=letters, label_overlaps=audit_overlaps(fig))
     style['canvas_mm'] = (fig.get_size_inches()*25.4).tolist()
@@ -281,7 +325,7 @@ def _export(fig, folder, stem, letters_on):
                                     for a in fig.axes if a.axison]
     QA.mkdir(parents=True, exist_ok=True)
     json.dump(dict(alignment=report, style=style), open(QA / f"{stem}.json", "w", encoding="utf-8"), indent=1)
-    meta = {'Author':'CHONG LIU', 'Creator':'', 'Producer':''}
+    meta = {'Author':'CHONG LIU', 'Creator':'CHONG LIU', 'Producer':'CHONG LIU'}
     # Axes tight bounds already include the ticks actually drawn, labels, legends
     # and child insets. Including every Text separately also includes unused
     # locator ticks outside the axis limits, producing large invisible margins.

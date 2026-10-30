@@ -48,11 +48,12 @@ def _status(ax, region='CONUS', zoom=False):
 
 def coverage_map3(fig,ss,ctx):
     """All geographic points retained, with explicit AK/HI and regional viewports."""
-    g=ss.subgridspec(2,2,height_ratios=[1,.12],width_ratios=[2.55,1],wspace=.045,hspace=.015)
+    g=ss.subgridspec(2,2,height_ratios=[1,.23],width_ratios=[2.75,1],wspace=.06,hspace=.055)
     ax=fig.add_subplot(g[0,0]);xy=_status(ax)
     ax.set_xlim(xy[:,0].min()-.015,max(xy[:,0].max()+.015,.415))
     ax.set_ylim(.018,xy[:,1].max()+.01)
     ax.set_gid('physical_basemap')
+    ax.set_anchor('W')
     # Preserve existing Albers/inset coordinates; these are explicit viewports.
     for reg,box in [('AK',[.005,.008,.23,.22]),('HI',[.25,.008,.15,.13])]:
         ia=ax.inset_axes(box);points=_status(ia,reg)
@@ -66,15 +67,16 @@ def coverage_map3(fig,ss,ctx):
         x0,x1,y0,y1=fs.zoom_bbox(name);xm=(x0+x1)/2;ym=(y0+y1)/2
         width=max(x1-x0,(y1-y0)*2);height=width/2
         z.set_xlim(xm-width/2,xm+width/2);z.set_ylim(ym-height/2,ym+height/2)
-        z.set_title(name,loc='left',fontsize=10.5,pad=2)
+        short={'Northeast corridor':'NE corridor','Carolinas–Georgia':'Carolinas–GA','Southern California':'S. California'}[name]
+        z.set_title(short,loc='left',fontsize=12,pad=2)
         for sp in z.spines.values():sp.set_visible(True);sp.set_color(MUTED);sp.set_linewidth(.6)
         ax.add_patch(Rectangle((xm-width/2,ym-height/2),width,height,fill=False,ec=INK,lw=.55,zorder=8))
     n=f1.P.category.value_counts()
     hs=[Line2D([],[],ls='',marker='o',mfc=C[k],mec=INK,mew=.35,ms=4.6,
-               label=f'{lab} (n = {n[nm]:,})') for nm,k,lab in [
+               label=f'{lab}\nn = {n[nm]:,}') for nm,k,lab in [
       ('Unmonitored','unmonitored','Unmonitored'),('Census (≥3,300)','census','Larger systems'),
-      ('Sampled small (<3,300)','sampled','Small sample')]]
-    legend_strip(fig,g[1,:],hs,3,columnspacing=.8,handletextpad=.25)
+      ('Sampled small (<3,300)','sampled','Monitored small')]]
+    legend_strip(fig,g[1,:],hs,3,columnspacing=1.5,handletextpad=.3,handlelength=.6)
 
 
 def layout1_round3(fig):
@@ -144,7 +146,7 @@ def draft_export():
     fs.MIN_PT=10.5;fs.LETTER_PT=12
     plt.rcParams.update({'font.size':10.5,'axes.labelsize':11.5,'xtick.labelsize':10.5,
       'ytick.labelsize':10.5,'legend.fontsize':10.5,'legend.title_fontsize':10.5,'axes.labelweight':'normal'})
-    out=OUTPUT/'checks'/'第三轮草稿';out.mkdir(parents=True,exist_ok=True)
+    out=OUTPUT/'内部核查'/'第三轮草稿';out.mkdir(parents=True,exist_ok=True)
     tasks=[('Fig1_overview_round3',(190,145),[coverage_map3,coverage_by_size3,f1.panel_c],layout1_round3),
       ('Fig4_validation_round3',(190,182),[
        efficiency_round3('medium','systems',ylim=(0,2.65),yticks=[0,1,2]),

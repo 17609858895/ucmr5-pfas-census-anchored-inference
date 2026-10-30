@@ -132,7 +132,7 @@ def small_task(scen, seed, R=600):
                 draw_rng = np.random.default_rng(62000 + 1000*seed + 100*list(sp.SCENARIOS).index(scen) + int(B)) if design == 'dual' else rng
                 r = run_strategy(draw_rng, y, sm.f.values, sm.u.values, a, costs, design, rule, q, ppi, B, R, base=a, strata=cells, obs_nh=obs_nh, P=sm.P.values)
                 out.append(dict(scenario=scen, seed=seed, estimand=estimand, budget=B, strategy=name, **r))
-        # reference: current practice = EPA allocation, full schedule, 800 systems
+        # reference: observed-cell allocation, full schedules, expected 800 systems; not recovered official allocation
         base = run_strategy(rng, y, sm.f.values, sm.u.values, a, costs, "EPA", "full", 0, False,
                             800 * np.sum(obs_nh / obs_nh.sum() * np.array([costs["cost_full"][cells == h].mean() for h in range(len(obs_nh))])),
                             R, base=a, strata=cells, obs_nh=obs_nh)

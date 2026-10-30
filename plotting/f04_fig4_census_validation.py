@@ -37,11 +37,11 @@ def eff_panel(pop, est, logy=False, ylim=None, yticks=None):
     return draw
 
 
-STRIP = .3
+STRIP = .45
 
 
 def panel_pareto(fig, ss, ctx):
-    gs = ss.subgridspec(2, 1, height_ratios=[STRIP, 1], hspace=.04)
+    gs = ss.subgridspec(2, 1, height_ratios=[STRIP, 1], hspace=.10)
     handles = [Line2D([], [], color=C["ANCHOR (Poisson + PPI++)"], lw=1.4, label="Dual"),
                Line2D([], [], ls="", marker="s", color=C["PPS-pop + Hájek (EPA-like)"], mec=INK, ms=5, label="Pop. PPS"),
                Line2D([], [], ls="", marker="o", mfc="white", mec=INK, ms=4.5, label="Large"),
@@ -62,7 +62,7 @@ def panel_pareto(fig, ss, ctx):
 
 
 def panel_coverage(fig, ss, ctx):
-    gs = ss.subgridspec(2, 1, height_ratios=[STRIP, 1], hspace=.04)
+    gs = ss.subgridspec(2, 1, height_ratios=[STRIP, 1], hspace=.10)
     legend_strip(fig, gs[0], [Line2D([], [], ls="", marker="o", mfc="white", mec=INK, ms=4.5, label="Wald"),
                               Line2D([], [], ls="", marker="o", mfc=MUTED, mec=INK, ms=4.5, label="KG")], 2)
     ax = fig.add_subplot(gs[1])

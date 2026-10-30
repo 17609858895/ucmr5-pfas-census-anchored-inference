@@ -1,46 +1,327 @@
 {
+  "date": "2026-10-31",
   "python_version": "3.12.3",
-  "deterministic_tests_passed": 5,
-  "scientific_function_ast": {
-    "anchor_core.py": {
-      "functions_compared": 18,
-      "identical": true
+  "deterministic_tests_passed": 9,
+  "python_files_parsed": 49,
+  "existing_scientific_function_ast": [
+    {
+      "file": "anchor_core.py",
+      "identical_functions": [
+        "cap_probs",
+        "mix_scores",
+        "draw_poisson",
+        "draw_systematic",
+        "neyman_alloc",
+        "draw_stratified",
+        "rank_strata",
+        "_var",
+        "_df",
+        "est_hajek",
+        "_lam",
+        "est_ppi",
+        "est_greg",
+        "_neff",
+        "_wilson",
+        "intervals",
+        "_wilson_v",
+        "intervals_vec"
+      ]
     },
-    "s17_census_grid.py": {
-      "functions_compared": 10,
-      "identical": true
+    {
+      "file": "s17_census_grid.py",
+      "identical_functions": [
+        "build_population",
+        "get_population",
+        "weights_for",
+        "neyman_spec",
+        "designs_for",
+        "draw",
+        "run_estimators",
+        "summarise",
+        "cheap_task",
+        "ml_task"
+      ]
     },
-    "s19_small_frame_burden.py": {
-      "functions_compared": 3,
-      "identical": true
+    {
+      "file": "s19_small_frame_burden.py",
+      "identical_functions": [
+        "build_table",
+        "census_prior",
+        "stratified_burden"
+      ]
     },
-    "s20_small_projection.py": {
-      "functions_compared": 7,
-      "identical": true
+    {
+      "file": "s20_small_projection.py",
+      "identical_functions": [
+        "truth_model",
+        "_recentre",
+        "expected_auc",
+        "scenario_linear",
+        "designs",
+        "dual_pi",
+        "task"
+      ]
     },
-    "s21_external_states.py": {
-      "functions_compared": 6,
-      "identical": true
+    {
+      "file": "s21_external_states.py",
+      "identical_functions": [
+        "num",
+        "load_michigan",
+        "load_minnesota",
+        "load_newhampshire",
+        "boot_ci",
+        "recall_at"
+      ]
     },
-    "s22_external_followup.py": {
-      "functions_compared": 1,
-      "identical": true
+    {
+      "file": "s22_external_followup.py",
+      "identical_functions": [
+        "within_group_auc"
+      ]
     },
-    "s23_within_system.py": {
-      "functions_compared": 0,
-      "identical": true
+    {
+      "file": "s23_within_system.py",
+      "identical_functions": []
     },
-    "s24_two_level.py": {
-      "functions_compared": 5,
-      "identical": true
+    {
+      "file": "s24_two_level.py",
+      "identical_functions": [
+        "budget_probs",
+        "estimate",
+        "run_strategy",
+        "census_task",
+        "small_task"
+      ]
     },
-    "f00_figure_data.py": {
-      "functions_compared": 7,
-      "identical": true
-    },
-    "model_features.py": {
-      "nb_feats_identical_to_source": true
+    {
+      "file": "f00_figure_data.py",
+      "identical_functions": [
+        "size_class",
+        "fig1",
+        "fig2",
+        "fig5",
+        "fig6",
+        "fig3",
+        "fig7"
+      ]
     }
+  ],
+  "additional_numerical_function_AST_comparison": [
+    {
+      "function": "lam",
+      "source": "weight_sensitivity.py",
+      "release": "s25_weight_sensitivity.py",
+      "AST_identical": true
+    },
+    {
+      "function": "estimate",
+      "source": "weight_sensitivity.py",
+      "release": "s25_weight_sensitivity.py",
+      "AST_identical": true
+    },
+    {
+      "function": "weights_for",
+      "source": "weight_sensitivity.py",
+      "release": "s25_weight_sensitivity.py",
+      "AST_identical": true
+    },
+    {
+      "function": "rake",
+      "source": "weight_sensitivity.py",
+      "release": "s25_weight_sensitivity.py",
+      "AST_identical": true
+    },
+    {
+      "function": "scenario",
+      "source": "weight_sensitivity.py",
+      "release": "s25_weight_sensitivity.py",
+      "AST_identical": true
+    },
+    {
+      "function": "vector_est",
+      "source": "weight_sensitivity.py",
+      "release": "s25_weight_sensitivity.py",
+      "AST_identical": true
+    },
+    {
+      "function": "array_hash",
+      "source": "direct_budget_check.py",
+      "release": "s27_direct_budget_check.py",
+      "AST_identical": true
+    },
+    {
+      "function": "clone_rng",
+      "source": "direct_budget_check.py",
+      "release": "s27_direct_budget_check.py",
+      "AST_identical": true
+    },
+    {
+      "function": "summarize",
+      "source": "direct_budget_check.py",
+      "release": "s27_direct_budget_check.py",
+      "AST_identical": true
+    }
+  ],
+  "reviewed_csv_outputs_reproduced": [
+    {
+      "file": "additive_domain_burden_canonical.csv",
+      "rows": 8,
+      "columns": 20,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "cell_influence.csv",
+      "rows": 8,
+      "columns": 10,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "concentration_stratified_bootstrap.csv",
+      "rows": 4000,
+      "columns": 2,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "current_small_vs_ucmr_size_crosswalk.csv",
+      "rows": 970,
+      "columns": 5,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "fig5c_additive_domain_shares.csv",
+      "rows": 8,
+      "columns": 8,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "fig5c_full_inventory_shares.csv",
+      "rows": 8,
+      "columns": 4,
+      "reproduces_reviewed_output": true,
+      "byte_identical": false
+    },
+    {
+      "file": "size_band_burden_bootstrap.csv",
+      "rows": 8,
+      "columns": 21,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "tableS9_additive_domains_display.csv",
+      "rows": 4,
+      "columns": 5,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "weight_calibration_sensitivity.csv",
+      "rows": 8,
+      "columns": 12,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "within_cell_selection_odds_curve.csv",
+      "rows": 81,
+      "columns": 4,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "within_cell_selection_odds_scenarios.csv",
+      "rows": 9,
+      "columns": 4,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "locations_span_over366days.csv",
+      "rows": 349,
+      "columns": 10,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "timing_burden_sensitivity.csv",
+      "rows": 2,
+      "columns": 9,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "timing_eligibility_population_changes.csv",
+      "rows": 3,
+      "columns": 10,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "direct_budget_by_seed.csv",
+      "rows": 60,
+      "columns": 19,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "direct_budget_draws.csv",
+      "rows": 40000,
+      "columns": 11,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "direct_budget_figure_data.csv",
+      "rows": 8,
+      "columns": 14,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "direct_budget_summary.csv",
+      "rows": 28,
+      "columns": 14,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "direct_reference_summary.csv",
+      "rows": 4,
+      "columns": 8,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "tableS11_direct_budget_canonical.csv",
+      "rows": 4,
+      "columns": 22,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    },
+    {
+      "file": "tableS11_direct_budget_display.csv",
+      "rows": 4,
+      "columns": 6,
+      "reproduces_reviewed_output": true,
+      "byte_identical": true
+    }
+  ],
+  "direct_budget_reference_checks_passed": 20,
+  "direct_budget_pseudo_populations_reproduced": 10,
+  "direct_budget_draws_per_setting": 1000,
+  "plotting_smoke_test": {
+    "figure": "5",
+    "draft_dpi": 180,
+    "palette_errors": 0,
+    "overlap_errors": 0,
+    "visually_inspected": true
   },
-  "no_real_data_fitting_or_simulations": true
+  "full_pipeline_retrained": false,
+  "independent_field_validation": false,
+  "absolute_private_paths_detected_in_python": false
 }

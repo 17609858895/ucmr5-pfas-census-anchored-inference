@@ -15,7 +15,7 @@ def detected_cols(le):
     return [c for c in PFAS25 if f"v_{c}" in le.columns]
 
 def complete_schedule():
-    """Locations with a full UCMR5 schedule: 4 quarterly events (SW/GU/MX) or 2 semi-annual events (GW)."""
+    """Locations with four reported events (SW/GU/MX) or two (GW); calendar spacing is not enforced."""
     le = pd.read_parquet(D / "loc_event.parquet")
     le["sw"] = le.WaterType.isin(["SW", "GU", "MX"])
     need = np.where(le.sw, 4, 2)

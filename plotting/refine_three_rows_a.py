@@ -21,23 +21,23 @@ def _style(ax, xlabel=None, ylabel=None):
 
 def layout1_three_rows(fig):
     """Map / monitoring-by-size / small-system composition."""
-    g=fig.add_gridspec(3,1,height_ratios=[1.45,1.0,.73],
+    g=fig.add_gridspec(3,1,height_ratios=[1.45,1.0,.87],
         left=.065,right=.99,top=.985,bottom=.045,hspace=.075)
     return [g[0],g[1],g[2]]
 
 
 def small_composition4(fig,ss,ctx):
     """Fig. 1c, with a one-line key suited to the full-width third row."""
-    g=ss.subgridspec(2,1,height_ratios=[.27,1],hspace=.045)
+    g=ss.subgridspec(2,1,height_ratios=[.55,1],hspace=.08)
     hs=[Patch(fc=C[f'cls{i}'],ec=INK,lw=.5,label=cls)
         for i,cls in enumerate(CLASS_ORDER)]
-    legend_strip(fig,g[0],hs,4,title='People served per system',
+    legend_strip(fig,g[0],hs,4,title='System size (people)',
                  handlelength=1.0,columnspacing=1.1,labelspacing=.15)
     ax=fig.add_subplot(g[1]);rows=['Frame: systems','Frame: people','UCMR5 sample: systems']
     left=np.zeros(3)
     for i,cls in enumerate(CLASS_ORDER):
         values=f1.COMP.loc[cls,rows].to_numpy()*100
-        ax.barh(range(3),values,left=left,height=.62,color=C[f'cls{i}'],
+        ax.barh(range(3),values,left=left,height=.78,color=C[f'cls{i}'],
                 edgecolor=INK,lw=.5,zorder=2)
         for j,(start,value) in enumerate(zip(left,values)):
             if value>=10:ax.text(start+value/2,j,f'{value:.0f}',
@@ -57,15 +57,15 @@ def layout2_three_rows(fig):
 
 def layout3_three_rows(fig):
     """Workflow / inclusion probability / expected composition; no equation."""
-    g=fig.add_gridspec(3,1,height_ratios=[1.30,1.0,.78],
+    g=fig.add_gridspec(3,1,height_ratios=[1.30,1.0,.94],
         left=.06,right=.99,top=.99,bottom=.045,hspace=.065)
     return [g[0],g[1],g[2]]
 
 
 def allocation4(fig,ss,ctx):
     """Original Fig. 3c -> new Fig. 3b; all medians/quantile bands unchanged."""
-    g=ss.subgridspec(2,1,height_ratios=[.14,1],hspace=.035)
-    designs=[('pi_epa','Reconstructed cells',C['PPS-pop + Hájek (EPA-like)'],'s'),
+    g=ss.subgridspec(2,1,height_ratios=[.20,1],hspace=.065)
+    designs=[('pi_epa','Cell reference',C['PPS-pop + Hájek (EPA-like)'],'s'),
              ('pi_anchor','ANCHOR (systems)',C['ANCHOR (Poisson + PPI++)'],'D'),
              ('pi_dual','Dual design',C['Neyman-H10 + PPI++ (hybrid)'],'o')]
     hs=[Line2D([],[],color=color,lw=1.4,marker=marker,ms=4.5,mec=INK,mew=.45,label=label)
@@ -89,10 +89,10 @@ def allocation4(fig,ss,ctx):
 
 def expected_composition4(fig,ss,ctx):
     """Original Fig. 3d -> new Fig. 3c; frame-weighted sum of original pi."""
-    g=ss.subgridspec(2,1,height_ratios=[.27,1],hspace=.045)
+    g=ss.subgridspec(2,1,height_ratios=[.55,1],hspace=.08)
     hs=[Patch(fc=C[f'cls{i}'],ec=INK,lw=.45,label=cls)
         for i,cls in enumerate(CLASS_ORDER)]
-    legend_strip(fig,g[0],hs,4,title='People served per system',
+    legend_strip(fig,g[0],hs,4,title='System size (people)',
                  handlelength=1.0,columnspacing=1.1,labelspacing=.15)
     ax=fig.add_subplot(g[1]);d=f3.PI
     classes=['<=100','101-500','501-1000','1001-3300']
@@ -101,20 +101,20 @@ def expected_composition4(fig,ss,ctx):
     left=np.zeros(3)
     for i in range(4):
         values=arr[:,i]
-        ax.barh(range(3),values,left=left,height=.60,color=C[f'cls{i}'],
+        ax.barh(range(3),values,left=left,height=.76,color=C[f'cls{i}'],
                 edgecolor=INK,lw=.45,zorder=2)
         for j,(start,value) in enumerate(zip(left,values)):
             if value>=12:ax.text(start+value/2,j,f'{value:.0f}',
                                 ha='center',va='center',fontsize=10.5)
         left+=values
-    ax.set_yticks(range(3),['Cells','ANCHOR','Dual'])
+    ax.set_yticks(range(3),['Cell reference','ANCHOR','Dual'])
     ax.set_ylim(2.5,-.5);ax.set_xlim(0,100);ax.set_xticks([0,25,50,75,100])
     _style(ax,'Expected sample composition (%)')
 
 
 def layout4_three_rows(fig):
     """Six unchanged quantitative panels in a compact three-by-two grid."""
-    g=fig.add_gridspec(4,1,height_ratios=[.15,.96,1.0,1.10],
+    g=fig.add_gridspec(4,1,height_ratios=[.25,.96,1.0,1.10],
         left=.065,right=.99,top=.99,bottom=.045,hspace=.045)
     hs=f4.method_handles()
     for h in hs:
@@ -143,7 +143,7 @@ def preview():
     from publication_layout import draw_module
     fs.MIN_PT=10.5;fs.LETTER_PT=12
     os.environ['FIG_DPI']='200'
-    out=OUTPUT/'checks/layout_drafts';out.mkdir(parents=True,exist_ok=True)
+    out=OUTPUT/'checks/draft_three_rows';out.mkdir(parents=True,exist_ok=True)
     fs.QA=out/'qa'
     plans=[
       ('Fig1_three_rows',[ov3.coverage_map3,ov3.coverage_by_size3,small_composition4],layout1_three_rows,SIZES['1']),

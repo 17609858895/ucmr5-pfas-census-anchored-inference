@@ -1,15 +1,13 @@
 # Source-release validation
 
-Validated on 2026-10-31 in the existing research analysis environment. The exact package versions used are recorded in `requirements-tested.txt`; `requirements.txt` gives compatible lower bounds for installation.
+Validated on 2026-10-31 in the research analysis environment. Exact tested package versions are in `requirements-tested.txt`.
 
-Five deterministic tests passed (`python -m unittest discover -s tests -v`):
+Nine deterministic/synthetic tests passed (`python -m unittest discover -s tests -v`). They check capped expected sample size/cost, complete-observation identities, exact two-phase design expectation on an enumerated three-unit population, scalar/vector interval agreement, calibration margins, gamma-one post-stratification, additive domain totals and the 366/367-day eligibility boundary.
 
-1. Capped unequal inclusion probabilities retain their expected sample-size budget.
-2. Inclusion probabilities calibrated with unequal schedule costs retain the expected analytical budget after caps.
-3. Full observation and full-schedule completion reduce the two-phase estimator to the exact population-weighted mean with zero design variance.
-4. Exhaustive enumeration of first- and second-phase selection in a three-unit population yields the known target exactly for the design-only two-phase estimator.
-5. Scalar and vector interval routines agree, including prevalence boundary cases.
+Existing statistical function ASTs and nine additional copied numerical functions agree with their analysis sources. Only portable paths, command-line interfaces, output organization, documentation labels and figure presentation were adapted. The full analysis/model-training pipeline was not rerun.
 
-All 39 Python files passed AST parsing. Statistical function definitions were compared with the manuscript analysis source, including the difference estimator, tuning coefficient, variance, benchmark design rules, pseudo-population generation and two-phase implementation. The source mapping and hashes are in `source_manifest.json`.
+The added weight/bootstrap, timing and direct-budget commands were executed against frozen study inputs. Their CSV outputs agree with the reviewed analyses within floating-point precision. Direct-budget reproduction verified all ten original pseudo-population truths and all twenty original 600-draw reference MSE/coverage/cost results, before evaluating 1,000 draws per setting at 1,000/1,200 expected analytical samples. Source-file hashes remained unchanged during the successful verification run.
 
-No real-data model fitting, benchmark, bootstrap, simulation or publication-figure regeneration was executed for this source-packaging pass. These checks establish software identities and preserve source logic; they do not constitute a new scientific validation or a fresh full-pipeline reproduction.
+The portable current plotting entry point was smoke-tested with Figure 5 in an isolated workspace and visually inspected. Its palette and overlap audits reported zero errors. Publication-figure export and visual QA are maintained in the manuscript package. Those image files and the optional Figure 3a illustrative raster are not included in this source-only repository.
+
+These checks establish software identities and reproduce the conditional analysis. They do not recover unknown official inclusion probabilities, make the pseudo-populations independent validation data, or establish field operational costs. Reproducibility details and file hashes are in `validation.json` and `source_manifest.json`.

@@ -8,7 +8,9 @@ STAGES={
  'benchmark-summary':'s18_summarize_grid.py','burden':'s19_small_frame_burden.py',
  'projection':'s20_small_projection.py','external':'s21_external_states.py',
  'recalibration':'s22_external_followup.py','schedules':'s23_within_system.py',
- 'two-phase':'s24_two_level.py','figure-data':'f00_figure_data.py'}
+ 'two-phase':'s24_two_level.py','figure-data':'f00_figure_data.py',
+ 'weight-sensitivity':'s25_weight_sensitivity.py','timing-sensitivity':'s26_timing_sensitivity.py',
+ 'direct-budget':'s27_direct_budget_check.py','direct-budget-summary':'s28_summarize_direct_budget.py'}
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('stage',choices=[*STAGES,'figures','check-inputs'])
  ap.add_argument('extra',nargs=argparse.REMAINDER);a=ap.parse_args()
@@ -19,5 +21,5 @@ if __name__=='__main__':
   files=[p.UCMR5_ZIP,p.SDWIS_ZIP,p.ZCTA_FILE]
   for f in files:print(('OK ' if f.is_file() else 'MISSING ')+str(f))
   raise SystemExit(0 if all(f.is_file() for f in files) else 1)
- script=REPO/('plotting/generate_refined_figures.py' if a.stage=='figures' else 'analysis/'+STAGES[a.stage])
+ script=REPO/('plotting/refine_jhm_figures.py' if a.stage=='figures' else 'analysis/'+STAGES[a.stage])
  subprocess.run([sys.executable,str(script),*a.extra],env=env,cwd=REPO,check=True)

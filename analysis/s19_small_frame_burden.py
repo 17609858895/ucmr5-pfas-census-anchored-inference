@@ -4,8 +4,9 @@ prior, and the national small-system PFOA/PFOS burden re-estimated with Korn-Gra
 Prior: 5-seed LightGBM ensemble trained on the medium+large census only (SDWIS + geography + census neighbour labels;
 missing coordinates/neighbour features are left as NaN and handled by the booster). Census out-of-fold predictions give
 an isotonic calibration map (pc, used by the classical Neyman planner) and an error model u = E|y - f| (used by ANCHOR).
-Burden: the UCMR5 small-system sample is treated as stratified SRS within reconstructed cells (source type x 4 size
-classes); estimators are the post-stratified Hajek estimator and the stratified PPI++ difference estimator.
+Burden: the observed small-system cohort uses working source-by-size post-stratification (source type x four size
+classes), not recovered official inclusion probabilities. Conditional intervals assume within-cell exchangeability;
+estimators are the post-stratified Hajek estimator and the stratified PPI++ difference estimator.
 Outputs: data_derived/small_frame_anchor.parquet, results/small_burden_kg.csv
 """
 import numpy as np, pandas as pd, lightgbm as lgb

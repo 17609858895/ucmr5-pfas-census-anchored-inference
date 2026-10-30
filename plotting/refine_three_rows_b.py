@@ -68,7 +68,7 @@ def layout6_three_rows(fig):
 def rules_scatter4(fig,ss,ctx):
     """Nine categorical size-class/rule points, without implied interpolation."""
     f7.panel_rules(fig,ss,ctx)
-    _style(fig.axes[-1],'Analytical samples saved (%)','Exceeding systems missed (%)')
+    _style(fig.axes[-1],'Samples saved (%)','Missed exceedances (%)')
 
 
 def layout7_three_rows(fig):
@@ -89,7 +89,7 @@ def _drafts():
     plt.rcParams.update({'font.size':10.5,'axes.labelsize':11.5,
       'xtick.labelsize':10.5,'ytick.labelsize':10.5,'legend.fontsize':10.5,
       'legend.title_fontsize':10.5,'axes.labelweight':'normal'})
-    out=OUTPUT/'checks'/'layout_drafts';out.mkdir(parents=True,exist_ok=True)
+    out=OUTPUT/'内部核查'/'第四轮草稿';out.mkdir(parents=True,exist_ok=True)
     fs.QA=out/'qa'
     plans=[
       ('Fig5_three_rows',(190,188),

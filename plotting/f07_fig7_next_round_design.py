@@ -13,7 +13,7 @@ def with_legend(fig, ss, handles, ncol, h=.16, loc="center right"):
     """Legend strip above the data axes; right-anchored so a wide legend overhangs the tick-label column, not the right edge."""
     gs = ss.subgridspec(2, 1, height_ratios=[h, 1], hspace=.04)
     la = fig.add_subplot(gs[0]); la.axis("off")
-    la.legend(handles=handles, loc=loc, ncol=ncol, handletextpad=.35, columnspacing=1.0, borderaxespad=0)
+    la.legend(handles=handles, loc=loc, ncol=ncol, handlelength=.65,handletextpad=.3, columnspacing=.55, borderaxespad=0)
     return fig.add_subplot(gs[1])
 
 
