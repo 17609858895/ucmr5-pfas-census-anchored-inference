@@ -1,10 +1,12 @@
-# PFAS burden estimates and monitoring priorities
+# Hidden PFOA and PFOS burden in small U.S. drinking-water systems: estimates and monitoring design
+
+The **31 October 2026 reviewer revision** adds a same-depth classical control and the final figure set. `strengthening/method/external_neyman_two_phase.py` combines target-specific five-stratum Neyman allocation with R12 schedules and 20% random full-schedule completion in the Michigan and Washington cohorts; its aggregate output is `strengthening/reference_results/method/external_neyman_two_phase.csv`. `render_upgraded_figures.py` draws the final Fig. 5, Fig. 7 (nine designs grouped by sampling depth) and the graphical abstract from aggregate inputs, and `workflow_schematic.py` draws the vector workflow used in Fig. 3a and the graphical abstract. Model labels in the spatial, external and method renderers read "National model". Script output names and submitted figure numbers are mapped in [FIGURE_NUMBERING.md](FIGURE_NUMBERING.md); checks are recorded in `strengthening/REVIEWER_REVISION_VALIDATION.json`.
 
 The **31 October 2026 strengthening release** adds fully UCMR5-disjoint Michigan/Washington cohorts, EPA-region information exclusions, schedule/precision/selection diagnostics and variable-probability completion analyses. Use [STRENGTHENING.md](STRENGTHENING.md) and `run_strengthening.py` for the current added analyses and figures. The earlier `s21`/`s22` state checks below are retained historical routines; their mixed endpoint/cohort comparisons are superseded by the new source-verified protocol. The numerical analysis files remain unchanged.
 
 The subsequent figure-only revision uses **normal weight for all figure text**, including tick labels, axis labels, panel letters, legends and annotations. Font sizes, `nature_new` colours, numerical inputs and three-row main-figure layouts are retained. Current renderers and their publication helpers include this preference, so regeneration keeps the regular typography. The later compact-layout update reduces panel gaps, legend-strip space and canvas heights while keeping the font sizes, normal weight, colours, numerical inputs and three content rows. Its source and export checks are recorded separately in `strengthening/COMPACT_LAYOUT_VALIDATION.json`. A narrow follow-up adjusts the internal Fig.1a map-to-zoom whitespace and the main Fig.7 column gutter identified in the author's screenshots; the remaining figure layouts and all statistical inputs are retained. See `strengthening/TARGETED_WHITESPACE_VALIDATION.json`. The checks for this revision are recorded separately in `strengthening/REGULAR_WEIGHT_VALIDATION.json`; previous validation reports describe their original releases.
 
-Core analysis and publication-plotting source for **PFOA and PFOS in small U.S. water systems: Burden estimates and monitoring priorities**.
+Core analysis and publication-plotting source for **Hidden PFOA and PFOS burden in small U.S. drinking-water systems: estimates and monitoring design**.
 
 The code links the August 2026 UCMR5 occurrence-data snapshot to a public-water-system inventory, trains larger-system prediction/error models, estimates weighted small-system burden, compares survey designs and estimators, and evaluates reduced schedules with random full-schedule completion. The two estimands are the share of systems and the share of service population attached to exceeding systems.
 
@@ -21,7 +23,7 @@ The code links the August 2026 UCMR5 occurrence-data snapshot to a public-water-
 - `analysis/s27_direct_budget_check.py` and `s28_summarize_direct_budget.py`: directly evaluated 1,000/1,200 expected analytical-sample budgets, original-reference reproduction checks and correctly grouped scenario summaries.
 - `analysis/f00_figure_data.py` and `plotting/`: figure-table preparation and the current three-row main figures. Independent panels are redrawn. Figure 3 contains no estimator equation; that equation is in the manuscript Methods.
 
-No manuscript, raw monitoring download, derived system-level dataset, fitted model, credentials or private absolute path is included. The illustrative raster used in Figure 3a is not redistributed; its plotting builder uses a simple editable scaffold if that optional asset is absent. Statistical panel values and uncertainty definitions use the retained analysis rules.
+No manuscript, raw monitoring download, derived system-level dataset, fitted model, credentials or private absolute path is included. Figure 3a is drawn as vector graphics by `workflow_schematic.py`; no raster illustration is used. Statistical panel values and uncertainty definitions use the retained analysis rules.
 
 ## Inputs and setup
 

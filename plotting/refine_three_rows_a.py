@@ -19,11 +19,22 @@ def _style(ax, xlabel=None, ylabel=None):
     ax.tick_params(length=3.4, width=.8, pad=3)
 
 
+FIG1_CANVAS_MM = (190,187)
+FIG1_AB_EXTRA_MM = 3.0
+
+
 def layout1_three_rows(fig):
-    """Map / monitoring-by-size / small-system composition."""
-    g=fig.add_gridspec(3,1,height_ratios=[1.85,.80,.75],
-        left=.065,right=.99,top=.985,bottom=.035,hspace=.040)
-    return [g[0],g[1],g[2]]
+    """Keep original physical panel sizes; add 3 mm only between a and b."""
+    old_height=184.0
+    usable=old_height*(.985-.035)
+    gap=usable*.040/(3+2*.040)
+    unit=(usable-2*gap)/(1.85+.80+.75)
+    height_mm=fig.get_figheight()*25.4
+    g=fig.add_gridspec(5,1,
+        height_ratios=[1.85*unit,gap+FIG1_AB_EXTRA_MM,.80*unit,gap,.75*unit],
+        left=.065,right=.99,top=1-old_height*.015/height_mm,
+        bottom=old_height*.035/height_mm,hspace=0)
+    return [g[0],g[2],g[4]]
 
 
 def small_composition4(fig,ss,ctx):
@@ -144,7 +155,7 @@ def pareto4(fig,ss,ctx):
             text.set_position((6,5));text.set_verticalalignment('bottom')
 
 
-SIZES={'1':(190,194),'2':(190,194),'3':(190,194),'4':(190,184)}
+SIZES={'1':FIG1_CANVAS_MM,'2':(190,194),'3':(190,194),'4':(190,184)}
 
 
 def preview():

@@ -120,8 +120,10 @@ def layout2(fig):
 
 def workflow(fig,ss,ctx):
     ax=fig.add_subplot(ss);ax.axis('off');ax.set_gid('schematic')
-    asset=OUTPUT/'figures/Fig3_anchor_method/source/workflow_landscape.png'
-    ax.imshow(plt.imread(asset),extent=[0,1,.14,.98],aspect='auto')
+    import sys as _sys;_sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+    import workflow_schematic as _ws
+    bb=ax.get_position();W,Hh=fig.get_size_inches()
+    _ws.draw_workflow(ax,PAL,INK,kx=(bb.height*Hh)/(bb.width*W),y0=.14,y1=.98,fs=9)
     names=[(.15,'Monitored larger systems'),(.435,'Risk and error models'),(.685,'Allocation +\nsampling depth'),(.892,'Systems +\npeople served')]
     for x,t in names:ax.text(x,.055,t,ha='center',va='center',fontsize=9)
     for x0,x1 in [(.296,.318),(.548,.572),(.785,.806)]:
@@ -374,7 +376,7 @@ def save(num,builders,layout,size,sizes,folder):
     save_modules([polish(b) for b in builders],folder,folder,layout,figsize_mm=size,sizes_mm=sizes)
 
 TASKS={
- '1':([ov3.coverage_map3,ov3.coverage_by_size3,tr4a.small_composition4],tr4a.layout1_three_rows,(190,194),[(195,95),(180,85),(180,60)],'Fig1_monitoring_gap'),
+ '1':([ov3.coverage_map3,ov3.coverage_by_size3,tr4a.small_composition4],tr4a.layout1_three_rows,tr4a.FIG1_CANVAS_MM,[(195,95),(180,85),(180,60)],'Fig1_monitoring_gap'),
  '2':([rm3.roc3,rm3.class_bias3,rm3.transfer_curve3],tr4a.layout2_three_rows,(190,194),[(180,85),(180,75),(185,70)],'Fig2_transfer_bias'),
  '3':([rm3.workflow3,tr4a.allocation4,tr4a.expected_composition4],tr4a.layout3_three_rows,(190,194),[(185,76),(180,80),(180,60)],'Fig3_anchor_method'),
  '4':([ov3.efficiency_round3('medium','systems',ylim=(0,2.65),yticks=[0,1,2]),ov3.efficiency_round3('large','systems',ylim=(0,2.35),yticks=[0,1,2]),ov3.efficiency_round3('medium','people',ylim=(0,3.15),yticks=[0,1,2,3]),ov3.efficiency_round3('large','people',logy=True,ylim=(.3,70),yticks=[.3,1,3,10,30]),tr4a.pareto4,ov3.coverage_round3],tr4a.layout4_three_rows,(190,184),[(105,86)]*4+[(100,90),(105,95)],'Fig4_census_validation'),

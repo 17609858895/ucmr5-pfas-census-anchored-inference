@@ -1,5 +1,6 @@
 """Compact transfer diagnostics, native-aspect workflow and sensitivity layouts."""
 from f_common import *
+from pathlib import Path
 import f02_fig2_transfer_bias as f2
 import f08_supporting_figures as si
 
@@ -61,16 +62,11 @@ def layout2_round3(fig):
 
 def workflow3(fig,ss,ctx):
     ax=fig.add_subplot(ss);ax.axis('off');ax.set_gid('schematic')
-    asset=OUTPUT/'figures/Fig3_anchor_method/source/workflow_landscape.png'
-    # Explicit extent follows the 3:1 asset at the intended physical panel size.
-    if asset.exists():
-        ax.imshow(plt.imread(asset),extent=[0,1,.17,.985],aspect='auto')
-    else:
-        # The illustrative raster is not redistributed with the source release.
-        # A code-native scaffold preserves the workflow, without quantitative marks.
-        from matplotlib.patches import Rectangle
-        for x,c in zip([.02,.28,.55,.79],[C['plugin'],C['recal'],C['ratio'],C['people']]):
-            ax.add_patch(Rectangle((x,.25),.18,.55,fc=c,ec=INK,lw=.7,alpha=.22))
+    # Author-drawn vector workflow (no raster or generated artwork); proportions follow the panel's physical aspect.
+    import sys as _sys;_sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+    import workflow_schematic as _ws
+    bb=ax.get_position();W,Hh=fig.get_size_inches()
+    _ws.draw_workflow(ax,PAL,INK,kx=(bb.height*Hh)/(bb.width*W),fs=10)
     for x,label in [(.128,'Monitored larger\nsystems'),(.392,'Risk and error\nmodels'),
                     (.660,'Allocation +\nsampling depth'),(.894,'Systems +\npeople served')]:
         ax.text(x,.06,label,ha='center',va='center',fontsize=10.5,linespacing=1.1)

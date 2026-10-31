@@ -1,0 +1,13 @@
+{
+  "cohort_sha256": "83671e681e303cd7a7e4dd72985762edee1530cd684df961054e11dec938584f",
+  "draws": 1000,
+  "q": 0.2,
+  "strata": 5,
+  "budgets_full_equivalents": [
+    100,
+    300
+  ],
+  "allocation_uses_external_outcomes": false,
+  "variance": "Poisson approximation with pi=n_h/N_h (conservative for stratified selection)",
+  "elapsed_seconds": 6.3
+}

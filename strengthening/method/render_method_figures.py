@@ -177,7 +177,7 @@ def information_mse(fig,ss,ctx):
                 r=g[g.population.eq(state)&g.regime.eq(reg)&g.estimand.eq(target)].iloc[0]
                 ax.plot(i+[-.21,-.07,.07,.21][j*2+ti],r.mse_ratio_to_SRS_Hajek,ls='',marker=MK[target],ms=5.2,mfc=COL[state],mec=INK,mew=.55,zorder=3)
     ax.axhline(1,color=INK,lw=.8,ls=(0,(3,3)),zorder=0);ax.set_yscale('log');ax.set_ylim(.018,2.7);ax.set_yticks([.03,.1,1]);ax.yaxis.set_major_formatter(FuncFormatter(lambda v,pos:f'{v:g}'));ax.yaxis.set_minor_locator(NullLocator());ax.set_xlim(-.5,2.5)
-    ax.set_xticks(range(3),['Learned','Proxy','Cold']);style(ax,None,'MSE /\nSRS–Hájek')
+    ax.set_xticks(range(3),['Learned','Proxy','Excluded']);style(ax,None,'MSE /\nSRS–Hájek')
     ax.tick_params(axis='x',labelrotation=28)
     for tick in ax.get_xticklabels():tick.set_ha('right')
 
@@ -214,7 +214,7 @@ def correction_scatter(fig,ss,ctx):
 
 def save_source_data():
     PRIMARY[PRIMARY.policy.isin(POLICIES)&~PRIMARY.coefficient.eq('one')].to_csv(FDS/'Fig_7_external_monitoring.csv',index=False)
-    pd.concat([pseudo_ratios('systems'),pseudo_ratios('people')],ignore_index=True).to_csv(FDS/'Fig_S6_ab_fresh_pseudo.csv',index=False)
+    pd.concat([pseudo_ratios('systems'),pseudo_ratios('people')],ignore_index=True).to_csv(FDS/'Fig_S6_ab_new_pseudo_populations.csv',index=False)
     selected=FRESH[FRESH.budget.eq(1200)&FRESH.scenario.eq('fitted')&FRESH.estimand.eq('systems')&FRESH.policy.eq('uniform20')&FRESH.coefficient.eq('tuned')]
     rows=[{'interval':k,'coverage':selected['coverage_'+k].mean(),'width':selected['width_'+k].mean(),'five_pseudo_population_mean':True} for k in ['wald','wald_t','logit_t','wilson','wilson_df','kg']]
     pd.DataFrame(rows).to_csv(FDS/'Fig_S6_c_interval_frontier.csv',index=False)

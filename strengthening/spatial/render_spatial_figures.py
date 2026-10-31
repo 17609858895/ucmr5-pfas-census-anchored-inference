@@ -103,7 +103,7 @@ def burden(fig,ss,ctx):
     la=fig.add_subplot(g[0]);la.axis('off');la.legend([raw,corr],['Prediction mean','Working correction'],handler_map={tuple:HandlerTuple(ndivide=None,pad=.15)},loc='center',ncol=2,handlelength=2,handletextpad=.35,columnspacing=1.0)
     grid=g[1].subgridspec(1,2,wspace=compact(.15,.10))
     keys=['frozen_production','available_neighbours','cold_neighbours','cold_coordinates_neighbours']
-    labels=['Production\nmodel','Available\nneighbours','Region-excluded\nneighbours','Region-excluded\nno IDs']
+    labels=['National\nmodel','Available\nneighbours','Region-excluded\nneighbours','Region-excluded\nno IDs']
     for j,(target,xlabel) in enumerate([('systems','Exceeding systems (%)'),('people','Associated service\npopulation (%)')]):
         ax=fig.add_subplot(grid[j]);ref=B[(B.estimand==target)&(B.model=='direct_poststratified')].theta.iloc[0]
         ax.axvline(ref*100,color=MUTED,lw=.8,ls='--',zorder=0)

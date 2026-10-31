@@ -28,7 +28,8 @@ def main():
         builders,plan,size,subsizes,folder=source.TASKS[key]
         independent=[(w,round(h*.92,1)) for w,h in subsizes]
         if key=='1':independent[0]=source.ov3.FIG1_MAP_STANDALONE_MM
-        source.TASKS[key]=(builders,plan,(190,184),independent,folder)
+        canvas=source.tr4a.FIG1_CANVAS_MM if key=='1' else (190,184)
+        source.TASKS[key]=(builders,plan,canvas,independent,folder)
     builders,plan,size,subsizes,folder=source.TASKS['4']
     source.TASKS['4']=(builders,plan,(190,186),[(145,96)]*4+[(w,round(h*.92,1)) for w,h in subsizes[4:]],folder)
     source.TASKS['5']=([burden.national,burden.weight_sensitivity,burden.selection_odds,burden.composition],burden.layout5,(190,194),[(185,74),(105,83),(105,83),(185,87)],'Fig5_small_burden')

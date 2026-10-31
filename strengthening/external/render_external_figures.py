@@ -87,13 +87,13 @@ def panel_prevalence(fig,ss,ctx):
         for x,v in enumerate(vals):
             y=v+.35 if x!=2 else 100*rat.hi+.35
             ax.text(x,y,f'{v:.2f}',ha='center',va='bottom',fontsize=12)
-        ax.set_xticks([0,1,2],['Observed','Frozen\nmodel','National\nratio']);ax.set_yticks([0,5,10]);ax.set_ylim(0,14)
+        ax.set_xticks([0,1,2],['Observed','National\nmodel','National\nratio']);ax.set_yticks([0,5,10]);ax.set_ylim(0,14)
         ax.set_title(f'{name} (n = {int(unc.n):,})',fontsize=12,pad=7)
         style(ax,ylabel='Cohort exceedance (%)' if st=='MI' else None)
 
 def panel_auc(fig,ss,ctx):
     axes=state_facets(fig,ss,.16)
-    models=[('f','Frozen\noriginal','s','frozen',False),('available_neighbours','Available\nneighbours','o','available',True),('cold_neighbours','Region\nexcluded','D','cold',False)]
+    models=[('f','National\nmodel','s','frozen',False),('available_neighbours','Available\nneighbours','o','available',True),('cold_neighbours','Region\nexcluded','D','cold',False)]
     for ax,(st,name) in zip(axes,STATES):
         g=M[M.state.eq(st)&M.subset.eq('all')&M.resampling.eq('spatial_0.5degree')]
         ax.axvline(.5,color=INK,lw=.8,ls=(0,(3,3)),zorder=1)
@@ -131,7 +131,7 @@ def endpoint_panel(state):
             obs.append(r.observed*100);pred.append(r.predicted*100);ns.append(int(r.n))
         x=np.arange(3)
         ax.bar(x-.18,obs,width=.34,color=C['observed'],edgecolor=INK,lw=.8,label='Observed')
-        ax.bar(x+.18,pred,width=.34,color=C['frozen'],edgecolor=INK,lw=.8,label='Frozen model')
+        ax.bar(x+.18,pred,width=.34,color=C['frozen'],edgecolor=INK,lw=.8,label='National model')
         for i,v,n in zip(x,obs,ns):ax.text(i,max(v,pred[i])+.5,f'n = {n:,}',ha='center',va='bottom',fontsize=12)
         ax.set_xticks(x,['Count','Calendar','Spaced']);ax.set_ylim(0,18.8);ax.set_yticks([0,5,10,15]);ax.set_title(dict(STATES)[state],fontsize=12,pad=7)
         ax.legend(loc='upper left',ncol=1,handlelength=.9,handletextpad=.35,borderaxespad=.15,labelspacing=.15)
@@ -169,7 +169,7 @@ def precision_panel(is_auc=False):
         ax.plot([lo,hi],[4,4],ls='',marker='|',color=INK,ms=9,mew=1)
         ax.set_yticks(range(5),[r[1] for r in E]+['Rounding\nscenario'] if not is_auc or ctx['standalone'] else ['']*5)
         ax.set_ylim(4.65,-.55);ax.set_title('Washington',fontsize=12,pad=7)
-        if is_auc:ax.set_xlim(.54,.64);ax.set_xticks([.55,.60,.65]);style(ax,xlabel='Frozen-score AUC')
+        if is_auc:ax.set_xlim(.54,.64);ax.set_xticks([.55,.60,.65]);style(ax,xlabel='National-model AUC')
         else:ax.set_xlim(8,11.5);ax.set_xticks([8,9,10,11]);style(ax,xlabel='Cohort exceedance (%)')
     return builder
 
