@@ -314,7 +314,7 @@ def audit_overlaps(fig):
                 continue
             if kind == "colorbar" and owner == i:
                 continue
-            for lab in [a.xaxis.label, a.yaxis.label] + a.get_xticklabels() + a.get_yticklabels():
+            for lab in [a.xaxis.label, a.yaxis.label, a.title] + a.texts + a.get_xticklabels() + a.get_yticklabels():
                 if not lab.get_visible() or not lab.get_text():
                     continue
                 b = lab.get_window_extent(rd)
@@ -346,6 +346,28 @@ def _export(fig, folder, stem, letters_on):
     style.update(alignment_max_residual_pt=max((r["max_residual_pt"] for r in report), default=0),
                  panel_letters=letters, label_overlaps=audit_overlaps(fig))
     style['canvas_mm'] = (fig.get_size_inches()*25.4).tolist()
+    # Measure the actual rendered content, including tick labels and legends.
+    # This records physical whitespace; GridSpec fractions alone do not do so.
+    fig.draw_without_rendering()
+    rd=fig.canvas.get_renderer();W,H=fig.get_size_inches()*25.4
+    def mm_box(box):
+        b=box.transformed(fig.transFigure.inverted())
+        return [b.x0*W,b.y0*H,b.x1*W,b.y1*H]
+    panels=[]
+    for record in getattr(fig,'_panel_records',[]):
+        item=dict(panel=record['key'],outer_mm=(np.asarray(_panel_bbox(fig,record['axes'],rd).extents)*[W,H,W,H]).tolist(),data_axes=[],legends=[])
+        for ax in record['axes']:
+            if ax.axison:item['data_axes'].append(dict(rectangle_mm=mm_box(ax.get_window_extent(rd)),tight_mm=mm_box(ax.get_tightbbox(rd))))
+            lg=ax.get_legend()
+            if lg is not None and lg.get_visible():item['legends'].append(dict(bbox_mm=mm_box(lg.get_window_extent(rd)),texts=[t.get_text() for t in lg.get_texts()]))
+        panels.append(item)
+    panel_axes={a for record in getattr(fig,'_panel_records',[]) for a in record['axes']}
+    shared=[]
+    for ax in fig.axes:
+        if ax in panel_axes:continue
+        lg=ax.get_legend()
+        if lg is not None and lg.get_visible():shared.append(dict(bbox_mm=mm_box(lg.get_window_extent(rd)),texts=[t.get_text() for t in lg.get_texts()]))
+    style['rendered_geometry_mm']=dict(panels=panels,shared_legends=shared,letters=[dict(letter=l['letter'],bbox_mm=(np.asarray(l['bbox'])*[W,H,W,H]).tolist()) for l in letters])
     style['data_rectangles_mm'] = [dict(gid=a.get_gid(), width=a.get_position().width*fig.get_figwidth()*25.4,
                                       height=a.get_position().height*fig.get_figheight()*25.4)
                                     for a in fig.axes if a.axison]

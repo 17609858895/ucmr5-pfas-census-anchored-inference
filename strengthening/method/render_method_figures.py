@@ -58,7 +58,7 @@ def style(ax,x=None,y=None):
 
 def legend_strip(fig,ss,handles,ncol=2,**kw):
     ax=fig.add_subplot(ss);ax.axis('off')
-    opts={'handlelength':1.1,'handletextpad':.4,'columnspacing':1.3};opts.update(kw)
+    opts={'handlelength':1.1,'handletextpad':.4,'columnspacing':1.3,'borderpad':0};opts.update(kw)
     ax.legend(handles=handles,loc='center',ncol=ncol,**opts)
     return ax
 
@@ -80,11 +80,11 @@ def state_target_handles():
 
 def main_axis(fig,ss,ctx,coverage=False):
     if ctx['standalone']:
-        g=ss.subgridspec(2,1,height_ratios=[.24,1],hspace=.16)
+        g=ss.subgridspec(2,1,height_ratios=[.20,1],hspace=.12)
         legend_strip(fig,g[0],policy_handles(),4,columnspacing=.5)
         ss=g[1]
     if coverage:
-        g=ss.subgridspec(2,1,height_ratios=[.18,1],hspace=.10)
+        g=ss.subgridspec(2,1,height_ratios=[.12,1],hspace=.20 if ctx['standalone'] else .035)
         handles=[Line2D([],[],ls='',marker=MK[t],mfc=PAL[4],mec=INK,mew=.6,ms=5,label=l) for t,l in [('systems','Sys.'),('people','Pop.')]]
         legend_strip(fig,g[0],handles,2,columnspacing=.7)
         ss=g[1]
@@ -120,16 +120,16 @@ def main_coverage(state):
     return build
 
 def grid_three(fig):
-    g=fig.add_gridspec(3,2,left=.10,right=.985,bottom=.055,top=.87,wspace=.35,hspace=.24)
+    g=fig.add_gridspec(3,2,left=.085,right=.99,bottom=.055,top=.88,wspace=.18,hspace=.16)
     return [g[r,c] for r in range(3) for c in range(2)]
 
 def main_grid(fig):
-    head=fig.add_axes([.035,.91,.95,.075]);head.axis('off')
-    head.legend(handles=policy_handles(),ncol=4,loc='center',handlelength=.7,handletextpad=.3,columnspacing=.6)
+    head=fig.add_axes([.03,.90,.96,.055]);head.axis('off')
+    head.legend(handles=policy_handles(),ncol=4,loc='center',handlelength=.7,handletextpad=.3,columnspacing=.6,borderpad=0)
     return grid_three(fig)
 
 def supplement_grid(fig):
-    g=fig.add_gridspec(3,2,left=.10,right=.985,bottom=.055,top=.985,wspace=.38,hspace=.30)
+    g=fig.add_gridspec(3,2,left=.085,right=.99,bottom=.055,top=.985,wspace=.18,hspace=.16)
     return [g[r,c] for r in range(3) for c in range(2)]
 
 def pseudo_ratios(target):
@@ -139,7 +139,7 @@ def pseudo_ratios(target):
 
 def pseudo_mse(target):
     def build(fig,ss,ctx):
-        gs=ss.subgridspec(2,1,height_ratios=[.20,1],hspace=.12)
+        gs=ss.subgridspec(2,1,height_ratios=[.13,1],hspace=.04)
         handles=[Line2D([],[],ls='',marker=mk,mfc=COL[sc],mec=INK,mew=.6,ms=5,label=lab) for sc,mk,lab in [('fitted','o','Fitted'),('auc-match','D','AUC-matched')]]
         legend_strip(fig,gs[0],handles,2,columnspacing=.8)
         ax=fig.add_subplot(gs[1]);d=pseudo_ratios(target)
@@ -168,7 +168,7 @@ def interval_frontier(fig,ss,ctx):
     ax.set_xlim(5.30,6.01);ax.set_ylim(89.9,96.1);ax.set_xticks([5.4,5.7,6]);ax.set_yticks([90,93,96]);style(ax,'Width (percentage points)','Coverage (%)')
 
 def information_mse(fig,ss,ctx):
-    gs=ss.subgridspec(2,1,height_ratios=[.33,1],hspace=.14);legend_strip(fig,gs[0],state_target_handles(),2,columnspacing=.4,handlelength=.65,handletextpad=.25)
+    gs=ss.subgridspec(2,1,height_ratios=[.24,1],hspace=.10);legend_strip(fig,gs[0],state_target_handles(),2,columnspacing=.4,handlelength=.65,handletextpad=.25)
     ax=fig.add_subplot(gs[1]);regimes=['operational_learned_error','operational_sd_proxy','cold_region_sd_proxy']
     g=ALL[ALL.rule.eq('R12')&ALL.budget_full_equivalents.eq(300)&ALL.policy.eq('uniform20')&ALL.coefficient.eq('tuned')]
     for j,state in enumerate(['MI','WA']):
@@ -182,7 +182,7 @@ def information_mse(fig,ss,ctx):
     for tick in ax.get_xticklabels():tick.set_ha('right')
 
 def calendar_coverage(fig,ss,ctx):
-    gs=ss.subgridspec(2,1,height_ratios=[.50,1],hspace=.20);legend_strip(fig,gs[0],state_target_handles(),2,columnspacing=.4,handlelength=.65,handletextpad=.25)
+    gs=ss.subgridspec(2,1,height_ratios=[.24,1],hspace=.10);legend_strip(fig,gs[0],state_target_handles(),2,columnspacing=.4,handlelength=.65,handletextpad=.25)
     ax=fig.add_subplot(gs[1]);pols=['srs_full_hajek','neyman5_full_difference','uniform20','pps_two_phase_hajek']
     for j,state in enumerate(['MI','WA']):
         g=CALENDAR[CALENDAR.population.eq(state)&~CALENDAR.coefficient.eq('one')]
@@ -203,7 +203,7 @@ def correction_points():
     return pd.concat([e,z],ignore_index=True)
 
 def correction_scatter(fig,ss,ctx):
-    gs=ss.subgridspec(2,1,height_ratios=[.40,1],hspace=.16)
+    gs=ss.subgridspec(2,1,height_ratios=[.24,1],hspace=.10)
     spec=[('MI','MI','o'),('WA','WA','D'),('fitted','Fitted','^'),('auc-match','AUC-matched','s')]
     legend_strip(fig,gs[0],[Line2D([],[],ls='',marker=mk,mfc=COL[k],mec=INK,mew=.6,ms=5.2,label=l) for k,l,mk in spec],2,columnspacing=.7)
     ax=fig.add_subplot(gs[1]);d=correction_points()
@@ -237,10 +237,10 @@ def main():
     save_source_data()
     if a.only in ['main','all']:
         builders=[main_mse('MI','systems'),main_mse('WA','systems'),main_mse('MI','people'),main_mse('WA','people'),main_coverage('MI'),main_coverage('WA')]
-        layout.save_modules(builders,'Fig_7','Fig_7',main_grid,figsize_mm=(190,225),sizes_mm=[(180,115)]*6)
+        layout.save_modules(builders,'Fig_7','Fig_7',main_grid,figsize_mm=(190,200),sizes_mm=[(180,100)]*6)
     if a.only in ['supplement','all']:
         builders=[pseudo_mse('systems'),pseudo_mse('people'),interval_frontier,information_mse,calendar_coverage,correction_scatter]
-        layout.save_modules(builders,'Fig_S6','Fig_S6',supplement_grid,figsize_mm=(190,225),sizes_mm=[(180,115)]*6)
+        layout.save_modules(builders,'Fig_S6','Fig_S6',supplement_grid,figsize_mm=(190,200),sizes_mm=[(180,100)]*6)
     assert HASHES=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [DATA/'external_primary_R12_B300.csv',DATA/'external_design_complete_v2.csv',DATA/'external_calendar_R12_B100.csv',DATA/'range_newseeds10_14/completion_small_by_seed.csv']}
     (QA/'source_and_palette_audit.json').write_text(json.dumps({'source_hashes_unchanged':HASHES,'palette':'nature_new','series_colors':COL,'main_policies':POLICIES,'native_minimum_font_pt':12,'main_layout':'three content rows, two state columns','MSE_intervals':'none drawn','coverage_bars':'95% Wilson binomial Monte Carlo intervals for R1000','Neyman_reference':'target specific, no joint point'},indent=2),encoding='utf-8')
 if __name__=='__main__':main()

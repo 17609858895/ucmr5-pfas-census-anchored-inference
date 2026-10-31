@@ -18,6 +18,7 @@ from f_common import *
 import f02_fig2_transfer_bias as original
 from matplotlib.legend_handler import HandlerTuple
 from matplotlib.text import Text
+from matplotlib.transforms import Bbox
 from audit_palette_usage import validate_series_colors
 fs.MIN_PT=12;fs.LETTER_PT=12
 plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','DejaVu Sans'],'font.size':12,
@@ -30,6 +31,9 @@ M=pd.read_csv(P/'information_regime_metrics.csv');M=M[M.weighting=='systems']
 B=pd.read_csv(P/'burden_model_stress.csv')
 CURVES=pd.read_csv(P/'plot_roc_curves.csv')
 BUFFER=pd.read_csv(P/'buffer_matched_metrics.csv')
+COMPACT_LAYOUT=True
+def compact(old,new):
+    return new if COMPACT_LAYOUT else old
 
 # Record actual artists after the shared layout pass; no global helper is edited.
 _base_audit_style=fs.audit_style
@@ -41,6 +45,27 @@ def audit_regular_spatial_text(fig):
     report['all_actual_text_normal']=all(t.get_fontweight() in ('normal',400) for t in actual)
     report['bold_math_commands']=[t.get_text() for t in actual
         if any(cmd in t.get_text() for cmd in [r'\mathbf',r'\boldsymbol',r'\mathbfit'])]
+    rd=fig.canvas.get_renderer();size=fig.get_size_inches()*25.4
+    def mm(box):
+        return (box.transformed(fig.transFigure.inverted()).extents*np.tile(size,2)).tolist()
+    panels=[]
+    for record in getattr(fig,'_panel_records',[]):
+        ink=[];legends=[];data=[]
+        for ax in record['axes']:
+            if ax.axison:
+                box=ax.get_tightbbox(rd);ink.append(box);data.append(mm(box))
+            lg=ax.get_legend()
+            if lg is not None and lg.get_visible():
+                box=lg.get_window_extent(rd);ink.append(box);legends.append(mm(box))
+        whole=mm(Bbox.union(ink))
+        gaps=[l[1]-d[3] for l in legends for d in data
+              if min(l[2],d[2])>max(l[0],d[0])]
+        panels.append(dict(panel=record['key'],ink_bbox_mm=whole,
+                           data_tight_bboxes_mm=data,legend_bboxes_mm=legends,
+                           legend_to_data_tight_gap_mm=gaps))
+    report['actual_geometry']=dict(native_canvas_mm=size.tolist(),panels=panels,
+        letters=[dict(letter=t.get_text(),bbox_mm=mm(t.get_window_extent(rd)))
+                 for t in fig.texts if t.get_text() in [p['panel'] for p in panels]])
     return report
 fs.audit_style=audit_regular_spatial_text
 
@@ -55,7 +80,7 @@ def information_handles():
 
 def auc_forest(models,labels):
     def draw(fig,ss,ctx):
-        g=ss.subgridspec(2,1,height_ratios=[.22,1],hspace=.10)
+        g=ss.subgridspec(2,1,height_ratios=[compact(.22,.12),1],hspace=compact(.10,.14))
         legend_strip(fig,g[0],information_handles(),2,handlelength=.7,columnspacing=1.4)
         ax=fig.add_subplot(g[1])
         for i,model in enumerate(models):
@@ -72,11 +97,11 @@ def auc_forest(models,labels):
     return draw
 
 def burden(fig,ss,ctx):
-    g=ss.subgridspec(2,1,height_ratios=[.19,1],hspace=.08)
+    g=ss.subgridspec(2,1,height_ratios=[compact(.19,.10),1],hspace=compact(.08,.13))
     raw=tuple(Line2D([],[],ls='',marker='s',ms=5.3,mfc='white',mec=COL[e],mew=1.2) for e in ['systems','people'])
     corr=tuple(Line2D([],[],ls='',marker='o',ms=5.3,mfc=COL[e],mec=INK,mew=.5) for e in ['systems','people'])
     la=fig.add_subplot(g[0]);la.axis('off');la.legend([raw,corr],['Prediction mean','Working correction'],handler_map={tuple:HandlerTuple(ndivide=None,pad=.15)},loc='center',ncol=2,handlelength=2,handletextpad=.35,columnspacing=1.0)
-    grid=g[1].subgridspec(1,2,wspace=.15)
+    grid=g[1].subgridspec(1,2,wspace=compact(.15,.10))
     keys=['frozen_production','available_neighbours','cold_neighbours','cold_coordinates_neighbours']
     labels=['Production\nmodel','Available\nneighbours','Region-excluded\nneighbours','Region-excluded\nno IDs']
     for j,(target,xlabel) in enumerate([('systems','Exceeding systems (%)'),('people','Associated service\npopulation (%)')]):
@@ -90,22 +115,26 @@ def burden(fig,ss,ctx):
         ax.set_yticks(range(4),labels if j==0 else ['']*4);ax.set_ylim(3.6,-.6);ax.set_xlim(0,12);ax.set_xticks([0,4,8,12]);sty(ax,xlabel)
 
 def production_size(fig,ss,ctx):
-    prior=original.STRIP;original.STRIP=.18
-    original.panel_c(fig,ss,ctx);original.STRIP=prior
+    prior=original.STRIP;original.STRIP=compact(.18,.11)
+    class CompactNestedSpec:
+        def subgridspec(self,*args,**kwargs):
+            kwargs['hspace']=.18
+            return ss.subgridspec(*args,**kwargs)
+    original.panel_c(fig,CompactNestedSpec() if COMPACT_LAYOUT else ss,ctx);original.STRIP=prior
     legend_ax,ax=fig.axes[-2:];lg=legend_ax.get_legend();hs=lg.legend_handles;lg.remove()
     legend_ax.legend(hs,['Larger obs.','Larger pred.','Small obs.','Small pred.'],ncol=4,loc='center',handlelength=1.1,handletextpad=.25,columnspacing=.6)
     ax.axvspan(1.4,np.log10(3300),color=C['sampled'],alpha=.065,lw=0,zorder=0)
     sty(ax,'System size (people)','Exceeding systems (%)')
 
 def layout_main(fig):
-    g=fig.add_gridspec(3,1,height_ratios=[.93,1.12,1],left=.065,right=.99,top=.99,bottom=.045,hspace=.14)
+    g=fig.add_gridspec(3,1,height_ratios=[.93,1.12,1],left=.065,right=.99,top=.99,bottom=.045,hspace=compact(.14,.06))
     return [g[i] for i in range(3)]
 
 def roc(regime):
     def draw(fig,ss,ctx):
         from sklearn.metrics import roc_curve
         if ctx['standalone']:
-            g=ss.subgridspec(2,1,height_ratios=[.29,1],hspace=.10)
+            g=ss.subgridspec(2,1,height_ratios=[compact(.29,.22),1],hspace=compact(.10,.16))
             legend_strip(fig,g[0],[Line2D([],[],color=COL[k],lw=1.6,label=l) for k,l in [('attributes','Attributes'),('geography','+ Geography'),('neighbours','+ Neighbours')]],1,labelspacing=.2)
             ax=fig.add_subplot(g[1])
         else:ax=fig.add_subplot(ss)
@@ -126,7 +155,7 @@ def buffer_auc(fig,ss,ctx):
     ax.axvline(.5,color=MUTED,ls='--',lw=.8);ax.set_yticks([0,1],['0 km','50 km']);ax.set_ylim(1.6,-.6);ax.set_xlim(.2,.8);ax.set_xticks([.2,.4,.6,.8]);sty(ax,'AUC','Spatial buffer')
 
 def no_id_auc(fig,ss,ctx):
-    g=ss.subgridspec(2,1,height_ratios=[.20,1],hspace=.10)
+    g=ss.subgridspec(2,1,height_ratios=[compact(.20,.10),1],hspace=compact(.10,.15))
     handles=information_handles()
     handles[0].set_label('Available');handles[1].set_label('Excluded')
     legend_strip(fig,g[0],handles,2,handlelength=.7,columnspacing=.7)
@@ -141,7 +170,7 @@ def no_id_auc(fig,ss,ctx):
     ax.set_xticks([0,1],['Coordinates','+ Neighbours']);ax.set_yticks([.2,.4,.6,.8,1]);sty(ax,y='AUC')
 
 def small_size(fig,ss,ctx):
-    g=ss.subgridspec(2,1,height_ratios=[.25,1],hspace=.10)
+    g=ss.subgridspec(2,1,height_ratios=[compact(.25,.11),1],hspace=compact(.10,.13))
     legend_strip(fig,g[0],[Line2D([],[],ls='',marker='o',ms=5.3,mfc=C['observed'],mec=INK,mew=.5,label='Observed'),Line2D([],[],ls='',marker='D',ms=5.3,mfc=C['plugin'],mec=INK,mew=.5,label='Predicted')],2,handlelength=.8,columnspacing=.7)
     ax=fig.add_subplot(g[1]);d=original.CLS
     for y,r in enumerate(d.itertuples()):
@@ -164,22 +193,26 @@ def regional_support(fig,ss,ctx):
     ax.set_xlim(-.025,.55);ax.set_ylim(.05,1);ax.set_xticks([0,.25,.5]);ax.set_yticks([0,.25,.5,.75,1]);sty(ax,'Neighbour support\nfraction','Regional AUC')
 
 def layout_si(fig):
-    g=fig.add_gridspec(4,2,height_ratios=[.16,1,1.05,1.12],left=.065,right=.99,top=.99,bottom=.045,wspace=.20,hspace=.16)
+    g=fig.add_gridspec(4,2,height_ratios=[compact(.16,.12),1,1.05,1.12],left=.065,right=.99,top=.99,bottom=.045,wspace=compact(.20,.14),hspace=compact(.16,.065))
     legend_strip(fig,g[0,:],[Line2D([],[],color=COL[k],lw=1.6,label=l) for k,l in [('attributes','Attributes'),('geography','+ Geography'),('neighbours','+ Neighbours')]],3,handlelength=1.1,columnspacing=1.1)
     return [g[1,0],g[1,1],g[2,0],g[2,1],g[3,0],g[3,1]]
 
-def run(draft=False,only=None):
+def run(draft=False,only=None,baseline_layout=False):
+    global COMPACT_LAYOUT
+    COMPACT_LAYOUT=not baseline_layout
     if draft:
         layout.FIG=WORK/'draft';fs.QA=WORK/'draft/qa';os.environ['FIG_DPI']='180';os.environ['FIG_COMBINED_ONLY']='1'
     else:
         os.environ.pop('FIG_COMBINED_ONLY',None);os.environ['FIG_DPI']='600'
+    if baseline_layout:
+        layout.FIG=WORK/'baseline';fs.QA=WORK/'baseline/qa'
     tasks={
-      '2':([auc_forest(['attributes','geography','neighbours'],['Attributes','+ Geography','+ Neighbours']),burden,production_size],layout_main,(190,218),[(185,88),(190,115),(185,85)],'Fig_2'),
-      'S4':([roc('available'),roc('cold'),no_id_auc,buffer_auc,small_size,regional_support],layout_si,(190,238),[(110,105),(110,105),(125,100),(110,95),(125,105),(115,100)],'Fig_S4')}
+      '2':([auc_forest(['attributes','geography','neighbours'],['Attributes','+ Geography','+ Neighbours']),burden,production_size],layout_main,compact((190,218),(190,192)),compact([(185,88),(190,115),(185,85)],[(185,77),(190,100),(185,74)]),'Fig_2'),
+      'S4':([roc('available'),roc('cold'),no_id_auc,buffer_auc,small_size,regional_support],layout_si,compact((190,238),(190,210)),compact([(110,105),(110,105),(125,100),(110,95),(125,105),(115,100)],[(110,94),(110,94),(125,89),(110,84),(125,93),(115,89)]),'Fig_S4')}
     for n in only or tasks:
         builders,plan,size,subsizes,folder=tasks[n]
         layout.save_modules(builders,folder,folder,plan,figsize_mm=size,sizes_mm=subsizes)
-    if not draft:
+    if not draft and not baseline_layout:
         dest=paths.FIGURES
         for n in only or tasks:
             folder=tasks[n][-1];src=WORK/'figures'/folder;to=dest/folder
@@ -187,4 +220,4 @@ def run(draft=False,only=None):
         (WORK/'source_input_sha256.json').write_text(json.dumps({str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in [P/'information_regime_metrics.csv',P/'burden_model_stress.csv',P/'buffer_matched_metrics.csv',P/'plot_roc_curves.csv',paths.WORKDIR/'figure_data/fig2_size_curve.csv',paths.WORKDIR/'figure_data/fig2_by_class.csv']},ensure_ascii=False,indent=2),encoding='utf-8')
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('--draft',action='store_true');a.add_argument('--only',nargs='*');x=a.parse_args();run(x.draft,x.only)
+    a=argparse.ArgumentParser();a.add_argument('--draft',action='store_true');a.add_argument('--only',nargs='*');a.add_argument('--baseline-layout',action='store_true');x=a.parse_args();run(x.draft,x.only,x.baseline_layout)

@@ -42,6 +42,17 @@ def export_regular_text(fig,folder,stem,letters_on):
     target=fs.QA/(stem+'.json');audit=json.loads(target.read_text(encoding='utf-8'))
     audit['style'].update(report)
     audit['text_objects']=[{'text':obj.get_text(),'weight':str(obj.get_fontweight()),'size_pt':obj.get_fontsize(),'visible':obj.get_visible()} for obj in objects]
+    # Physical visual extents include all titles, ticks, labels and legends.
+    # Recording these supports reproducible panel-gap comparisons without
+    # changing the common alignment/export helper.
+    fig.draw_without_rendering();renderer=fig.canvas.get_renderer()
+    width,height=fig.get_size_inches()*25.4
+    audit['compact_geometry']={
+        'native_canvas_mm':[float(width),float(height)],
+        'panels':[{'panel':r['key'],'outer_mm':(np.asarray(fs._panel_bbox(fig,r['axes'],renderer).extents)*[width,height,width,height]).tolist(),
+            'axes_outer_mm':[(np.asarray(fs._panel_bbox(fig,[a],renderer).extents)*[width,height,width,height]).tolist() for a in r['axes'] if a.get_visible()]}
+            for r in getattr(fig,'_panel_records',[])],
+        'legend_strip_axes':sum(not a.axison and a.get_legend() is not None for a in fig.axes)}
     target.write_text(json.dumps(audit,indent=2),encoding='utf-8')
     return report
 fs._export=export_regular_text
@@ -61,12 +72,12 @@ def style(ax,xlabel=None,ylabel=None):
     ax.tick_params(length=4.5,width=1,pad=3)
     return ax
 
-def state_facets(fig,ss,left_space=.20):
+def state_facets(fig,ss,left_space=.16):
     g=ss.subgridspec(1,2,wspace=left_space)
     return [fig.add_subplot(g[0,i]) for i in range(2)]
 
 def panel_prevalence(fig,ss,ctx):
-    axes=state_facets(fig,ss,.20)
+    axes=state_facets(fig,ss,.16)
     for ax,(st,name) in zip(axes,STATES):
         rows=CAL[CAL.state.eq(st)];unc=rows[rows.prediction_method.eq('Uncorrected')].iloc[0]
         rat=rows[rows.prediction_method.eq('National ratio')].iloc[0]
@@ -81,7 +92,7 @@ def panel_prevalence(fig,ss,ctx):
         style(ax,ylabel='Cohort exceedance (%)' if st=='MI' else None)
 
 def panel_auc(fig,ss,ctx):
-    axes=state_facets(fig,ss,.20)
+    axes=state_facets(fig,ss,.16)
     models=[('f','Frozen\noriginal','s','frozen',False),('available_neighbours','Available\nneighbours','o','available',True),('cold_neighbours','Region\nexcluded','D','cold',False)]
     for ax,(st,name) in zip(axes,STATES):
         g=M[M.state.eq(st)&M.subset.eq('all')&M.resampling.eq('spatial_0.5degree')]
@@ -95,7 +106,7 @@ def panel_auc(fig,ss,ctx):
         style(ax,xlabel='AUC')
 
 def panel_selection(fig,ss,ctx):
-    axes=state_facets(fig,ss,.20)
+    axes=state_facets(fig,ss,.16)
     for ax,(st,name) in zip(axes,STATES):
         r=SEL[SEL.state.eq(st)&SEL.unit.eq('system')&SEL.subgroup.eq('early_index')&SEL.initial_condition.eq('first_detect4')].iloc[0]
         for i,prefix,key in [(0,'negative','below4'),(1,'positive','detect4')]:
@@ -107,7 +118,7 @@ def panel_selection(fig,ss,ctx):
         style(ax,ylabel='Follow-up eligible (%)' if st=='MI' else None)
 
 def main_layout(fig):
-    g=fig.add_gridspec(3,1,left=.07,right=.99,top=.985,bottom=.035,hspace=.16,height_ratios=[1,1,1])
+    g=fig.add_gridspec(3,1,left=.07,right=.99,top=.985,bottom=.035,hspace=.06,height_ratios=[1,1,1])
     return [g[i,0] for i in range(3)]
 
 def endpoint_panel(state):
@@ -163,16 +174,16 @@ def precision_panel(is_auc=False):
     return builder
 
 def supp_layout(fig):
-    g=fig.add_gridspec(3,2,left=.07,right=.99,top=.985,bottom=.035,wspace=.20,hspace=.19,height_ratios=[1,1,1.10])
+    g=fig.add_gridspec(3,2,left=.07,right=.99,top=.985,bottom=.035,wspace=.09,hspace=.07,height_ratios=[1,1,1.10])
     return [g[i,j] for i in range(3) for j in range(2)]
 
 if __name__=='__main__':
     import argparse
     ap=argparse.ArgumentParser();ap.add_argument('--only',choices=['6','S5']);args=ap.parse_args()
     if args.only in [None,'6']:
-        layout.save_modules([panel_prevalence,panel_auc,panel_selection],'Fig_6','Fig_6',main_layout,figsize_mm=(190,214),sizes_mm=[(190,74)]*3)
+        layout.save_modules([panel_prevalence,panel_auc,panel_selection],'Fig_6','Fig_6',main_layout,figsize_mm=(190,195),sizes_mm=[(190,66)]*3)
     if args.only in [None,'S5']:
-        layout.save_modules([endpoint_panel('MI'),endpoint_panel('WA'),transition_panel('MI'),transition_panel('WA'),precision_panel(False),precision_panel(True)],'Fig_S5','Fig_S5',supp_layout,figsize_mm=(190,235),sizes_mm=[(115,92)]*6)
+        layout.save_modules([endpoint_panel('MI'),endpoint_panel('WA'),transition_panel('MI'),transition_panel('WA'),precision_panel(False),precision_panel(True)],'Fig_S5','Fig_S5',supp_layout,figsize_mm=(190,210),sizes_mm=[(115,82)]*6)
     # Exact displayed data travel with the statistical source, independent of plots.
     fd=P/'figure_data';fd.mkdir(exist_ok=True)
     CAL[CAL.prediction_method.isin(['Uncorrected','National ratio'])].to_csv(fd/'Fig_6a_calibration.csv',index=False)
@@ -180,4 +191,4 @@ if __name__=='__main__':
     SEL[SEL.unit.eq('system')&SEL.subgroup.eq('early_index')&SEL.initial_condition.eq('first_detect4')].to_csv(fd/'Fig_6c_followup_eligibility.csv',index=False)
     SENS[SENS.state.eq('WA')&SENS.model.eq('f')].to_csv(fd/'Fig_S5_precision.csv',index=False)
     SCHED[SCHED.model.eq('f')&SCHED.resampling.eq('system')].to_csv(fd/'Fig_S5_schedule.csv',index=False)
-    (P/'figure_specification.json').write_text(json.dumps({'palette':'nature_new, exact get_palette entries','main':{'path':'05/Figures/Fig_6','canvas_mm':[190,214],'semantic_panels':['a: two selected-cohort prevalence facets; national-factor-only ratio intervals','b: external discrimination, spatial 0.5-degree block-bootstrap intervals','c: first-detection follow-up eligibility with exact binomial intervals']},'supplement':{'path':'05/Figures/Fig_S5','canvas_mm':[190,235],'panels':['a,b: observed and frozen prediction means, selected schedule cohorts','c,d: paired exact shared-location endpoint transitions','e: WA threshold/duplicate prevalence points and hypothetical rounding scenario range','f: corresponding frozen-score AUC points and exact rank-based rounding scenario range']},'scenario_not_CI':'Rounding assumption is undocumented; purple ranges are conditional assumption scenarios, not sampling CIs or identified true-label bounds.','metadata_author':'CHONG LIU','render_dpi':int(os.environ.get('FIG_DPI','600'))},indent=2),encoding='utf-8')
+    (P/'figure_specification.json').write_text(json.dumps({'palette':'nature_new, exact get_palette entries','main':{'path':'07/Figures/Fig_6','canvas_mm':[190,195],'semantic_panels':['a: two selected-cohort prevalence facets; national-factor-only ratio intervals','b: external discrimination, spatial 0.5-degree block-bootstrap intervals','c: first-detection follow-up eligibility with exact binomial intervals']},'supplement':{'path':'07/Figures/Fig_S5','canvas_mm':[190,210],'panels':['a,b: observed and frozen prediction means, selected schedule cohorts','c,d: paired exact shared-location endpoint transitions','e: WA threshold/duplicate prevalence points and hypothetical rounding scenario range','f: corresponding frozen-score AUC points and exact rank-based rounding scenario range']},'scenario_not_CI':'Rounding assumption is undocumented; purple ranges are conditional assumption scenarios, not sampling CIs or identified true-label bounds.','metadata_author':'CHONG LIU','render_dpi':int(os.environ.get('FIG_DPI','600'))},indent=2),encoding='utf-8')

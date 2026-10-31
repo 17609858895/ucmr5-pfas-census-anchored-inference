@@ -6,7 +6,7 @@ import refine_mechanism_round3 as mechanics
 SCENARIOS=[('fitted','Fitted',PAL[1],'o'),('auc-match','AUC matched',PAL[7],'s'),('fitted+sd','Extra variation',PAL[2],'^')]
 
 def layout_s1(fig):
-    g=fig.add_gridspec(4,2,height_ratios=[.14,1,.25,1],left=.065,right=.99,top=.99,bottom=.055,wspace=.18,hspace=.075)
+    g=fig.add_gridspec(4,2,height_ratios=[.12,1,.23,1],left=.065,right=.99,top=.99,bottom=.04,wspace=.095,hspace=.040)
     legend_strip(fig,g[0,:],[Line2D([],[],color=c,marker='o',ms=4,label=l) for _,l,c in source.IV],4,handlelength=1.05,columnspacing=1.0)
     legend_strip(fig,g[2,:],[Line2D([],[],color=c,marker='o',ms=4,label=str(n)) for c,n in zip([PAL[1],PAL[3],PAL[4]],[150,300,600])],3,title='Budget (full-schedule system equivalents)',handlelength=1.05,labelspacing=.3)
     return [g[1,0],g[1,1],g[3,0],g[3,1]]
@@ -14,7 +14,11 @@ def layout_s1(fig):
 def interval_coverage(fig,ss,ctx):
     source.interval_panel()(fig,ss,ctx)
     for ax in fig.axes:
-        if ax.axison and ax.get_ylabel()=='95% interval coverage':ax.set_ylabel('Coverage')
+        if ax.axison and ax.get_ylabel()=='95% interval coverage':
+            ax.set_ylabel('Coverage')
+            if ctx['standalone']:
+                # Preserve the original visible tick set on the shorter canvas.
+                ax.set_yticks([.90,.91,.92,.93,.94,.95,.96,.97,.98])
 
 def interval_width(fig,ss,ctx):
     source.interval_panel(True)(fig,ss,ctx);ax=fig.axes[-1]
@@ -32,12 +36,15 @@ def fraction(eff=False):
                 if legend is not None:
                     legend.set_title('Budget (full-schedule\nequivalents)')
         ax=fig.axes[-1];ax.set_ylabel('Efficiency / full' if eff else 'Coverage')
+        if eff:
+            # Keep the same visible ticks; omit unused out-of-view locators.
+            ax.set_yticks([.8,1.0,1.2,1.4])
     return draw
 
 def scenario_forest(target):
     def draw(fig,ss,ctx):
         if ctx['standalone']:
-            g=ss.subgridspec(2,1,height_ratios=[.18,1],hspace=.07)
+            g=ss.subgridspec(2,1,height_ratios=[.14,1],hspace=.035)
             legend_strip(fig,g[0],[Line2D([],[],color=c,marker=m,ms=5,mec=INK,mew=.4,label=label) for _,label,c,m in SCENARIOS],3,handlelength=.7,columnspacing=.8)
             ss=g[1]
         ax=fig.add_subplot(ss);d=source.SP[(source.SP.n==800)&(source.SP.estimand==target)]
@@ -56,7 +63,7 @@ def scenario_forest(target):
     return draw
 
 def layout_s2(fig):
-    g=fig.add_gridspec(5,2,height_ratios=[.14,1.2,.14,.70,1.1],left=.065,right=.99,top=.99,bottom=.045,wspace=.20,hspace=.085)
+    g=fig.add_gridspec(5,2,height_ratios=[.11,1.2,.11,.70,1.1],left=.065,right=.99,top=.99,bottom=.035,wspace=.095,hspace=.040)
     legend_strip(fig,g[0,:],[Line2D([],[],color=c,marker=m,ms=5,mec=INK,mew=.45,label=label) for _,label,c,m in SCENARIOS],3,handlelength=1.1,columnspacing=1.1)
     hs=[Line2D([],[],ls='',marker=m,color=c,mec=INK,mew=.5,label=l,ms=5) for c,m,l in [(PAL[1],'s','Geography'),(PAL[3],'D','+ Neighbours')]]
     legend_strip(fig,g[2,:],hs,2,handlelength=.7,columnspacing=1.2)

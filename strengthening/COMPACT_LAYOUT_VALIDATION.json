@@ -1,0 +1,1704 @@
+{
+  "date": "2026-10-31",
+  "base_commit": "d7da984dcae7047768d486343f1e86d5a9a32e5d",
+  "scope": "Compact presentation only: 72 current figure canvases, with smaller panel/legend spacing and canvas heights.",
+  "all_checks_passed": true,
+  "source_file_count": 9,
+  "source_files": [
+    {
+      "path": "plotting/jhm_burden_panels.py",
+      "submission_source": "legacy_support/plotting/jhm_burden_panels.py",
+      "submission_SHA256": "590b02aa8f70430c5b22f0da64332f21cddb8943bd5a215b36ae492bf30a851a",
+      "normalized_source_and_release_SHA256": "718c7a792e65aea06538dc9f9b2510d0dec1e69ee83189c76bc34df62a0f425e",
+      "release_SHA256": "718c7a792e65aea06538dc9f9b2510d0dec1e69ee83189c76bc34df62a0f425e",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "plotting/jhm_supporting_panels.py",
+      "submission_source": "legacy_support/plotting/jhm_supporting_panels.py",
+      "submission_SHA256": "a69840a0075097c1ed233fb4fa5838000390f5a8b2eb2d98502b3e4430098c00",
+      "normalized_source_and_release_SHA256": "149bc6dbaca673b71b03b5355704c0dbad7d965a6afbb6c11cf8a6314f772521",
+      "release_SHA256": "149bc6dbaca673b71b03b5355704c0dbad7d965a6afbb6c11cf8a6314f772521",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "plotting/refine_jhm_figures.py",
+      "submission_source": "legacy_support/plotting/refine_jhm_figures.py",
+      "submission_SHA256": "eed5f0c28534b563154f40c4fb99ef695245b738c0be6792f743309c67697b7a",
+      "normalized_source_and_release_SHA256": "820b365d831e6e0166e1a1a73cafc49a6e85968b34a211a080da0bf2b8a31792",
+      "release_SHA256": "820b365d831e6e0166e1a1a73cafc49a6e85968b34a211a080da0bf2b8a31792",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "plotting/refine_three_rows_a.py",
+      "submission_source": "legacy_support/plotting/refine_three_rows_a.py",
+      "submission_SHA256": "57f74a7d45ce6acc23fe5efb621626b04e936acecd33309d0648b2648076cc87",
+      "normalized_source_and_release_SHA256": "9826e16dd4111f203eb89922fb68ad0201faea0f6522f2cede3ec856dd92343b",
+      "release_SHA256": "9826e16dd4111f203eb89922fb68ad0201faea0f6522f2cede3ec856dd92343b",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "strengthening/external/render_external_figures.py",
+      "submission_source": "strengthening/external/render_external_figures.py",
+      "submission_SHA256": "df4e547087753672a973b0e6795148ffa1a67f559f22f4486c482a675ecaee28",
+      "normalized_source_and_release_SHA256": "df4e547087753672a973b0e6795148ffa1a67f559f22f4486c482a675ecaee28",
+      "release_SHA256": "df4e547087753672a973b0e6795148ffa1a67f559f22f4486c482a675ecaee28",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/figstyle.py",
+      "submission_source": "strengthening/method/figure_helpers/figkit/figstyle.py",
+      "submission_SHA256": "ef8f062c557fdc8d3536375fba3f110db67ffd434ff225a9e80858000418e2e5",
+      "normalized_source_and_release_SHA256": "ef8f062c557fdc8d3536375fba3f110db67ffd434ff225a9e80858000418e2e5",
+      "release_SHA256": "ef8f062c557fdc8d3536375fba3f110db67ffd434ff225a9e80858000418e2e5",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "strengthening/method/render_method_figures.py",
+      "submission_source": "strengthening/method/render_method_figures.py",
+      "submission_SHA256": "1ac639ea231b28cec36dcf4f5ae09432f8e96c6657fe0ca1963f03458e5a65ff",
+      "normalized_source_and_release_SHA256": "1ac639ea231b28cec36dcf4f5ae09432f8e96c6657fe0ca1963f03458e5a65ff",
+      "release_SHA256": "1ac639ea231b28cec36dcf4f5ae09432f8e96c6657fe0ca1963f03458e5a65ff",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "strengthening/spatial/audit_spatial_figures.py",
+      "submission_source": "strengthening/spatial/audit_spatial_figures.py",
+      "submission_SHA256": "d72f3cb03aace7dee7ec3e213c5117e05139b1b53bd73943070e86cc754a9f61",
+      "normalized_source_and_release_SHA256": "d72f3cb03aace7dee7ec3e213c5117e05139b1b53bd73943070e86cc754a9f61",
+      "release_SHA256": "d72f3cb03aace7dee7ec3e213c5117e05139b1b53bd73943070e86cc754a9f61",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "strengthening/spatial/render_spatial_figures.py",
+      "submission_source": "strengthening/spatial/render_spatial_figures.py",
+      "submission_SHA256": "3b3c26dc1230a8474aa9b7c0d5fb302e737dfe2a321dbea8e9bf8ab08bff357e",
+      "normalized_source_and_release_SHA256": "3b3c26dc1230a8474aa9b7c0d5fb302e737dfe2a321dbea8e9bf8ab08bff357e",
+      "release_SHA256": "3b3c26dc1230a8474aa9b7c0d5fb302e737dfe2a321dbea8e9bf8ab08bff357e",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    }
+  ],
+  "original_numerical_analysis_and_aggregate_data_unchanged": true,
+  "unit_tests": {
+    "passed": 24,
+    "total": 24,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "Python_source_files_parsed": 97,
+  "no_statistical_reanalysis_or_model_fitting": true,
+  "no_duplicate_render_needed": "Public source is AST- and normalized-byte-identical to the frozen, completely rendered07 source.",
+  "current_figure_canvases": 72,
+  "PNG_PDF_file_count": 144,
+  "retained_graphical_abstract": "Unchanged; excluded from this layout source update and from the72-canvas count.",
+  "font_sizes_regular_weight_nature_new_and_three_main_rows_preserved": true,
+  "largest_alignment_residual_pt": 0.32416000320724975,
+  "native_minimum_font_pt": 12.0,
+  "individual_visual_reviews": {
+    "base_main": "FINAL_PASS",
+    "base_SI": "PASS",
+    "external": true,
+    "method": "FINAL_PASS",
+    "spatial": true
+  },
+  "author_metadata": "CHONG LIU",
+  "unchanged_analysis_and_aggregate_file_count": 90,
+  "figure_checks": [
+    {
+      "canvas": "Fig_1",
+      "native_canvas_mm": [
+        190.0,
+        184.0
+      ],
+      "export_mm": [
+        182.28769790872914,
+        176.95368724070784
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.16508792900801664,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "6fbae7d7eeb0a1585d7f8123162e3043fe48123019e2a736afa22f80b1bcdba5",
+      "PDF_SHA256": "498dcda1886797e6c6dfa5de32f94c21fb65c360ed92332c7e753e7c257be803",
+      "export_QA_SHA256": "8999edeb36fc80cc3c47be35abc5aa03adc24280e35819cbf6d7c4bda457a849"
+    },
+    {
+      "canvas": "Fig_1_a",
+      "native_canvas_mm": [
+        195.0,
+        87.4
+      ],
+      "export_mm": [
+        182.37236474472948,
+        81.61882990432647
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.02359915884096091,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "6d6fd4794a82fe872c4301fddbcb700a518fc0abb2dca175ec44cb3b89c6cb10",
+      "PDF_SHA256": "229fea6a3d1d9b395f13ad606741492d4e21b6559760dfda32bf69b0f597de2d",
+      "export_QA_SHA256": "5e476db2cc59315fbca4e2163eb930a41c8277861554fcc67e3addf7c8235998"
+    },
+    {
+      "canvas": "Fig_1_b",
+      "native_canvas_mm": [
+        180.0,
+        78.2
+      ],
+      "export_mm": [
+        168.52933705867412,
+        73.1521463042926
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.16563687568293636,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "34b7970a129d80b0c025dd2449371200a09452b7037e481cb4a41fca62a1d98c",
+      "PDF_SHA256": "4dcdeeeba4c776c71719de3733bff0800410a8b665f1a4533db1f348f67fc085",
+      "export_QA_SHA256": "b73eec584cd48ac203ff4024218e506db4ec0f195a4de2c64b23b61257dbb46c"
+    },
+    {
+      "canvas": "Fig_1_c",
+      "native_canvas_mm": [
+        180.0,
+        55.2
+      ],
+      "export_mm": [
+        168.57167047667429,
+        52.23943781220896
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.19047660539164651,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "845241dd90280565ac08533f3d9b9fc6b35323ee8bbcaa866b75621a89d37491",
+      "PDF_SHA256": "fca80032f4bfdffd53abd31600269199e0563b970bb7695d896fb62fd111e31f",
+      "export_QA_SHA256": "45782a9cf2f26b887b9dcc63fd82f67784c59cfededf546eb90da995ae7d57bb"
+    },
+    {
+      "canvas": "Fig_3",
+      "native_canvas_mm": [
+        190.0,
+        184.0
+      ],
+      "export_mm": [
+        183.17669968673272,
+        177.75802218271104
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.20318208757099157,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "85ec44e99823a5485db5b946a71b4f601645439930dc68859fe49fcbb25da583",
+      "PDF_SHA256": "0b494e4b643ceb7d6ca0622f242a68ce46e813b1f41c02caef7cec05a13d2ab5",
+      "export_QA_SHA256": "5b7f4985d1cbc5ae67a7e00706ff4c702eda24e86db484252f03199a2616859a"
+    },
+    {
+      "canvas": "Fig_3_a",
+      "native_canvas_mm": [
+        185.0,
+        69.9
+      ],
+      "export_mm": [
+        173.14367962069258,
+        65.91313182626365
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.0,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "9ebd96f5791d1d9bf650f468786328bfe999dc5624db8734cf7f1d11d847fe2d",
+      "PDF_SHA256": "9818867e3023db15bb2207c777c87e9bb36f0e83f95451d22fcdd7de08e1597c",
+      "export_QA_SHA256": "803a00d4df063dd9d11fd06f276855402e040c9f0d53c9f37cea7e3050f88151"
+    },
+    {
+      "canvas": "Fig_3_b",
+      "native_canvas_mm": [
+        180.0,
+        73.6
+      ],
+      "export_mm": [
+        168.57167047667429,
+        69.00347134027601
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1950205617764932,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "e517c81977e3ebc7eb1750cacc2da583c9099a4937fa07f81086014904f96a87",
+      "PDF_SHA256": "9111b6626c349cfc41b57cba321b8840ff9467ed865979b68eb6136250f0428a",
+      "export_QA_SHA256": "75bf916178cf487496587cfd2a0a8d571965daf8d0f575c0ba5b16fcaab99756"
+    },
+    {
+      "canvas": "Fig_3_c",
+      "native_canvas_mm": [
+        180.0,
+        55.2
+      ],
+      "export_mm": [
+        168.57167047667429,
+        52.40877148420964
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.17751999889531828,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "90449133ff0b0910436c75a182579217328c627b011663552cee761b7717c04d",
+      "PDF_SHA256": "2ac2f084889c3d9cc5baf155d778d395db73a247c61a11c75908f4b9ea31dbdf",
+      "export_QA_SHA256": "517da4670f5db2853d84fede54831f029e3240c785d764c1759704ce32e752e0"
+    },
+    {
+      "canvas": "Fig_4",
+      "native_canvas_mm": [
+        190.0,
+        186.0
+      ],
+      "export_mm": [
+        182.28769790872914,
+        180.04402675472016
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.29523173736600367,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "3c33e2efa1c5cdd8888722744258d6c76c1fb6c604e201ab15eac7510307e5a9",
+      "PDF_SHA256": "05ad6ced4f33527d828328c7d2efe859b7e2df44d2e31fc7217224ee2ae0a761",
+      "export_QA_SHA256": "ad6c1634f1531317964ca29949a70e2c44f34012c9f4bc3f739e55b4797a13a7"
+    },
+    {
+      "canvas": "Fig_4_a",
+      "native_canvas_mm": [
+        145.0,
+        96.0
+      ],
+      "export_mm": [
+        136.22893912454492,
+        89.36584539835746
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09257063002974628,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "f736dcf20c7c2b9a93e213ce4936f04880654f4067fadf416442a82af9d36257",
+      "PDF_SHA256": "386445e0730b20dea88b4ebd84b08f7b2d6d71046ea0d9f2647138ebfcea88fa",
+      "export_QA_SHA256": "446951b046728dcc2858e65703bb9e1099b36d39df5b53fb4434e08d7dc090ed"
+    },
+    {
+      "canvas": "Fig_4_b",
+      "native_canvas_mm": [
+        145.0,
+        96.0
+      ],
+      "export_mm": [
+        136.22893912454492,
+        89.36584539835746
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09257063002974628,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "278740617956e17928a7cd30d105755a650146b712163fb4ceb6229a4cf3cbad",
+      "PDF_SHA256": "7bbe8602246e21166b9f3d8256a8a2322f15644eef6b593e0ab1d9f3ca15c875",
+      "export_QA_SHA256": "02351969e3ae85ba773df320c427b315d1b7bb4317cc63ef2c3b019311676da0"
+    },
+    {
+      "canvas": "Fig_4_c",
+      "native_canvas_mm": [
+        145.0,
+        96.0
+      ],
+      "export_mm": [
+        136.18660570654475,
+        89.36584539835746
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09257063002974628,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "411fee51b8590a88b04d793b2413dca0e4887a7faff750185ee2094785b84cfe",
+      "PDF_SHA256": "6e093868df3714d86fa7f0f3997aacf982ce248b66d92b0252132a468046ce64",
+      "export_QA_SHA256": "12d5f191a98d69d1b78c3ee4a7621082b742ba23aed53a03b69cc5601a4ec26d"
+    },
+    {
+      "canvas": "Fig_4_d",
+      "native_canvas_mm": [
+        145.0,
+        96.0
+      ],
+      "export_mm": [
+        136.18660570654475,
+        89.36584539835746
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09257063002974628,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "73863e895dbfc53e137b3cc93bab30be888d1a0af22d282b6cb38172b05040b1",
+      "PDF_SHA256": "c51be83eb5096ff435621217ae928e33774949e3bdf31ea487fba7a98a18b8f6",
+      "export_QA_SHA256": "ef911e1d38ceaca207377c074c3ad08c26ec0fedc7802e695cf9fc80fe9897ea"
+    },
+    {
+      "canvas": "Fig_4_e",
+      "native_canvas_mm": [
+        100.0,
+        82.8
+      ],
+      "export_mm": [
+        94.5728558123783,
+        77.34315468630938
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.14043903244754588,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "1b30b468782b145f3bee8d8fea6d097440dca7cc156ac29317d4079b54c3432c",
+      "PDF_SHA256": "0035edfa26880af572509da614b97bd3725186551d45383aa3802276c44a03ae",
+      "export_QA_SHA256": "409902ff99a011df6023ce010ccd02112d8a863ce99b96b8641fd3ad2b557b4a"
+    },
+    {
+      "canvas": "Fig_4_f",
+      "native_canvas_mm": [
+        105.00000000000001,
+        87.4
+      ],
+      "export_mm": [
+        99.2718652103971,
+        81.4494962323258
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.30948974685818187,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "c538f9d3f1031a66bfa9c608be800f98fc1b5117cae348a8fe71bd60d50ac815",
+      "PDF_SHA256": "16c3069a46b1db516e04cb45a958c5d1341715e417f523c3a94f3b12bde186ef",
+      "export_QA_SHA256": "6c39f18876c81d2b0cc4b243820e204aa918cd1c6ba11ac43a9fb3c081e87cf5"
+    },
+    {
+      "canvas": "Fig_5",
+      "native_canvas_mm": [
+        190.0,
+        194.0
+      ],
+      "export_mm": [
+        182.28769790872914,
+        187.28304123274913
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.25179364848215435,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "5be43505408d1eb791d4ce61507d466b48f69e731c845f659ed9d154345323f7",
+      "PDF_SHA256": "bef53b9894676c1f554257e914ab34d949ef80c09ea989497f4833413b686f6a",
+      "export_QA_SHA256": "59a27c48e1c5cfc02130507dd84152818fca887ef5f39a8900f42abd16948f03"
+    },
+    {
+      "canvas": "Fig_5_a",
+      "native_canvas_mm": [
+        185.0,
+        74.0
+      ],
+      "export_mm": [
+        173.18601303869275,
+        69.25747184827702
+      ],
+      "minimum_font_pt": 12.5,
+      "alignment_max_residual_pt": 0.18016888642416926,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "2a8336da2a2b842ccb509a85f774f3b2709010ce559fa4554923cc22923abebd",
+      "PDF_SHA256": "501ce84890da7e54d8f1b7456c804dd838dcd8355e6b4531e236543922d4b328",
+      "export_QA_SHA256": "3b8f46fc87bdadfec91a164dd60b655e88da52d30532fb15eb2a27145b94974e"
+    },
+    {
+      "canvas": "Fig_5_b",
+      "native_canvas_mm": [
+        105.00000000000001,
+        83.0
+      ],
+      "export_mm": [
+        99.14486495639657,
+        77.47015494030988
+      ],
+      "minimum_font_pt": 12.5,
+      "alignment_max_residual_pt": 0.18613100396585142,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "f5cad3b9307ec02bc1d2054fe8839b38650dfb47241bf2e62d282066f8f079f4",
+      "PDF_SHA256": "ff37bd31f907383fdace285f75ca5643e7f1d72c8f2f097e984942780a5a229e",
+      "export_QA_SHA256": "7d1d13c1fa75c623254e401d606a2a812474480984151ed06f2094715ee033ab"
+    },
+    {
+      "canvas": "Fig_5_c",
+      "native_canvas_mm": [
+        105.00000000000001,
+        83.0
+      ],
+      "export_mm": [
+        99.14486495639657,
+        77.47015494030988
+      ],
+      "minimum_font_pt": 12.5,
+      "alignment_max_residual_pt": 0.11819980169121491,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "32ce3b330dbc05b1a33f25d17daa7bba832a3fd7c09100856598954a201fc4ff",
+      "PDF_SHA256": "2eefb35b0a61cd6ad8a3caeda53653785932f371a442ad59b59bef851922153f",
+      "export_QA_SHA256": "5f02408f76078c6e6b801f16a65c6b6cbe61d54ca1f706a26840f9a556ddf024"
+    },
+    {
+      "canvas": "Fig_5_d",
+      "native_canvas_mm": [
+        185.0,
+        87.0
+      ],
+      "export_mm": [
+        173.14367962069258,
+        81.1531623063246
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.10638923629046401,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "0453a9613a7863bddf75d11086ab68c147cb204324de36cbed873fd9376f3973",
+      "PDF_SHA256": "ddcab2ed21f402880a845773c4d9a95ac61685c90fc11cb465459b32441fee7d",
+      "export_QA_SHA256": "352d129c39ed2b84f6030908a6bf6035d066c0eb8218e4589a6cd43686e15976"
+    },
+    {
+      "canvas": "Fig_S1",
+      "native_canvas_mm": [
+        190.0,
+        142.0
+      ],
+      "export_mm": [
+        182.28769790872914,
+        136.6522733045466
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1819403143363629,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT",
+        "GCWXDV+DejaVuSans-Oblique"
+      ],
+      "PNG_SHA256": "88670264a46a19a5f85ee5d7d95521b91ca81419a8f9c82376c84b1021b512ad",
+      "PDF_SHA256": "e732144eb76e2ef094ec0f29ccaff2b7ccbd5e5d49623e957a7cdbdf3fce6fed",
+      "export_QA_SHA256": "791af6cc0d362613f7721f6317353f052524d0370d160d38095b18461ebe8c8b"
+    },
+    {
+      "canvas": "Fig_S1_a",
+      "native_canvas_mm": [
+        105.00000000000001,
+        81.0
+      ],
+      "export_mm": [
+        99.22953179239693,
+        75.69215138430278
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09243096616671334,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "9730cb25f762d699adb8c6ef287d7fdd3bbed81c030a01529e2a6806eba2b408",
+      "PDF_SHA256": "21f22cb1c3126fd31dea49116fd60e3a623ce7db2c6b3544da25a92e6c438bf2",
+      "export_QA_SHA256": "899a7768b07dd0ea78a5926d32061d32ca0c9f3b9fc930eb8e116b4a66f14897"
+    },
+    {
+      "canvas": "Fig_S1_b",
+      "native_canvas_mm": [
+        105.00000000000001,
+        81.0
+      ],
+      "export_mm": [
+        99.06019812039625,
+        75.69215138430278
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09243096616671334,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "f953c1614aa27f29ba9fdcd4f84e6e623adef5c615ab8df9b7fa382414b359c1",
+      "PDF_SHA256": "0344b78edb2f4b3bf8a0613f7efd8437d9bac13f74ba1b256cdd97db97411c4c",
+      "export_QA_SHA256": "2e2a9ac0f3ae6c0b7c2c7a4f757a11cc09cae9722f2504417a9269fb98160cd3"
+    },
+    {
+      "canvas": "Fig_S1_c",
+      "native_canvas_mm": [
+        105.00000000000001,
+        85.0
+      ],
+      "export_mm": [
+        99.22953179239693,
+        79.07882482431631
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09850037384702436,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT",
+        "GCWXDV+DejaVuSans-Oblique"
+      ],
+      "PNG_SHA256": "2f3fc2bef10baf1d97fc9c877a018cc2fbc93745a7478c073ae2486e2fc5f3c9",
+      "PDF_SHA256": "398e19da272d00d63fd0d0f258dcf85902dbbd7650efa43096ac5220dcab444d",
+      "export_QA_SHA256": "9e43dd37da472a3b3080c09615e4ab373dc5a44ed86e85ca650559bd69ed6776"
+    },
+    {
+      "canvas": "Fig_S1_d",
+      "native_canvas_mm": [
+        105.00000000000001,
+        85.0
+      ],
+      "export_mm": [
+        99.22953179239693,
+        79.07882482431631
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09850037384702436,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT",
+        "GCWXDV+DejaVuSans-Oblique"
+      ],
+      "PNG_SHA256": "cd5c41ff6eaf5899a0045b26b7d673ede6872304b199c3cccce9fdf241c94a50",
+      "PDF_SHA256": "eda403f90ee9dcdf126024542f2dfa03fc46e0d10ccf444beab78aa1bb1de97a",
+      "export_QA_SHA256": "c6ced11562b1117c436a7803eb4cf5480224e2f33a930bdc542bdcb7ec449dd0"
+    },
+    {
+      "canvas": "Fig_S2",
+      "native_canvas_mm": [
+        190.0,
+        182.0
+      ],
+      "export_mm": [
+        184.5737024807383,
+        176.65735331470663
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2962221364491514,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "2a7d2a3892638514e3aa23482764a4214c83c8d04d8be32ca505d3447bfd66f5",
+      "PDF_SHA256": "593ba615f7e7d74cd98fed0f6423f4e2386d2dfd83b7daca394c7228f375a6f7",
+      "export_QA_SHA256": "19b1d68302afcea73ca2301857635cac0e1810156b87b826bcb88a274e71a1cb"
+    },
+    {
+      "canvas": "Fig_S2_a",
+      "native_canvas_mm": [
+        114.99999999999999,
+        96.0
+      ],
+      "export_mm": [
+        108.58521717043433,
+        89.3235119803573
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.29093958588305235,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "a97f185f91813c8359deb2380dd18c282fd59d81c1fc2d25da10f11536de3622",
+      "PDF_SHA256": "9996c5b3f63fd7ba5b3263f2598e63002b0566b65306da41931d1ee58056cf5d",
+      "export_QA_SHA256": "31bcbf1fa6fa62688a40b53741f7b69bd7c4f005e09dc9aaae29fba6245acb0a"
+    },
+    {
+      "canvas": "Fig_S2_b",
+      "native_canvas_mm": [
+        114.99999999999999,
+        96.0
+      ],
+      "export_mm": [
+        108.41588349843367,
+        89.3235119803573
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.29565422689827014,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "09563cc6d9d23a49196270d6260771e90cc584d1bad82f91915cdb40655acd78",
+      "PDF_SHA256": "1f444ce5cc65f1bcefea4efe6c1dfea2709f1b0ad1467409c1c4802f9a567587",
+      "export_QA_SHA256": "b2cda73e82a337fa06003f3dfc89c0bd2b81f93974bf4cd0387766b2cf845e6f"
+    },
+    {
+      "canvas": "Fig_S2_c",
+      "native_canvas_mm": [
+        110.0,
+        78.0
+      ],
+      "export_mm": [
+        103.92854119041571,
+        72.94047921429176
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2751221563815193,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "e41444c68bfbbe718a44dbb152a0d1e7c92d10e441da01d6a266815d4fd62f11",
+      "PDF_SHA256": "ea5d244291d8bcf981ab312046b9627930c01182026eabe16390ce124f0abacd",
+      "export_QA_SHA256": "c19c19f4d96731fcc3ad7e18e18e749197aea2d1569533dc1787e22ae40e1953"
+    },
+    {
+      "canvas": "Fig_S2_d",
+      "native_canvas_mm": [
+        110.0,
+        78.0
+      ],
+      "export_mm": [
+        103.92854119041571,
+        72.94047921429176
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2751221563815193,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "8fdd82790adf4d08529c5a5ce3a47949ce9d7f6abf412906a12f979f24df17a2",
+      "PDF_SHA256": "2cc69adebaa775bc6840d9653cf9160ab1a47073d9e03d5e148594693f9959d4",
+      "export_QA_SHA256": "d1b7fab576ef41687679f7ed3786ff73f338a47e3a7d1ba0209c886d2ed85d72"
+    },
+    {
+      "canvas": "Fig_S2_e",
+      "native_canvas_mm": [
+        180.0,
+        78.0
+      ],
+      "export_mm": [
+        168.52933705867412,
+        73.02514605029211
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1659481018910973,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "d6ff3547ffa72bd80bdd03fc79b0e4aa6b07ec4c7b748e6af865882a34419756",
+      "PDF_SHA256": "a39a1e3d7ef6820c1eaa6280e5a203563e31908e39864c851da51f9c4b14795b",
+      "export_QA_SHA256": "757cae4cf1844e8bb10f62e93f24df0265212d23a37e4b883e3db67eb2a8a83f"
+    },
+    {
+      "canvas": "Fig_S3",
+      "native_canvas_mm": [
+        190.0,
+        192.0
+      ],
+      "export_mm": [
+        182.28769790872914,
+        185.251037168741
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.20577040211626368,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "7706b3bdc35cc5814f3f6cd76ca9925e4ba2338d96fb9b594c927d178549bd67",
+      "PDF_SHA256": "1d03729a38802966b2472319e0f399d5b3ce7cf3f474120e9947dbb4f0a0b5a2",
+      "export_QA_SHA256": "2d42b2dc24f6ea9c2c6c70e0aa1349fe1ec3e1a62b1a33522908edf27df9fbb1"
+    },
+    {
+      "canvas": "Fig_S3_a",
+      "native_canvas_mm": [
+        125.0,
+        88.0
+      ],
+      "export_mm": [
+        110.74422148844297,
+        82.04216408432816
+      ],
+      "minimum_font_pt": 12.5,
+      "alignment_max_residual_pt": 2.7694382220570835e-14,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "d56e4750fa266b730d00835536aaec0a3210dbee5561b83bb744f6d27e736ee5",
+      "PDF_SHA256": "a7374b7bdfc87a8d8f60cd4ff192f846ded410d1c4b3b9076bdb0cdbf8d0ffe1",
+      "export_QA_SHA256": "ba9cb6c96d9fc112782ee89c40f9ad9d767064b3238ca95192b7ce755b33daad"
+    },
+    {
+      "canvas": "Fig_S3_b",
+      "native_canvas_mm": [
+        110.0,
+        101.0
+      ],
+      "export_mm": [
+        103.75920751841502,
+        93.85318770637542
+      ],
+      "minimum_font_pt": 12.5,
+      "alignment_max_residual_pt": 0.29425798844254314,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "972e3b44cf6cd204f3b7c9f73d4a1ae1a8b2a4e08bd8e6d89ea0fd29c72d2751",
+      "PDF_SHA256": "39a036b7a3c5f63979ead0e1b968323177e3b3e2f70c44d972818c0a5dd1e232",
+      "export_QA_SHA256": "9b11e50a4e65331e1203228164b5c43d2e1df35d2f0a5f1b6d605e90f2394faf"
+    },
+    {
+      "canvas": "Fig_S3_c",
+      "native_canvas_mm": [
+        185.0,
+        78.0
+      ],
+      "export_mm": [
+        173.14367962069258,
+        72.94047921429176
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1391869844223408,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "5dd441220ff768d88ba027eb065da5aeeb32e1abf56cf5ffdb0f9ec87daec3d1",
+      "PDF_SHA256": "99c873930c07e1bdc470d5b355c82706b190aa0b15e556d7f23eedea2a11faf0",
+      "export_QA_SHA256": "ba977aef4c996507785c1db2bb487f4dfb8c1190ef80bbaa2d92cd0e3b133620"
+    },
+    {
+      "canvas": "Fig_S3_d",
+      "native_canvas_mm": [
+        185.0,
+        83.0
+      ],
+      "export_mm": [
+        173.22834645669292,
+        77.42782152230971
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1412988667607095,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "04e1ac533786fbda18c08c55cf27d7551560445deb1c5d916d44acf7ab0c2794",
+      "PDF_SHA256": "556cacd3ac7c23a27944a0632c93bae57954e3cb0c487f93c8f1994c3ab31af2",
+      "export_QA_SHA256": "7be398190fa6b98e6e818e83f8e5efb65b92091bb7a122cf42940eed7d1fd48a"
+    },
+    {
+      "canvas": "Fig_6",
+      "native_canvas_mm": [
+        190.0,
+        195.0
+      ],
+      "export_mm": [
+        181.31402929472526,
+        187.41004148674963
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2161269646739087,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "95c6ce00312359c17801b12b553f533bc25f9d831cd7713cd856433244882dd6",
+      "PDF_SHA256": "4bdfd01dd18fedbc6c340c1d7cb851c9dfe8d448c647ad06861368bec59e67b9",
+      "export_QA_SHA256": "6c73156bdc4fbe74a73948247c4cc5492405ee39d53f4960b56a1fa415f8408f"
+    },
+    {
+      "canvas": "Fig_6_a",
+      "native_canvas_mm": [
+        190.0,
+        66.0
+      ],
+      "export_mm": [
+        177.84268901871135,
+        62.01845737024808
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.15144916825810037,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "63eeb3862dd9c4baa5d33854e929580c2b365e863987929286330db2c09c8863",
+      "PDF_SHA256": "f1940d4e95a74a0ee3bc5761af8c6c668966bb2254d2438f856f33b9200866a4",
+      "export_QA_SHA256": "ffe61f5f13ab1850a10c3f43a317a90b4dfdbc3b4c610e42f691d7bd65cdf798"
+    },
+    {
+      "canvas": "Fig_6_b",
+      "native_canvas_mm": [
+        190.0,
+        66.0
+      ],
+      "export_mm": [
+        177.75802218271104,
+        62.01845737024808
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2074374989268746,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "27cd5715ffcef9700939785470e850cac74558f8febbb7d04d98b0dd3ea91fad",
+      "PDF_SHA256": "0b5c8b4bd1ace64d28223e3092345b6a1244777c11b0a33756f42a7deb3f133a",
+      "export_QA_SHA256": "793c119e40f6c1c6348550cdf2150b7595d5405080bfa65983a74e72a94bc873"
+    },
+    {
+      "canvas": "Fig_6_c",
+      "native_canvas_mm": [
+        190.0,
+        66.0
+      ],
+      "export_mm": [
+        177.8003556007112,
+        62.187791042248755
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1301724888364364,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "d5a33884ce8025686f19cfac7bee0180f9c107960079d5c373b6ac2590132d3f",
+      "PDF_SHA256": "b9a9c54bd414852f209826ab34e57c0b3abcfe790dd57659baa133ab6d0f5fdf",
+      "export_QA_SHA256": "bc40c42695ab6ec9c63aaca0b316c3e8046851cc31b0f60da8af52f6e81d9008"
+    },
+    {
+      "canvas": "Fig_S5",
+      "native_canvas_mm": [
+        190.0,
+        210.00000000000003
+      ],
+      "export_mm": [
+        181.35636271272543,
+        201.59173651680638
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.21002574881867847,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "c942bb2be6e3bbce1e6f6b3456c9439aacfcb2f205598429f2acdac7bd63ba88",
+      "PDF_SHA256": "657dd4f7290fcfc7221b269318c892c4859fd02925dae48aaee8d54b422445db",
+      "export_QA_SHA256": "8e9d9290fb7765817cb77c976fa3229b762016e3b745491ba159e3ef56db3ebb"
+    },
+    {
+      "canvas": "Fig_S5_a",
+      "native_canvas_mm": [
+        114.99999999999999,
+        82.0
+      ],
+      "export_mm": [
+        108.45821691643384,
+        76.70815341630683
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.07119962300900899,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "f4747fcffd9d7f6f7b9d29901baa01533c3b254116e3ecd7d1aab9730ea2f510",
+      "PDF_SHA256": "75ea1f364f4a231b7426dd37300f07841fe50ed2944560ed4312f27cb55d5ce6",
+      "export_QA_SHA256": "afb627ba97097e8abac921aa846a9c5975b51eed381df5b986ae05441cd692b7"
+    },
+    {
+      "canvas": "Fig_S5_b",
+      "native_canvas_mm": [
+        114.99999999999999,
+        82.0
+      ],
+      "export_mm": [
+        108.45821691643384,
+        76.70815341630683
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.07119962300900899,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "0e468b21fb2a9eb02e287b5c572505481a34c545a42f816410ea9fbffae9b5b3",
+      "PDF_SHA256": "59cabf276eec3978121de8bb7b903f267c584a97a9b5ab60fc76dc715c2c6072",
+      "export_QA_SHA256": "680b52cfd9e87eb51f035b960c0d7897e90bce26ff2c26ffa71b668f400027c4"
+    },
+    {
+      "canvas": "Fig_S5_c",
+      "native_canvas_mm": [
+        114.99999999999999,
+        82.0
+      ],
+      "export_mm": [
+        108.50055033443401,
+        76.66581999830666
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1941333559979745,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "2bf7729de9440454c948700af78d8afeebb8bdcb9624fee5a57f08522ceb21a7",
+      "PDF_SHA256": "4bd936299b9740026d5651f52274557c9aa417e0f5ba47c0309f8cda098e14e3",
+      "export_QA_SHA256": "8804ffe678845aad2efbe3c154ce980c724ec2945b9f696c162a3a9f60d58a4a"
+    },
+    {
+      "canvas": "Fig_S5_d",
+      "native_canvas_mm": [
+        114.99999999999999,
+        82.0
+      ],
+      "export_mm": [
+        108.50055033443401,
+        76.66581999830666
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1941333559979745,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "c1b389c1f3c906d8bffb8dc4246666695c5d792e479fbe9ebb24c12b444034e1",
+      "PDF_SHA256": "828d84d2e932327eef564f028fcd7e216a4e5147daa402b3279b06d24dc71eb9",
+      "export_QA_SHA256": "18a4adfbc313d9934f55f9b7b6357fa119249e7031fb4e3b762a014126fc6cd5"
+    },
+    {
+      "canvas": "Fig_S5_e",
+      "native_canvas_mm": [
+        114.99999999999999,
+        82.0
+      ],
+      "export_mm": [
+        108.41588349843367,
+        76.70815341630683
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09423790879179045,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "299a6bffca520d6c2ce6c5d7ca85d24c5e45c9f4368847b921b496b756bd0d43",
+      "PDF_SHA256": "50174c62fe3415424610eee5a596885206b62035b631ad2cd887b0d08c24ccdf",
+      "export_QA_SHA256": "e35eab97e520457fa352d0f991187a5ccd117e2980974e19114240c2edff24b8"
+    },
+    {
+      "canvas": "Fig_S5_f",
+      "native_canvas_mm": [
+        114.99999999999999,
+        82.0
+      ],
+      "export_mm": [
+        108.45821691643384,
+        76.53881974430617
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.16828239504834697,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "7db72906f78fd07f97b0cfcd09ab5dc015b58d73655aa6ddca4fec87ad952b6c",
+      "PDF_SHA256": "d258665fede3c4e64b5eccca41c4a68c94f47fd8d07319d3cd23e596d6fbe328",
+      "export_QA_SHA256": "6df3596a8e328ad9e62ef091bc0c38bbcd506092af2b244b316bd0efa52698b1"
+    },
+    {
+      "canvas": "Fig_2",
+      "native_canvas_mm": [
+        190.0,
+        192.0
+      ],
+      "export_mm": [
+        182.24536449072897,
+        183.55770044873424
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1900196524353752,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "8189fb7a52386a2fea380779be11c32362cb67d1b467e659ff2b091464f25cde",
+      "PDF_SHA256": "0a46a6c9025b61ddc876c74f3f8de855e817c688ee0ee91c157f0e00da87274d",
+      "export_QA_SHA256": "aa0e35cb3812c21bdd80be7c70c59e023fc6d833823688e5518df7a55f8e01cb"
+    },
+    {
+      "canvas": "Fig_2_a",
+      "native_canvas_mm": [
+        185.0,
+        77.0
+      ],
+      "export_mm": [
+        173.18601303869275,
+        71.96681060028787
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.08210691790320479,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "937413f0ef5140eb3f4474bec7080524c713c844bc66f35faeee608af6baa905",
+      "PDF_SHA256": "a880f9323f688af3258c59e6b741c108722ac4774f1470ab636c6760728d8832",
+      "export_QA_SHA256": "fe593548def67bc3c146518b6ac8231b74ac349e04fe983f6e001939046dece6"
+    },
+    {
+      "canvas": "Fig_2_b",
+      "native_canvas_mm": [
+        190.0,
+        100.0
+      ],
+      "export_mm": [
+        177.84268901871135,
+        92.96418592837186
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.17673808853056733,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "e750a0a17436ad1643b1b95a02299ba37e7a7ed562cf0b94b02920992d8a5301",
+      "PDF_SHA256": "69a2dd537bf5a7079535f080ff0412029d2df527fabc8899768531be55e9850f",
+      "export_QA_SHA256": "b88355bfadf69b69bc9a483a6d79e755c6de6209464fb23306dd726f18583fa4"
+    },
+    {
+      "canvas": "Fig_2_c",
+      "native_canvas_mm": [
+        185.0,
+        74.0
+      ],
+      "export_mm": [
+        173.14367962069258,
+        69.55380577427822
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.32416000320724975,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "eda0fae09b710ff251db66a11c0be9b5ab6e47f95f7458e6c6da2dc95fcbe7fe",
+      "PDF_SHA256": "c63ea719b725966c8f1dc756b791e1b77104b04a93debad53e2ca3fb105fa8ad",
+      "export_QA_SHA256": "1cf412511699765c71c5adefbc4a7925e52d036d81ec150a1157bf9da277e4d8"
+    },
+    {
+      "canvas": "Fig_S4",
+      "native_canvas_mm": [
+        190.0,
+        210.00000000000003
+      ],
+      "export_mm": [
+        182.3300313267293,
+        200.61806790280247
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2882295990434438,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "58559354b410e8caa84e78ba027af32ab5beba64229a037e1f2c5dc47f4804bc",
+      "PDF_SHA256": "ffca3936cd8ec9727442b9a2dad4e5e81988ca2973ba26043b5e60b87b6e9e0e",
+      "export_QA_SHA256": "0be8d0196d4875dc945357665702cfdc4937d608332f6d393084864e0a20c9ea"
+    },
+    {
+      "canvas": "Fig_S4_a",
+      "native_canvas_mm": [
+        110.0,
+        94.0
+      ],
+      "export_mm": [
+        103.75920751841502,
+        87.71484209635086
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.28347394893089733,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "8712f2d0a7153e73fddcfc3a453f48c519ad8bbb1f4be64fa1f57e9037a2afb3",
+      "PDF_SHA256": "872562ba3606d2954029462df637e6d77a26b09355067b0e9ccce1e027717af6",
+      "export_QA_SHA256": "1cabe047658a3655a0c19dedcdfdd52e6009787aec4a19726d1c740f163177a3"
+    },
+    {
+      "canvas": "Fig_S4_b",
+      "native_canvas_mm": [
+        110.0,
+        94.0
+      ],
+      "export_mm": [
+        103.75920751841502,
+        87.71484209635086
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.28347394893089733,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "431bb330fe6dca6d3043249d8054f287176b8faf6fca09d98d65920c86065903",
+      "PDF_SHA256": "b8b9b1eb80dc54d0a525f06ff3f619384f3067ddc025ca705e047ab81b8865b5",
+      "export_QA_SHA256": "431369425734f2ee9dae6eb7024413d78b7798517d9d81899f1531efc218975e"
+    },
+    {
+      "canvas": "Fig_S4_c",
+      "native_canvas_mm": [
+        125.0,
+        89.0
+      ],
+      "export_mm": [
+        117.55990178647025,
+        82.9734992803319
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.0734682304373574,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "ac5d515e729fb363b6602e742858d419ac453d5f259f3a80e90d0c115127b01b",
+      "PDF_SHA256": "aa55f27f83ccb9ad908cc42fe4200589914c474630d097a614ca5eb8694ba857",
+      "export_QA_SHA256": "3296cf892d97b3c2915e8c538dfda554cafc6dc0f94e2a64891c71cb9db7296b"
+    },
+    {
+      "canvas": "Fig_S4_d",
+      "native_canvas_mm": [
+        110.0,
+        84.0
+      ],
+      "export_mm": [
+        103.75920751841502,
+        78.2744898823131
+      ],
+      "minimum_font_pt": 12.5,
+      "alignment_max_residual_pt": 0.12981603719274673,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "4c0893e6285488a43d68f44015a01630ce2c69c4ff6c84a7ce1a79c434ad3b57",
+      "PDF_SHA256": "e195678cdcb312f28b02bc2f601aa7341ca832aba79f2171617de4bbd2aea300",
+      "export_QA_SHA256": "894c92eac194d353b04728ae7bcf0a7c68e06f97e235e0b79ee5f989fb40c161"
+    },
+    {
+      "canvas": "Fig_S4_e",
+      "native_canvas_mm": [
+        125.0,
+        93.0
+      ],
+      "export_mm": [
+        117.64456862247057,
+        86.61417322834646
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.17972108377390356,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "82c4eefe0fa84af0e1440f0158212afcfab751d4834c658b4030c7d888eb66f6",
+      "PDF_SHA256": "8da7b219c82d5859dbe173026857599186377fcaef11fb164dd898bbd2277ed3",
+      "export_QA_SHA256": "0e689f27dce228ad31001b384212269fdac745c5a895ddc8a518cca4ced5283f"
+    },
+    {
+      "canvas": "Fig_S4_f",
+      "native_canvas_mm": [
+        114.99999999999999,
+        89.0
+      ],
+      "export_mm": [
+        108.45821691643384,
+        82.80416560833122
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.12528256354134104,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "3c09d63c8739087b853b07a52ebf8dc040c726772a638bec66064ee81dbc99d1",
+      "PDF_SHA256": "a87c9dcaa6cbd74eca32be5b51cd0d70278dda26f978bfb42b8178162cf66f8c",
+      "export_QA_SHA256": "6a811c32e0dd381f42c12a4dca51fbeed02fc134d3bf25eef090b7454d9e34c0"
+    },
+    {
+      "canvas": "Fig_7",
+      "native_canvas_mm": [
+        190.0,
+        200.0
+      ],
+      "export_mm": [
+        184.40436880873762,
+        181.9490305647278
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.27755261975290546,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "a8efeec97462e229c8a3f05af4e80ca043ef46b1fd8de01351b901b1e403f704",
+      "PDF_SHA256": "0f39dd1d2ef9cd1cbc7256f694d67d63aa6c9a055fe13a5921b867546803c99f",
+      "export_QA_SHA256": "030bc4528f9e27f05b7d35904d97f3d330ffa3d61b87cdf3aac1352f57195c70"
+    },
+    {
+      "canvas": "Fig_7_a",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.6986707306748,
+        92.92185251037169
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.047815534298082774,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "c1b67e11e9adc84021de2b2574354ebb84170e9e79a729026ef07cec56a902eb",
+      "PDF_SHA256": "d2859066d31056c86b7c6ad2366e141a401299789ac79233b4d21c4b5c5485c0",
+      "export_QA_SHA256": "c0b84488cf9d0394ff6d71e3f89b347163d9a4c5a2fd6e2f384eff3a4a63fbc7"
+    },
+    {
+      "canvas": "Fig_7_b",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.6986707306748,
+        92.92185251037169
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.047815534298082774,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "be3f1e46068f5fd313bd7a7fd1a7c7c05cb782df67fe00589bcf7f82df59f2b1",
+      "PDF_SHA256": "ddca2833d801928bcde81a74d8445de0b032ef64b3d9e48dba5003a2f1349d28",
+      "export_QA_SHA256": "1d969bd11b97775a19d4e975fb63ef664d55ef2cd18907d536a2f3762e267e26"
+    },
+    {
+      "canvas": "Fig_7_c",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.61400389467445,
+        92.92185251037169
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.155631525747842,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "6fdd1e2e07b90b40a21a7bc630f7ab2181a2493b61d192dddb761979f39e149f",
+      "PDF_SHA256": "870f7b44b907a6e8c9872dc2d2b134013bd7b1f9dc962b0edf6cf2687408c09a",
+      "export_QA_SHA256": "d616aae2c117bef162e9f4d0f74b5e5c176ba6ff902e1dcaabbfb0b2faf67d3e"
+    },
+    {
+      "canvas": "Fig_7_d",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.61400389467445,
+        92.92185251037169
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.155631525747842,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "4af899be749a0ceaf46894fc3f526be44429cf0b4b6d5093351ccc352ed5d058",
+      "PDF_SHA256": "3165f5ae42aecdfb0cc0492cc5c29b9eb01993d661cdc9eec76a2c7e0a64da6f",
+      "export_QA_SHA256": "c7b4c2d034b606a8bc5eeecad6e5b318857d638947662f94971370cf4081bb53"
+    },
+    {
+      "canvas": "Fig_7_e",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.65633731267462,
+        92.96418592837186
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1267732439248419,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "bc8bf0ee7fa48a4475e21ee05fcf99cb67bac2b4807ee89fcd856c6dc8fad571",
+      "PDF_SHA256": "2995438d0cdd93d2979b3c8eac7eae2709e1d1283eaaa13da077f4c0f4c78f98",
+      "export_QA_SHA256": "b7cad1b93fa0094b04947b883a16219a883f2830be459f0de4d55d20dce68b34"
+    },
+    {
+      "canvas": "Fig_7_f",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.65633731267462,
+        92.96418592837186
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1267732439248419,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "2769f4a275d6957bf5d8a162427d7f0de0643b2505dc9a0f4b4285c68bfa83e2",
+      "PDF_SHA256": "c0272d5cfbc7370eeead898dd60fd39b205c69ebc3441c3128eff96c580ee70c",
+      "export_QA_SHA256": "c117b143e057df1937b309cc0eacbf2c81ed17110a86b8f7efe8c8f237842fd7"
+    },
+    {
+      "canvas": "Fig_S6",
+      "native_canvas_mm": [
+        190.0,
+        200.0
+      ],
+      "export_mm": [
+        178.52002370671408,
+        188.0450427567522
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.23794868248564768,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "0de9b7d1a98f30a355d69063b2ecec2bf74df3004028bba7f1f774b2cddd1b21",
+      "PDF_SHA256": "97132089e2db265324b311df01c53ff037cd04777532610801b92f4ada165978",
+      "export_QA_SHA256": "98b5ab40f6cbf87e605a9b9de63865c1e1c483ea134e5a86e772e7483f45a759"
+    },
+    {
+      "canvas": "Fig_S6_a",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.52933705867412,
+        93.00651934637203
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.12216272231726072,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "a1b47026fec5ce48a1f09633e90be1b4fb9072c95d613877a9558d6d222b74ec",
+      "PDF_SHA256": "01a91e07528c965ce7e9a840b335a822d5b72ea1c007035b0108503c475f64c1",
+      "export_QA_SHA256": "9ef3da4b28fbf297ef58fa53c6d8d06c0964a859e53df6fd3b00246b94453a7e"
+    },
+    {
+      "canvas": "Fig_S6_b",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.44467022267378,
+        93.00651934637203
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.12216272231726072,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "67220711b78d8b329f1149cc87bb3a66d57195efef18c0c56282ef0ea1977f8a",
+      "PDF_SHA256": "5d2b0bdc48747a60e4aa7f51b2dc72a78854c9ea846171bab0c5d407249cfe06",
+      "export_QA_SHA256": "51198969d52f1b59cc68de11dd7eb329f01618d285d584dc160cdb065551d205"
+    },
+    {
+      "canvas": "Fig_S6_c",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.57167047667429,
+        93.09118618237237
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.30931502418212775,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "f7bf23f35daef4530f65fb5274f44b3192d6aa6fa3d7780520d8d558ea04677a",
+      "PDF_SHA256": "07db4897383a561226b280b18b725a6eeb05e9880d7330d8abd4d5649a1926f1",
+      "export_QA_SHA256": "2da6f66da68cb2a1c2dfed1409153ff9a86a05e2ca1175ffa0cc0682d792ba77"
+    },
+    {
+      "canvas": "Fig_S6_d",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.52933705867412,
+        92.96418592837186
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.155631525747842,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "16ad41dbe4b3c23a7723c670d53a6d0206eb25929d6f4cfd310e293b6e64ce33",
+      "PDF_SHA256": "bad1741bf227ec6a55c0483176a447e42fca1538eb01ab8890dd8438dec2795c",
+      "export_QA_SHA256": "7c1e885002d4801c1539fcce93e6745745ebad1657cd4a5d9c4c5fd7a61a085a"
+    },
+    {
+      "canvas": "Fig_S6_e",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.65633731267462,
+        92.92185251037169
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.17156054132836157,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "8494831853c5b39042d3a2b2b5e4ce3c1ddb0f0c424b6bf49165a73e9bd0e6b5",
+      "PDF_SHA256": "171ffae7bf47fd520af659d631d3ead05fbf5c6293dd8b735b87428712909e78",
+      "export_QA_SHA256": "dae8a21c7a95d50ce6a4c11d7f42f7f19de060e1d9254ede11d95d9afa56744d"
+    },
+    {
+      "canvas": "Fig_S6_f",
+      "native_canvas_mm": [
+        180.0,
+        100.0
+      ],
+      "export_mm": [
+        168.65633731267462,
+        93.00651934637203
+      ],
+      "minimum_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.11223686121252521,
+      "all_text_regular": true,
+      "no_palette_or_label_overlap_errors": true,
+      "PNG600dpi": true,
+      "PDF_fonts": [
+        "ELUGPM+ArialMT"
+      ],
+      "PNG_SHA256": "99cee511e3dc23de5e18f49af460d7942ff5b2c57196872628f6d8022cb490ab",
+      "PDF_SHA256": "9d33627080cd9592a30e5d937f37182ce393df000bec721a14577e8b3c058794",
+      "export_QA_SHA256": "05545f6555dcd7ae34f76d2c14a72a0aec34d3406449f5d55bd379b13bbaf035"
+    }
+  ],
+  "public_contents": "Source, documentation, hashes and validation summaries only; no raw records, workbooks, contact fields, manuscripts, figure images or system prediction frames added."
+}

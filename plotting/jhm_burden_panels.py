@@ -23,7 +23,7 @@ def sty(ax,xlabel=None,ylabel=None):
 def national(fig,ss,ctx):
     # Row labels already identify all three methods; a second colour legend
     # would duplicate that information in this paired display.
-    row=ss.subgridspec(1,2,wspace=.14)
+    row=ss.subgridspec(1,2,wspace=.085)
     for j,(target,xlabel) in enumerate([('systems','Exceeding systems (%)'),('people','Associated service population (%)')]):
         ax=fig.add_subplot(row[j])
         for y,(key,label,mk,col) in enumerate(NATIONAL):
@@ -61,12 +61,12 @@ def selection_odds(fig,ss,ctx):
     sty(ax,'Exceedance-odds ratio\n(unmonitored / observed)','Exceeding systems (%)')
 
 def composition(fig,ss,ctx):
-    g=ss.subgridspec(2,1,height_ratios=[.25,1],hspace=.08)
+    g=ss.subgridspec(2,1,height_ratios=[.16,1],hspace=.035)
     inventory=tuple(Line2D([],[],ls='',marker='s',ms=5.5,mfc='white',mec=C[e],mew=1.1) for e in ['systems','people'])
     exceed=tuple(Line2D([],[],ls='',marker='o',ms=5.5,mfc=C[e],mec=INK,mew=.5) for e in ['systems','people'])
     la=fig.add_subplot(g[0]);la.axis('off')
     la.legend([inventory,exceed],['Inventory','Associated with exceedance'],handler_map={tuple:HandlerTuple(ndivide=None,pad=.2)},loc='center',ncol=2,handlelength=2.2,handletextpad=.4,columnspacing=1.25)
-    row=g[1].subgridspec(1,2,wspace=.16)
+    row=g[1].subgridspec(1,2,wspace=.09)
     for j,(target,label) in enumerate([('systems','Share of systems (%)'),('people','Share of people served (%)')]):
         ax=fig.add_subplot(row[j]);d=SHARE[SHARE.estimand==target].set_index('class').loc[CLASSES]
         inventory_share=INVENTORY[INVENTORY.estimand==target].set_index('class').loc[CLASSES].inventory_share_pct
@@ -78,12 +78,12 @@ def composition(fig,ss,ctx):
         sty(ax,label,'System size (people)' if j==0 else None)
 
 def layout5(fig):
-    g=fig.add_gridspec(3,1,height_ratios=[.86,1.0,1.06],left=.065,right=.99,top=.99,bottom=.045,hspace=.12)
-    middle=g[1].subgridspec(1,2,wspace=.20)
+    g=fig.add_gridspec(3,1,height_ratios=[.86,1.0,1.06],left=.065,right=.99,top=.99,bottom=.035,hspace=.050)
+    middle=g[1].subgridspec(1,2,wspace=.095)
     return [g[0],middle[0],middle[1],g[2]]
 
 def size_prevalence(fig,ss,ctx):
-    g=ss.subgridspec(2,1,height_ratios=[.19,1],hspace=.05)
+    g=ss.subgridspec(2,1,height_ratios=[.23,1],hspace=.035)
     hs=[Line2D([],[],ls='',marker=mk,ms=5.5,mfc=C[col],mec=INK,mew=.5,label=label) for label,mk,col in [('Model-assisted','D','ANCHOR (Poisson + PPI++)'),('Model-only','s','plugin')]]
     legend_strip(fig,g[0],hs,2,handlelength=.65,columnspacing=1.2)
     ax=fig.add_subplot(g[1]);d=DOMAIN[DOMAIN.estimand=='systems'].set_index('size_band').loc[CLASSES]
@@ -97,8 +97,8 @@ def size_prevalence(fig,ss,ctx):
     sty(ax,'Exceeding systems (%)','System size (people)')
 
 def layout_s3(fig):
-    g=fig.add_gridspec(3,1,height_ratios=[1.14,.80,1.0],left=.065,right=.99,top=.99,bottom=.045,hspace=.09)
-    top=g[0].subgridspec(1,2,width_ratios=[1.3,1],wspace=.16)
+    g=fig.add_gridspec(3,1,height_ratios=[1.14,.80,1.0],left=.065,right=.99,top=.99,bottom=.035,hspace=.045)
+    top=g[0].subgridspec(1,2,width_ratios=[1.3,1],wspace=.09)
     return [top[0],top[1],g[1],g[2]]
 
 def state_map(fig,ss,ctx):
