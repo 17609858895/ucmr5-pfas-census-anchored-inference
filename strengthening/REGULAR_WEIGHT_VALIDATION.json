@@ -1,0 +1,779 @@
+{
+  "date": "2026-10-31",
+  "scope": "Normal-weight figure-only source update; no statistical reanalysis.",
+  "base_commit": "335425765992daffa60aea70e68f8af17175ad7a",
+  "all_checks_passed": true,
+  "original_numerical_analysis_and_all_aggregate_inputs_unchanged": true,
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 24,
+    "total": 24
+  },
+  "no_training_or_statistical_analysis_rerun": true,
+  "python_source_files_parsed": 97,
+  "source_files": [
+    {
+      "path": "plotting/figkit/figstyle.py",
+      "submission_source": "legacy_support/plotting/figkit/figstyle.py",
+      "source_sha256": "2e20e3404e06d306eee3ac5a6c69bf81166cd418c0fcc77da335752523cdedeb",
+      "release_sha256": "17ec194bbe279a90e690ec05f26abaf5a198948992b7ff04af54e6222ecb8904",
+      "AST_identical": true,
+      "adaptation": "LF line endings only"
+    },
+    {
+      "path": "plotting/generate_refined_figures.py",
+      "submission_source": "legacy_support/plotting/generate_refined_figures.py",
+      "source_sha256": "2587c302adc11f50abc746d7b7094bd0f81de4fe926a50c2b46047424ebdf2d9",
+      "release_sha256": "58c49cfc1ccd01e3e503deba30fbd9f092e8d79f9c93d0e56aa46fa7dd4baa05",
+      "AST_identical": true,
+      "adaptation": "LF line endings only"
+    },
+    {
+      "path": "strengthening/external/render_external_figures.py",
+      "submission_source": "strengthening/external/render_external_figures.py",
+      "source_sha256": "59522b416ee49d3220dca1094208e5c3710d3f2dfac43de71e51c7fe694ce03e",
+      "release_sha256": "59522b416ee49d3220dca1094208e5c3710d3f2dfac43de71e51c7fe694ce03e",
+      "AST_identical": true,
+      "adaptation": "Exact frozen source copy"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/figstyle.py",
+      "submission_source": "strengthening/method/figure_helpers/figkit/figstyle.py",
+      "source_sha256": "d16d932e2ae1639ac4e02d43d5e92804388fe7ac5fca2f63382476a2fa48d6d2",
+      "release_sha256": "d16d932e2ae1639ac4e02d43d5e92804388fe7ac5fca2f63382476a2fa48d6d2",
+      "AST_identical": true,
+      "adaptation": "Exact frozen source copy"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/publication_helpers/ml_publication_style.py",
+      "submission_source": "strengthening/method/figure_helpers/figkit/publication_helpers/ml_publication_style.py",
+      "source_sha256": "dda332214c3e9ec119deb3c35bc586d2291b7fa55a6c5b3cc74182a2c2167ed5",
+      "release_sha256": "dda332214c3e9ec119deb3c35bc586d2291b7fa55a6c5b3cc74182a2c2167ed5",
+      "AST_identical": true,
+      "adaptation": "Exact frozen source copy"
+    },
+    {
+      "path": "strengthening/method/render_method_figures.py",
+      "submission_source": "strengthening/method/render_method_figures.py",
+      "source_sha256": "c30c5ed1094906ce241479e9c7c305f49badc514ff32d17f896d81e0956ddff9",
+      "release_sha256": "c30c5ed1094906ce241479e9c7c305f49badc514ff32d17f896d81e0956ddff9",
+      "AST_identical": true,
+      "adaptation": "Exact frozen source copy"
+    },
+    {
+      "path": "strengthening/spatial/audit_spatial_figures.py",
+      "submission_source": "strengthening/spatial/audit_spatial_figures.py",
+      "source_sha256": "9fb5de21b90d3bfc0cbf33c5bb53e0865b9781f0e363382bcf6a9192bad1c757",
+      "release_sha256": "9fb5de21b90d3bfc0cbf33c5bb53e0865b9781f0e363382bcf6a9192bad1c757",
+      "AST_identical": true,
+      "adaptation": "Exact frozen source copy"
+    },
+    {
+      "path": "strengthening/spatial/render_spatial_figures.py",
+      "submission_source": "strengthening/spatial/render_spatial_figures.py",
+      "source_sha256": "0c87b70f0a08f96c718847f195f33eed0ebac85594a562337d591f429d03d97e",
+      "release_sha256": "0c87b70f0a08f96c718847f195f33eed0ebac85594a562337d591f429d03d97e",
+      "AST_identical": true,
+      "adaptation": "Exact frozen source copy"
+    }
+  ],
+  "figure_canvases": 36,
+  "PNG_PDF_file_count": 72,
+  "all_36_PNGs_pixel_identical_to_frozen_regular_weight_submission": true,
+  "all_PDFs_have_no_bold_font_names_or_spans": true,
+  "all_PNGs_600_dpi": true,
+  "author_metadata": "CHONG LIU",
+  "largest_alignment_residual_pt": 0.3323567639917635,
+  "native_minimum_font_pt": 12.0,
+  "style_audits": [
+    {
+      "canvas": "Fig_2",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.24376131478107552
+    },
+    {
+      "canvas": "Fig_2_a",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.08210691790320479
+    },
+    {
+      "canvas": "Fig_2_b",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.17673808853056733
+    },
+    {
+      "canvas": "Fig_2_c",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.13048046659788756
+    },
+    {
+      "canvas": "Fig_S4",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.33122526116710177
+    },
+    {
+      "canvas": "Fig_S4_a",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.18052478153948565
+    },
+    {
+      "canvas": "Fig_S4_b",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.18052478153948565
+    },
+    {
+      "canvas": "Fig_S4_c",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.0734682304373574
+    },
+    {
+      "canvas": "Fig_S4_d",
+      "min_font_pt": 12.5,
+      "alignment_max_residual_pt": 0.12981603719274673
+    },
+    {
+      "canvas": "Fig_S4_e",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.17972108377390356
+    },
+    {
+      "canvas": "Fig_S4_f",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.08129329347639958
+    },
+    {
+      "canvas": "Fig_6",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1935152030264976
+    },
+    {
+      "canvas": "Fig_6_a",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.0998509403978461
+    },
+    {
+      "canvas": "Fig_6_b",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1372400584984895
+    },
+    {
+      "canvas": "Fig_6_c",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.09485401633594531
+    },
+    {
+      "canvas": "Fig_S5",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.25316802217547385
+    },
+    {
+      "canvas": "Fig_S5_a",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.06682392370727026
+    },
+    {
+      "canvas": "Fig_S5_b",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.06682392370727026
+    },
+    {
+      "canvas": "Fig_S5_c",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1941333559979745
+    },
+    {
+      "canvas": "Fig_S5_d",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1941333559979745
+    },
+    {
+      "canvas": "Fig_S5_e",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.08622593813652964
+    },
+    {
+      "canvas": "Fig_S5_f",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.16828239504834697
+    },
+    {
+      "canvas": "Fig_7",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2454009546769046
+    },
+    {
+      "canvas": "Fig_7_a",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.047815534298082774
+    },
+    {
+      "canvas": "Fig_7_b",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.047815534298082774
+    },
+    {
+      "canvas": "Fig_7_c",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.155631525747842
+    },
+    {
+      "canvas": "Fig_7_d",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.155631525747842
+    },
+    {
+      "canvas": "Fig_7_e",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1267732439248419
+    },
+    {
+      "canvas": "Fig_7_f",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1267732439248419
+    },
+    {
+      "canvas": "Fig_S6",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.3323567639917635
+    },
+    {
+      "canvas": "Fig_S6_a",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1012785536817632
+    },
+    {
+      "canvas": "Fig_S6_b",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1012785536817632
+    },
+    {
+      "canvas": "Fig_S6_c",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.2105128699586912
+    },
+    {
+      "canvas": "Fig_S6_d",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.155631525747842
+    },
+    {
+      "canvas": "Fig_S6_e",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.1267732439248419
+    },
+    {
+      "canvas": "Fig_S6_f",
+      "min_font_pt": 12.0,
+      "alignment_max_residual_pt": 0.08037381419260896
+    }
+  ],
+  "figure_checks": [
+    {
+      "file": "Fig_2/Fig_2.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "ee776ba4ad85264c056c4043a88a865de44ec4f43a2a944ec6ad90a0386c8db2",
+      "pdf_sha256": "034f536fc5460135f8fec5a28c1085d9419526d98965cd68e6d2618fad801c0a"
+    },
+    {
+      "file": "Fig_2/subfigures/Fig_2_a.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "9f956245f9b93b9bf3acc167f4c44a66135499f3de9362931149500f77a324c1",
+      "pdf_sha256": "38a7c818158011508a8d5e6881864b7b282b96f3d935436a181fcae5edad7462"
+    },
+    {
+      "file": "Fig_2/subfigures/Fig_2_b.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "daadf5bb1b1f1f0d473cb4986dfdd11cf01972a9d2807e14f01902b6944ab122",
+      "pdf_sha256": "0105b31b5c3c73debb32079ab3be5517fefcc8d8150162757510b97071210a41"
+    },
+    {
+      "file": "Fig_2/subfigures/Fig_2_c.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "56307810ef1e71cb32d0a34afd17b7f403422799f7ab5bda91ad04ebc8138fa7",
+      "pdf_sha256": "dc258ab2c4352b67dd14b578ccf2b6ca2cae0d7fa66a32375055bba25691be02"
+    },
+    {
+      "file": "Fig_S4/Fig_S4.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "2b95b97c21af68dcaf563d5736e84eb361e2ae23439784396b41bc476f8544e3",
+      "pdf_sha256": "30160d537a135f648daebb6b011e6fcd888ffffc553f4e8a39e46c5acde0b6cc"
+    },
+    {
+      "file": "Fig_S4/subfigures/Fig_S4_a.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "65257354ad5b9a118c6b070d4c9582549f9943091c8618ee312c967af870341b",
+      "pdf_sha256": "9aad1256828d2c62955ca0fcedb52c18f358320b098907cf7479e6f92fc5ed86"
+    },
+    {
+      "file": "Fig_S4/subfigures/Fig_S4_b.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "d009620a80520fde0dff45b199bbf9d14a5019f279208e9389d95510eb75938f",
+      "pdf_sha256": "4bfcdbe08c17cb138382797ced5fca57abde481f250ae6d9bdbb409bae0db61a"
+    },
+    {
+      "file": "Fig_S4/subfigures/Fig_S4_c.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "0a23bdb1e537902c5a05536886cd55963785c564d88dbd4bf2dc815b1b837a0e",
+      "pdf_sha256": "2ab56e046ac47e11f777eb6714fbfa7822a6732485a63600464d087f4f6a3d90"
+    },
+    {
+      "file": "Fig_S4/subfigures/Fig_S4_d.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "b193e83c67bac38ee3900841ed580670246dd5b585fbc710a89f2226bcbe9fc0",
+      "pdf_sha256": "9da924e0f3abc88714f10de329b55097a905360db3d8a715f64111dec6ca48c1"
+    },
+    {
+      "file": "Fig_S4/subfigures/Fig_S4_e.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "e8350a237c3d826e4c3dd8a796cf1489f071b481748a1da5a02792d8535ad045",
+      "pdf_sha256": "7adddac5fa87a4d0afad39a7629e1c640bde74a8f6ac3db35df6c5230be79b74"
+    },
+    {
+      "file": "Fig_S4/subfigures/Fig_S4_f.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "e48526d381444377d0a5d86913ad960ac025ae3d44e9918edc73d14dddca4fbe",
+      "pdf_sha256": "b7f6720e4c0b925d0fe30526a31b7d36f8bba16a541d12a50c87acc081b587ce"
+    },
+    {
+      "file": "Fig_6/Fig_6.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "64b0c60258f0820a7df42f8133d42aee74c2615dadf82fa921f88efc553926c3",
+      "pdf_sha256": "43a17a4a445bd429ee558d183b34eb96f3d3be84cbfa9e0bc964886131b05e09"
+    },
+    {
+      "file": "Fig_6/subfigures/Fig_6_a.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "f86624e98bcb1e3020772eb07045c8c72cf3ebf53d8158b1d91c3a4f7b7fd145",
+      "pdf_sha256": "6fe469fc56c8aa8e4e53af2335e6f5395e8e8bb78a241cec5894efaa2400e26a"
+    },
+    {
+      "file": "Fig_6/subfigures/Fig_6_b.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "b8aeee113cd7d59288ab49cb2fd13e6f274f315c79fbf620bb92381592a43c60",
+      "pdf_sha256": "83b6bb7a55f1d0c0b1ea8ba1647365004d7ac819b0c5f81b8dd9082bc3f5e3d0"
+    },
+    {
+      "file": "Fig_6/subfigures/Fig_6_c.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "2a452e2ae2d7d86b0f860bbc94b219dc3bf29f77b9cc175cea6d5e127732ea5b",
+      "pdf_sha256": "06ee4be75c9f355329b3b5b5b6d8804c9fe1bcf840bb04bc20d097442710afb3"
+    },
+    {
+      "file": "Fig_S5/Fig_S5.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "c518654d52e17c562494a7863732fed5a7c10ffbd21c3832ad4e5d5c9395808f",
+      "pdf_sha256": "827ae9d84240ac8d3e6fe8d66a530de29e1ef145cd527e8cfb4a8387ce94bebd"
+    },
+    {
+      "file": "Fig_S5/subfigures/Fig_S5_a.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "e2e8622188eb89a1f5c5ba344c39f6f33afa5b199340ed11c5e89f5566581c49",
+      "pdf_sha256": "19dd5d71bdb648802d06222061f512efde8d61078e1aab80f007de8e7f4f69a1"
+    },
+    {
+      "file": "Fig_S5/subfigures/Fig_S5_b.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "13d0942bc0bee6ae27b353de9529dffce876f08ccfa770eb180d93c1d0249f19",
+      "pdf_sha256": "2271e43ef9059a84905e4274fa5850d3f7bde63135ba17f21a0df317df6ecbe4"
+    },
+    {
+      "file": "Fig_S5/subfigures/Fig_S5_c.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "f672fd3232b091193b22e02abba426cab408aa71f23a64968e667caf8e41ccc7",
+      "pdf_sha256": "4dab51e990f1f7353eebc917ef8c0e962cf54521e60e9a218d528a7396c81d9d"
+    },
+    {
+      "file": "Fig_S5/subfigures/Fig_S5_d.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "34398dcc0adcd9a0752a6862ecc35b499b96815926486f51a805ed645f327084",
+      "pdf_sha256": "768ae3619c3b13afb0b76d456a53dfef2a5019ffdefcbea23fff1c5244eb5759"
+    },
+    {
+      "file": "Fig_S5/subfigures/Fig_S5_e.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "56f9af2685018b001d16d29f330ae32ea514a517e70ee503ffd373b15f0b4225",
+      "pdf_sha256": "e824e1c71c1baff1edb8d914d22ee680891b644064a05bffaf56251bce5fc6e4"
+    },
+    {
+      "file": "Fig_S5/subfigures/Fig_S5_f.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "62aa832257cbc598e043458f30a9e40200c96bd054e376112f22b17b1f4426e3",
+      "pdf_sha256": "699962454cb72498b3b47e08247fcb6fde5d281f45228a7fc60130673e90eb2e"
+    },
+    {
+      "file": "Fig_7/Fig_7.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "b95b039e9dab8617a94aa31853f3f7f13c0b34b1a3fa20518a7d6ba915094f60",
+      "pdf_sha256": "5eb9992b8cb1756c58e36d83b8b8d17811d7f41d7430242827bae8cee747ace4"
+    },
+    {
+      "file": "Fig_7/subfigures/Fig_7_a.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "365e945d50e2fba27977ee3acaa1fed44a5cb0d7d1805f556a659758d86c2a97",
+      "pdf_sha256": "e3f1c4dbd40fe91e4b43a4bfeadff497554fd3d907314330b65d99bb7d1f27ca"
+    },
+    {
+      "file": "Fig_7/subfigures/Fig_7_b.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "e2f887225de2f120ec0cb4acfeeaa876f6773c841cde083c9c110a7390060c92",
+      "pdf_sha256": "810e8cf04c1ec37c6dc2adf272e9e2514030a1d5f6478e42474b9eda9c867b58"
+    },
+    {
+      "file": "Fig_7/subfigures/Fig_7_c.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "3074bda6df30ca4125a4704491a4ca635442d9c3d750a731bb495e5038062287",
+      "pdf_sha256": "106abef78b017351ef1ccd26d022aee988c1e049850f48b4325071d617c01bae"
+    },
+    {
+      "file": "Fig_7/subfigures/Fig_7_d.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "f8ac04906840c95262a98a632e10f54c046b74fb808148f2631d1ef33ccacc78",
+      "pdf_sha256": "f952cc5521370f2816ecbefd8487f95a410c2df1e2bfba2cac101272e002dfb2"
+    },
+    {
+      "file": "Fig_7/subfigures/Fig_7_e.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "bab3b38052aa5c8a07899dd12a15cf87028ed272669996aaa65d2876b178b639",
+      "pdf_sha256": "73cff8d3b3c84eb75144de58297e48e48fcd91b65b6a6faf30153e71f38b22bd"
+    },
+    {
+      "file": "Fig_7/subfigures/Fig_7_f.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "1f3bbea58f3bbc8bc4336bde91fc3f34bf78c3dd9d297c0ff74e461956100aa4",
+      "pdf_sha256": "2ee464e3d1a5cf928984228cb1e5ad8ad17c31441f97e15ecb0f11b7365e2f0a"
+    },
+    {
+      "file": "Fig_S6/Fig_S6.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "62ced090c61bea1ed3a8404862c4dc7ff9e717109706c8b2cb1dc6820d24940f",
+      "pdf_sha256": "b848018ee8888d27472ead34c8f176aa11adc30175cae67ba11c0e3bcbfcaa2c"
+    },
+    {
+      "file": "Fig_S6/subfigures/Fig_S6_a.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "b69cdf5b49129034d9bc863617080d7d07bc7b2774746d3dc5b347eb487296cd",
+      "pdf_sha256": "31bcdbfa7a8cfefb7fd8feb1c4c0ef9ac335a733adedd08051a75d980a5c2876"
+    },
+    {
+      "file": "Fig_S6/subfigures/Fig_S6_b.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "e0133562769dd443f2b2c8cb0cbb7e3ee15d5e77039d4e4942909fe1d9d9a0ae",
+      "pdf_sha256": "b344a435d2d2d92c07a810383a8e57601f3ae9d48ddd1df7ed04ca3c4ca2dfc4"
+    },
+    {
+      "file": "Fig_S6/subfigures/Fig_S6_c.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "2445820e45ba35561ff5fb9c4ce190d6df5189c7e732948147d7945a19da7795",
+      "pdf_sha256": "e459dbe5a6640ecb23ee215e176938c92fce84465d6049b9ee7b6d049d1cfa08"
+    },
+    {
+      "file": "Fig_S6/subfigures/Fig_S6_d.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "a3ddad30d33c41fda652533860f79f48a121bbde79bca7918d3304b76cdb4ee0",
+      "pdf_sha256": "9969e139ead08933e5881419addf0e7661eae0e6fb9050d358b5b1ecf6af5137"
+    },
+    {
+      "file": "Fig_S6/subfigures/Fig_S6_e.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "f6f24adcf24609fa437ea979f03247883cb1a3fc09a4a9d625bb6797dc98f6b2",
+      "pdf_sha256": "5baf5e47fbb7c10b24f61f1032e03c859a43352f600e940e56b88e54097af11b"
+    },
+    {
+      "file": "Fig_S6/subfigures/Fig_S6_f.png",
+      "pixels_identical_to_frozen_submission": true,
+      "regular_PDF_font_names": [
+        "ELUGPM+ArialMT"
+      ],
+      "no_bold_PDF_spans": true,
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "png_sha256": "547242aeec27e88d28c002837f2f396b9f7141e6cd0d439f8a617800777d5cd4",
+      "pdf_sha256": "f338a1e37782d990270f6ee0f3d05dc1a7eb12b682946d7998e0e1e751d5f52e"
+    }
+  ],
+  "immutable_source_and_aggregate_file_count": 89,
+  "data_privacy": "Only existing bounded aggregate inputs used for redraw; no raw records, manuscripts, contact workbooks or prediction frames added.",
+  "evidence": "This revision is verified independently of earlier bold-tick reports."
+}

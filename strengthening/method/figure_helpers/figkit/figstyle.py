@@ -10,7 +10,7 @@ Composition method ported from the HodgeMap submission kit
   top/bottom and left/right edges (residual < 0.35 pt, reported to figures/qa/*.json);
 - maps keep equal x/y scale: the map row height follows the map aspect and the neighbouring panels
   in that row adopt the same outer height;
-- axis and colorbar ticks use bold weight under the current figure skill; labels have explicit minimum sizes;
+- all figure text uses the user's requested regular weight; labels retain their existing minimum sizes;
 - lowercase regular-weight panel letters (16 pt) sit in the gutter left of each panel's outer bbox,
   checked for overlap;
 - audits: palette compliance of rendered artists, legend/colour-bar overlaps with labels, alignment;
@@ -108,9 +108,9 @@ def _normalise_text(fig):
                 t.set_color(INK)
     for ax in fig.findobj(Axes):
         for label in ax.get_xticklabels()+ax.get_yticklabels():
-            label.set_fontweight('bold');label.set_fontsize(max(12.5,label.get_fontsize()))
+            label.set_fontweight('normal');label.set_fontsize(max(12.5,label.get_fontsize()))
         for label in [ax.xaxis.label,ax.yaxis.label]:
-            label.set_fontweight('bold');label.set_fontsize(max(13.5,label.get_fontsize()))
+            label.set_fontweight('normal');label.set_fontsize(max(13.5,label.get_fontsize()))
         if ax.axison:
             # Numeric/category axes only; maps have no tick labels.
             ax.tick_params(which='major',length=4.5,width=1.0,bottom=True,left=True)
@@ -122,13 +122,13 @@ def refine_layout(fig):
     _normalise_text(fig)
     for a in fig.findobj(Axes):
         for label in a.get_xticklabels()+a.get_yticklabels():
-            label.set_fontweight('bold')
+            label.set_fontweight('normal')
     recs = getattr(fig, "_panel_records", [])
     for r in recs:
         for a in r["axes"]:
             a.set_axes_locator(None)
             for label in a.get_xticklabels() + a.get_yticklabels():
-                label.set_fontweight("bold")
+                label.set_fontweight("normal")
     pt = np.tile(fig.get_size_inches(), 2) * 72
     # maps: width fills the cell, height follows the aspect; same-row panels adopt that outer height
     for r in recs:
@@ -252,12 +252,21 @@ def audit_style(fig):
                 if c[3] > 0 and not any(np.allclose(c[:3], o, atol=2e-3) for o in ok):
                     bad.append(dict(artist=type(art).__name__, getter=g, rgb=[round(v, 3) for v in c[:3]]))
     txt = [t for t in fig.findobj(Text) if t.get_visible() and t.get_text()]
+    weights=[dict(text=t.get_text(),weight=t.get_fontweight(),size_pt=t.get_fontsize(),family=t.get_fontfamily()) for t in txt]
+    math_bold=[];unicode_bold=[]
+    import unicodedata
+    for t in txt:
+        if re.search(r'\\(?:mathbf|boldsymbol|boldmath|mathbfit|bm|bf|bold)\b',t.get_text()):math_bold.append(t.get_text())
+        for char in t.get_text():
+            if 'BOLD' in unicodedata.name(char,''):unicode_bold.append(dict(text=t.get_text(),character=char,name=unicodedata.name(char)))
+    nonnormal=[v for v in weights if v['weight'] not in ('normal','regular',400)]
     return dict(unexpected_colours=bad[:20], n_unexpected=len(bad),
                 min_font_pt=min(t.get_fontsize() for t in txt) if txt else None,
-                bold_tick_labels=all(t.get_fontweight() in ("bold", 700) for a in fig.findobj(Axes) for t in a.get_xticklabels()+a.get_yticklabels() if t.get_visible()),
+                normal_tick_labels=all(t.get_fontweight() in ('normal','regular',400) for a in fig.findobj(Axes) for t in a.get_xticklabels()+a.get_yticklabels() if t.get_visible()),
                 tick_axes_including_children=len(fig.findobj(Axes)),
-                regular_text=all(t.get_fontweight() in ("normal", 400) for t in txt),
-                nonregular_text=[t.get_text() for t in txt if t.get_fontweight() not in ("normal",400)])
+                regular_text=not nonnormal,all_text_normal=not nonnormal and not math_bold and not unicode_bold,
+                actual_text_object_count=len(weights),text_weight_inventory=weights,
+                nonregular_text=nonnormal,math_bold_commands=math_bold,unicode_bold_glyphs=unicode_bold)
 
 
 def audit_categorical_artists(fig):

@@ -19,12 +19,32 @@ sys.path.insert(0,str(kit));sys.path.insert(0,str(kit/'figkit'))
 import publication_layout as layout
 import figstyle as fs
 from publication_layout import plt,style_axis
+from matplotlib.text import Text
 
 DEL=paths.WORKDIR
 layout.FIG=paths.FIGURES;fs.QA=P/'figure_QA';fs.MIN_PT=12;fs.LETTER_PT=12
-plt.rcParams.update({'font.size':12,'axes.labelsize':13.5,'axes.labelweight':'bold',
+plt.rcParams.update({'font.size':12,'font.weight':'normal','axes.labelsize':13.5,'axes.labelweight':'normal',
  'xtick.labelsize':12.5,'ytick.labelsize':12.5,'legend.fontsize':12,'legend.title_fontsize':12,
  'lines.linewidth':1.6,'axes.linewidth':1.0,'savefig.dpi':600})
+
+# User preference for this isolated revision: every figure Text uses regular
+# weight. Apply before layout calibration and audit every object after export.
+_source_export=fs._export
+def export_regular_text(fig,folder,stem,letters_on):
+    for obj in fig.findobj(Text):obj.set_fontweight('normal')
+    report=_source_export(fig,folder,stem,letters_on)
+    objects=fig.findobj(Text)
+    bad=[obj.get_text() for obj in objects if obj.get_fontweight() not in ('normal',400)]
+    assert not bad,(stem,bad)
+    report['all_Text_objects_normal']=True
+    report['all_Text_object_count']=len(objects)
+    report['font_weight_inventory']=sorted({str(obj.get_fontweight()) for obj in objects})
+    target=fs.QA/(stem+'.json');audit=json.loads(target.read_text(encoding='utf-8'))
+    audit['style'].update(report)
+    audit['text_objects']=[{'text':obj.get_text(),'weight':str(obj.get_fontweight()),'size_pt':obj.get_fontsize(),'visible':obj.get_visible()} for obj in objects]
+    target.write_text(json.dumps(audit,indent=2),encoding='utf-8')
+    return report
+fs._export=export_regular_text
 PAL=fs.get_palette('nature_new');INK=fs.INK
 C={'observed':PAL[0],'frozen':PAL[1],'ratio':PAL[4],'available':PAL[1],'cold':PAL[4],'below4':PAL[1],'detect4':PAL[0]}
 fs.validate_series_colors('nature_new',C)

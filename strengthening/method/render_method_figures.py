@@ -12,7 +12,7 @@ from matplotlib.lines import Line2D
 from matplotlib.ticker import FuncFormatter,NullLocator
 
 from strengthening import paths
-pre=argparse.ArgumentParser(add_help=False);pre.add_argument('--data-root',type=Path);pre.add_argument('--output-root',type=Path)
+pre=argparse.ArgumentParser(add_help=False);pre.add_argument('--data-root',type=Path);pre.add_argument('--output-root',type=Path);pre.add_argument('--qa-root',type=Path)
 location_args,remaining_args=pre.parse_known_args();sys.argv=[sys.argv[0],*remaining_args]
 P=Path(__file__).resolve().parent;ROOT=paths.WORKDIR
 DATA=location_args.data_root.resolve() if location_args.data_root else paths.METHOD_RESULTS
@@ -26,12 +26,12 @@ from audit_palette_usage import validate_series_colors
 from matplotlib import pyplot as plt
 
 DEL=location_args.output_root.resolve() if location_args.output_root else paths.WORKDIR;FIG=DEL/'figures' if location_args.output_root else paths.FIGURES
-QA=DATA/'figure_QA';QA.mkdir(exist_ok=True)
-FDS=DATA/'figure_source_data';FDS.mkdir(exist_ok=True)
+QA=location_args.qa_root.resolve() if location_args.qa_root else paths.WORKDIR/'figure_QA_regular';QA.mkdir(parents=True,exist_ok=True)
+FDS=QA/'figure_source_data';FDS.mkdir(parents=True,exist_ok=True)
 fs.OUTPUT=DEL;fs.FIG=FIG;fs.QA=QA;fs.MIN_PT=12;fs.LETTER_PT=12
 layout.OUTPUT=DEL;layout.FIG=FIG
 configure_publication_style()
-plt.rcParams.update({'font.size':12,'axes.labelsize':13.5,'axes.labelweight':'bold','xtick.labelsize':12.5,'ytick.labelsize':12.5,'legend.fontsize':12,'legend.title_fontsize':12,'axes.linewidth':1.,'lines.linewidth':1.4,'savefig.dpi':600})
+plt.rcParams.update({'font.size':12,'font.weight':'normal','axes.labelsize':13.5,'axes.labelweight':'normal','axes.titleweight':'normal','xtick.labelsize':12.5,'ytick.labelsize':12.5,'legend.fontsize':12,'legend.title_fontsize':12,'axes.linewidth':1.,'lines.linewidth':1.4,'savefig.dpi':600})
 PAL=get_palette('nature_new');INK=fs.INK
 POLICIES=['srs_full_hajek','neyman5_full_difference','pps_full_hajek','system_anchor_two_phase','uniform20','dual_full','pps_two_phase_hajek']
 LABELS=['SRS full','Neyman† full','PPS full','System 20%','Dual 20%','Dual full','PPS 20%']

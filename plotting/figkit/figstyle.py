@@ -91,9 +91,9 @@ def _normalise_text(fig):
                 t.set_color(INK)
     for ax in fig.findobj(Axes):
         for label in ax.get_xticklabels()+ax.get_yticklabels():
-            label.set_fontweight('bold');label.set_fontsize(max(12.5,label.get_fontsize()))
+            label.set_fontweight('normal');label.set_fontsize(max(12.5,label.get_fontsize()))
         for label in [ax.xaxis.label,ax.yaxis.label]:
-            label.set_fontweight('bold');label.set_fontsize(max(13.5,label.get_fontsize()))
+            label.set_fontweight('normal');label.set_fontsize(max(13.5,label.get_fontsize()))
         if ax.axison:
             # Numeric/category axes only; maps have no tick labels.
             ax.tick_params(which='major',length=4.5,width=1.0,bottom=True,left=True)
@@ -105,13 +105,13 @@ def refine_layout(fig):
     _normalise_text(fig)
     for a in fig.findobj(Axes):
         for label in a.get_xticklabels()+a.get_yticklabels():
-            label.set_fontweight('bold')
+            label.set_fontweight('normal')
     recs = getattr(fig, "_panel_records", [])
     for r in recs:
         for a in r["axes"]:
             a.set_axes_locator(None)
             for label in a.get_xticklabels() + a.get_yticklabels():
-                label.set_fontweight("bold")
+                label.set_fontweight("normal")
     pt = np.tile(fig.get_size_inches(), 2) * 72
     # maps: width fills the cell, height follows the aspect; same-row panels adopt that outer height
     for r in recs:
@@ -237,7 +237,7 @@ def audit_style(fig):
     txt = [t for t in fig.findobj(Text) if t.get_visible() and t.get_text()]
     return dict(unexpected_colours=bad[:20], n_unexpected=len(bad),
                 min_font_pt=min(t.get_fontsize() for t in txt) if txt else None,
-                bold_tick_labels=all(t.get_fontweight() in ("bold", 700) for a in fig.findobj(Axes) for t in a.get_xticklabels()+a.get_yticklabels() if t.get_visible()),
+                regular_tick_labels=all(t.get_fontweight() in ("normal", 400) for a in fig.findobj(Axes) for t in a.get_xticklabels()+a.get_yticklabels() if t.get_visible()),
                 tick_axes_including_children=len(fig.findobj(Axes)),
                 regular_text=all(t.get_fontweight() in ("normal", 400) for t in txt),
                 nonregular_text=[t.get_text() for t in txt if t.get_fontweight() not in ("normal",400)])

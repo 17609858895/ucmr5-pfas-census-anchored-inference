@@ -17,10 +17,12 @@ layout.OUTPUT=WORK;layout.FIG=WORK/'figures'
 from f_common import *
 import f02_fig2_transfer_bias as original
 from matplotlib.legend_handler import HandlerTuple
+from matplotlib.text import Text
 from audit_palette_usage import validate_series_colors
 fs.MIN_PT=12;fs.LETTER_PT=12
 plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','DejaVu Sans'],'font.size':12,
-                    'axes.labelsize':13.5,'axes.labelweight':'bold','xtick.labelsize':12.5,'ytick.labelsize':12.5,
+                    'axes.labelsize':13.5,'axes.labelweight':'normal','font.weight':'normal',
+                    'axes.titleweight':'normal','xtick.labelsize':12.5,'ytick.labelsize':12.5,
                     'legend.fontsize':12,'legend.title_fontsize':12,'axes.linewidth':.9,'lines.linewidth':1.6,'savefig.dpi':600})
 COL={'available':PAL[1],'cold':PAL[4],'attributes':C['m_sdwis'],'geography':C['m_geo'],'neighbours':C['m_nb'],'systems':C['systems'],'people':C['people']}
 validate_series_colors('nature_new',COL)
@@ -29,10 +31,23 @@ B=pd.read_csv(P/'burden_model_stress.csv')
 CURVES=pd.read_csv(P/'plot_roc_curves.csv')
 BUFFER=pd.read_csv(P/'buffer_matched_metrics.csv')
 
+# Record actual artists after the shared layout pass; no global helper is edited.
+_base_audit_style=fs.audit_style
+def audit_regular_spatial_text(fig):
+    report=_base_audit_style(fig)
+    actual=[t for t in fig.findobj(Text) if t.get_visible() and t.get_text()]
+    report['actual_text_styles']=[dict(text=t.get_text(),weight=t.get_fontweight(),
+        size_pt=t.get_fontsize(),family=t.get_fontfamily()) for t in actual]
+    report['all_actual_text_normal']=all(t.get_fontweight() in ('normal',400) for t in actual)
+    report['bold_math_commands']=[t.get_text() for t in actual
+        if any(cmd in t.get_text() for cmd in [r'\mathbf',r'\boldsymbol',r'\mathbfit'])]
+    return report
+fs.audit_style=audit_regular_spatial_text
+
 def sty(ax,x=None,y=None):
     style_axis(ax,xlabel=x,ylabel=y,tick_size=12.5,label_size=13.5)
     ax.tick_params(length=3.5,width=.9)
-    for t in ax.get_xticklabels()+ax.get_yticklabels():t.set_weight('bold')
+    for t in ax.get_xticklabels()+ax.get_yticklabels():t.set_weight('normal')
 
 def information_handles():
     return [Line2D([],[],ls='',marker='o',mfc=COL['available'],mec=INK,mew=.6,ms=5.5,label='Available layer'),

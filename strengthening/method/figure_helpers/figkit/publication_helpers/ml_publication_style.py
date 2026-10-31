@@ -1,8 +1,8 @@
 """
-Shared publication figure helpers for Nature-style ML figures.
+Shared publication figure helpers with user-requested regular figure text.
 
 Use these helpers in every generated figure script unless the journal requires
-a different style. They enforce visible tick marks, bold readable tick labels,
+a different style. They enforce visible tick marks, regular readable tick labels,
 high-resolution export, and per-panel subfigure export.
 """
 
@@ -26,7 +26,9 @@ def configure_publication_style() -> None:
             "figure.dpi": 160,
             "savefig.dpi": 600,
             "axes.labelsize": 15.5,
-            "axes.labelweight": "bold",
+            "font.weight": "normal",
+            "axes.labelweight": "normal",
+            "axes.titleweight": "normal",
             "xtick.labelsize": 12.5,
             "ytick.labelsize": 12.5,
             "legend.fontsize": 11.5,
@@ -74,16 +76,16 @@ def style_axis(ax, xlabel: str | None = None, ylabel: str | None = None,
         tick.tick1line.set_markersize(7.2)
         tick.tick1line.set_markeredgewidth(1.55)
     for label in ax.get_xticklabels() + ax.get_yticklabels():
-        label.set_fontweight("bold")
+        label.set_fontweight("normal")
         label.set_fontsize(tick_size)
-    ax.xaxis.label.set_fontweight("bold")
-    ax.yaxis.label.set_fontweight("bold")
+    ax.xaxis.label.set_fontweight("normal")
+    ax.yaxis.label.set_fontweight("normal")
     ax.xaxis.label.set_size(label_size)
     ax.yaxis.label.set_size(label_size)
     if xlabel is not None:
-        ax.set_xlabel(xlabel, fontweight="bold", fontsize=label_size, labelpad=7)
+        ax.set_xlabel(xlabel, fontweight="normal", fontsize=label_size, labelpad=7)
     if ylabel is not None:
-        ax.set_ylabel(ylabel, fontweight="bold", fontsize=label_size, labelpad=7)
+        ax.set_ylabel(ylabel, fontweight="normal", fontsize=label_size, labelpad=7)
 
 
 def numeric_ticks(ax, x: bool = True, y: bool = True, n: int = 5) -> None:

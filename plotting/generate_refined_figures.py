@@ -27,7 +27,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 fs.MIN_PT=12
 fs.LETTER_PT=12
-plt.rcParams.update({'font.size':12,'axes.labelsize':13.5,'axes.labelweight':'bold',
+plt.rcParams.update({'font.size':12,'axes.labelsize':13.5,'axes.labelweight':'normal',
  'xtick.labelsize':12.5,'ytick.labelsize':12.5,'legend.fontsize':12,'legend.title_fontsize':12,
  'lines.linewidth':1.6,'axes.linewidth':1.0,'savefig.dpi':600})
 
