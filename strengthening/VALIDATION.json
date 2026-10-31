@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-31",
+  "old_python_files": 49,
+  "old_python_unchanged": true,
+  "unit_tests": {
+    "all_passed": true,
+    "total": 24,
+    "added": 15,
+    "original": 9
+  },
+  "external_pipeline": {
+    "commands": [
+      {
+        "stage": "external-counts",
+        "passed": true
+      },
+      {
+        "stage": "external-source-verify",
+        "passed": true
+      },
+      {
+        "stage": "external-predictions",
+        "passed": true
+      },
+      {
+        "stage": "external-metrics",
+        "passed": true
+      },
+      {
+        "stage": "external-calibration",
+        "passed": true
+      },
+      {
+        "stage": "external-followup",
+        "passed": true
+      },
+      {
+        "stage": "external-calendar",
+        "passed": true
+      },
+      {
+        "stage": "external-sensitivity",
+        "passed": true
+      },
+      {
+        "stage": "external-freeze",
+        "passed": true
+      }
+    ],
+    "comparisons": [
+      {
+        "file": "external_schedule_systems.csv",
+        "rows": 2138,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "calendar_aligned_systems.csv",
+        "rows": 633,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "MI_spacing_sensitivity_systems.csv",
+        "rows": 1084,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "WA_spacing_sensitivity_systems.csv",
+        "rows": 658,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "strict_external_metrics_bootstrap.csv",
+        "rows": 88,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "threshold_duplicate_and_quantization_sensitivity.csv",
+        "rows": 27,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "schedule_sensitivity_metrics.csv",
+        "rows": 44,
+        "all_values_reproduced": true
+      },
+      {
+        "file": "followup_eligibility_selection_summary.csv",
+        "rows": 16,
+        "all_values_reproduced": true
+      }
+    ],
+    "source_only_adaptation": "Statistical formulas/constants unchanged; configured paths, module imports and pure protocol functions used by actual pipeline.",
+    "passed": true
+  },
+  "followup_correction": "Uses min(actual last paired state date,common window end)-366days. MI2248 early-index systems,34/38 vs1235/2210,OR6.7064. WA1639 unchanged. A dedicated executed-helper test covers this boundary.",
+  "spatial_rerun": {
+    "passed": true,
+    "systems": 66395,
+    "fits": 90,
+    "seed_columns_and_ensemble": [
+      "attributes_seed0",
+      "attributes_seed1",
+      "attributes_seed2",
+      "attributes",
+      "geography_seed0",
+      "geography_seed1",
+      "geography_seed2",
+      "geography",
+      "neighbours_seed0",
+      "neighbours_seed1",
+      "neighbours_seed2",
+      "neighbours"
+    ],
+    "predictions_bitwise_equal": true,
+    "scope": "Portable primary region-excluded model rerun; no-ID/calibration/buffer variants were not all refitted for this packaging smoke."
+  },
+  "completion_integration": {
+    "passed": true,
+    "draws": 10,
+    "regimes": [
+      "operational_learned_error"
+    ],
+    "rules": [
+      "R12"
+    ],
+    "budget_full_equivalents": [
+      100
+    ],
+    "settings": 48,
+    "scope": "Software integration only; these reduced Monte Carlo draws do not reproduce the manuscript 1000-draw design validation."
+  },
+  "figure_pixel_reproduction": [
+    {
+      "figure": "Fig_2",
+      "pixel_identical": true
+    },
+    {
+      "figure": "Fig_S4",
+      "pixel_identical": true
+    },
+    {
+      "figure": "Fig_6",
+      "pixel_identical": true
+    },
+    {
+      "figure": "Fig_S5",
+      "pixel_identical": true
+    },
+    {
+      "figure": "Fig_7",
+      "pixel_identical": true
+    },
+    {
+      "figure": "Fig_S6",
+      "pixel_identical": true
+    }
+  ],
+  "not_rerun_for_packaging": [
+    "all coordinate/calibration/buffer model fits",
+    "full1000-draw completion MonteCarlo suite"
+  ],
+  "source_only_checks": {
+    "no_raw_workbooks": true,
+    "no_contact_columns": true,
+    "no_system_level_predictions": true,
+    "all_reference_CSV_at_most_1000_aggregate_rows": true
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.13.1",
+    "sklearn": "1.5.1",
+    "lightgbm": "4.6.0",
+    "statsmodels": "0.14.2",
+    "matplotlib": "3.9.2"
+  },
+  "corrected_followup_portability_rechecked": true
+}

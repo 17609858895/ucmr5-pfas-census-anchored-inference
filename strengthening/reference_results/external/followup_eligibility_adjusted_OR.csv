@@ -1,0 +1,3 @@
+state,n,spatial_blocks,adjusted_OR_detect4,lo,hi,adjustment
+MI,2248,206,8.769203807577952,2.762806288543297,27.83363268634552,"log10 population, system source class, initial-date elapsed years; first date allows 366-day follow-up; 0.5-degree spatial-cluster robust CI; descriptive association"
+WA,1639,128,31.937665290766756,11.06361474842772,92.19540696407607,"log10 population, system source class, initial-date elapsed years; first date allows 366-day follow-up; 0.5-degree spatial-cluster robust CI; descriptive association"

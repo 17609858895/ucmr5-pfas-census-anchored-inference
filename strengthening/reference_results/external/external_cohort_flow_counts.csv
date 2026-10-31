@@ -1,0 +1,12 @@
+state,stage,paired_dates,systems,locations,positive_systems,full_event_cost
+MI,"paired distinct dates, all available",22312,2793,5428,,
+MI,current small-system inventory exact-ID matched,18445,2326,4560,,
+MI,2023-01-01 to 2026-06-30,9522,2316,3516,,
+MI,all UCMR5 PWSIDs excluded,9379,2292,3467,,
+MI,first 2/4 dates within 366 days,3120,1283,1553,25.0,3120.0
+WA,"paired distinct dates, all available",12473,2501,4397,,
+WA,current small-system inventory exact-ID matched,7837,2197,3188,,
+WA,2023-01-01 to 2026-06-30,6617,2158,3071,,
+WA,all UCMR5 PWSIDs excluded,6531,2135,3031,,
+WA,verified eligible per-source type,6508,2131,3022,,
+WA,first 2/4 dates within 366 days,2200,855,1090,84.0,2200.0

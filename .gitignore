@@ -18,3 +18,5 @@ checks/
 *.png
 *.jpg
 *.zip
+!strengthening/reference_results/figure_data/
+!strengthening/reference_results/figure_data/*.csv

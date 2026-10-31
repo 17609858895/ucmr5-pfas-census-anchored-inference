@@ -1,0 +1,8 @@
+strengthening/** text eol=lf
+run_strengthening.py text eol=lf
+run_current_figures.py text eol=lf
+tests/test_strengthening_protocols.py text eol=lf
+STRENGTHENING.md text eol=lf
+requirements-strengthening.txt text eol=lf
+README.md text eol=lf
+DATA_SOURCES.md text eol=lf

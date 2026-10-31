@@ -1,5 +1,7 @@
 # PFAS burden estimates and monitoring priorities
 
+The **31 October 2026 strengthening release** adds fully UCMR5-disjoint Michigan/Washington cohorts, EPA-region information exclusions, schedule/precision/selection diagnostics and variable-probability completion analyses. Use [STRENGTHENING.md](STRENGTHENING.md) and `run_strengthening.py` for the current added analyses and figures. The earlier `s21`/`s22` state checks below are retained historical routines; their mixed endpoint/cohort comparisons are superseded by the new source-verified protocol. The original 49 Python files are preserved.
+
 Core analysis and publication-plotting source for **PFOA and PFOS in small U.S. water systems: Burden estimates and monitoring priorities**.
 
 The code links the August 2026 UCMR5 occurrence-data snapshot to a public-water-system inventory, trains larger-system prediction/error models, estimates weighted small-system burden, compares survey designs and estimators, and evaluates reduced schedules with random full-schedule completion. The two estimands are the share of systems and the share of service population attached to exceeding systems.

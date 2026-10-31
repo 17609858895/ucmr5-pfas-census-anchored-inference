@@ -1,0 +1,432 @@
+{
+  "release": "2026-10-31 independent validation and completion strengthening",
+  "old_python_files_unchanged": 49,
+  "line_endings": "LF for current added source and manifest hashes",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 269,
+      "sha256": "f3f184d3fba22da63c514b84b476fbf4c2e8684aa4916e743326cae6f2811d9c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 268,
+      "sha256": "7d90bc14a8ad513553a59c1b72c006452b891a52575de0d3febca0e19ce2d170"
+    },
+    {
+      "path": "DATA_SOURCES.md",
+      "bytes": 4700,
+      "sha256": "e7113d6be1a81322927535eab387922096ed6e04b4f1b67226753446ead90bc6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8961,
+      "sha256": "ed23434a4fb96b4cad76176f7562845314e74988a451e17a95dc310fc6dd346d"
+    },
+    {
+      "path": "STRENGTHENING.md",
+      "bytes": 13153,
+      "sha256": "4af05d47091fd08fd9dbbdc29a2e7a9073b2acda4e0526a266d9039035f316ab"
+    },
+    {
+      "path": "requirements-strengthening.txt",
+      "bytes": 90,
+      "sha256": "c2beebba99cb746fa5f63445f9c8cad92870528bfdd5ecb72c0ebf611672ed91"
+    },
+    {
+      "path": "run_current_figures.py",
+      "bytes": 2107,
+      "sha256": "76ca12e0584aafeb0e1e2b41a3a08e0203f727b8cb3c362e635a231e7afca986"
+    },
+    {
+      "path": "run_strengthening.py",
+      "bytes": 5643,
+      "sha256": "ee498641e5c496f8b707af9e106e2f26c2289986f826e523168cd875685729f4"
+    },
+    {
+      "path": "strengthening/VALIDATION.json",
+      "bytes": 4443,
+      "sha256": "6e7892e784a1132234da958150241a4c56521d2faa95aeaae38a2fe1fd5e7bc8"
+    },
+    {
+      "path": "strengthening/__init__.py",
+      "bytes": 75,
+      "sha256": "00ffade0504dd493cdd421400403b66e1b5a7cc4f7ee6109e98d62780fc882e5"
+    },
+    {
+      "path": "strengthening/external/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "strengthening/external/additional_external_sensitivity.py",
+      "bytes": 7989,
+      "sha256": "ee191617bd635c7c6dde2444faf56876e7e789b894e0c56935d4ba0acea4a494"
+    },
+    {
+      "path": "strengthening/external/build_external_cohorts.py",
+      "bytes": 9423,
+      "sha256": "6a1208dc7e1a001a19f3b42989cccc34a6c386f451b2df3a51225c18a11e2ef4"
+    },
+    {
+      "path": "strengthening/external/calendar_sensitivity.py",
+      "bytes": 4380,
+      "sha256": "f6dd36bd75d1723daa85dedb8b7c995cf59aa03ba7d943cf2a112d6c8a78fa1b"
+    },
+    {
+      "path": "strengthening/external/calibration_transfer.py",
+      "bytes": 3464,
+      "sha256": "632b4930b0c8f67eb32a0648137111ea3d1a1a57a82634dec0d31752caa5d049"
+    },
+    {
+      "path": "strengthening/external/external_metrics.py",
+      "bytes": 6082,
+      "sha256": "cea66ab05d09ee0cc17c7986c24f6d5d2ab75052326e814debc8c8954f666a54"
+    },
+    {
+      "path": "strengthening/external/followup_selection_diagnostic.py",
+      "bytes": 4513,
+      "sha256": "b5b5c476eeb98bdec2c0eac5a244cdb8834ef355dd653f3fd6eec8cec0457693"
+    },
+    {
+      "path": "strengthening/external/freeze_external_protocol.py",
+      "bytes": 9122,
+      "sha256": "fbe72f8df00c362b41032d9d1b088fdeae437d3d4b431bc91310759dc8638c0b"
+    },
+    {
+      "path": "strengthening/external/metric_core.py",
+      "bytes": 989,
+      "sha256": "86ab0b0b9b4f0a68377947479747b842797ac75e8f594120c55f68718c87df37"
+    },
+    {
+      "path": "strengthening/external/prepare_external_predictions.py",
+      "bytes": 954,
+      "sha256": "9032df1d2bd88f23892d7950d7b6c5c5dda76817be22db916a6294db0eef7f45"
+    },
+    {
+      "path": "strengthening/external/protocol_core.py",
+      "bytes": 2266,
+      "sha256": "ba05934987dc1f0205c42889bef6ea38482e8aaceb610542ebbb0511a4ec5789"
+    },
+    {
+      "path": "strengthening/external/render_external_figures.py",
+      "bytes": 11572,
+      "sha256": "933917d841fe1a7dd51eca227706b490825925bde220c6ae41cf852035c1afe9"
+    },
+    {
+      "path": "strengthening/external/secondary_nonharmonized_states.py",
+      "bytes": 4464,
+      "sha256": "ee7bd405635657a0ae1996e9a5078f459a69cdb6621b0cc80a768b90bd8e0e81"
+    },
+    {
+      "path": "strengthening/external/verify_wa_source.py",
+      "bytes": 3665,
+      "sha256": "1bb95d328e3ae383cb6b1cefbbd6416b130f3810fb4172103e2fe2bbcadea8ba"
+    },
+    {
+      "path": "strengthening/method/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "strengthening/method/audit_estimators.py",
+      "bytes": 3284,
+      "sha256": "17a4e7f468b6da59c7569891bc3445ca8a2021e50bea066c417346c0aa657ac4"
+    },
+    {
+      "path": "strengthening/method/calendar_external_sensitivity.py",
+      "bytes": 1655,
+      "sha256": "c1b3917a8eb5f7dc7035f664062f1896d12eb9415ede2fb740c8682b13b3a38a"
+    },
+    {
+      "path": "strengthening/method/completion_design_validation.py",
+      "bytes": 14181,
+      "sha256": "a0945208d9fb7d559afd9b90803923fb8648190aa8a90a85374764e878ecf151"
+    },
+    {
+      "path": "strengthening/method/estimator_core.py",
+      "bytes": 2662,
+      "sha256": "cf6003dbc37c6371cf416226c583cb3d61491b21e7861933e1673c7cb182279d"
+    },
+    {
+      "path": "strengthening/method/external_classical_controls.py",
+      "bytes": 7303,
+      "sha256": "847e65c302dd9592900cd0ec9028f4d646cbd06d509ef1405166f9c620df719b"
+    },
+    {
+      "path": "strengthening/method/external_completion_validation.py",
+      "bytes": 7452,
+      "sha256": "8bc6857d0cb40b64ed8ba3bd126d5db88805d4345e32e8cd1e7a1e958ee08375"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/figstyle.py",
+      "bytes": 26942,
+      "sha256": "827d103a90a25eee24200f8067fa3f89cc95bb87b0d9743cb6c85d457a3f1115"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/publication_helpers/audit_palette_usage.py",
+      "bytes": 4997,
+      "sha256": "46e61a472b13ed2ef124ceb304a890a8617f493b8eb7752b1f1985b59ae04322"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/publication_helpers/ml_publication_style.py",
+      "bytes": 5839,
+      "sha256": "7eee66c2ef267dfaa1972daa0d86dfb58b662afd400b6504323e823b9479354e"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/publication_helpers/scientific_palettes.py",
+      "bytes": 5870,
+      "sha256": "6aeea93e17da270b7d93a783ea328f27fc90fcc690ac83bf3af85e7a7f5ede43"
+    },
+    {
+      "path": "strengthening/method/figure_helpers/figkit/publication_layout.py",
+      "bytes": 4671,
+      "sha256": "f5202b00d03c7e0077b6fb90e2094bc49bc054dbfc36ef09bb304e9634b65990"
+    },
+    {
+      "path": "strengthening/method/finalize_method_handoff.py",
+      "bytes": 9117,
+      "sha256": "a36f0a92766dfc6b201ddef7d7fe85a321937e6d4f679e5367be8a3393f8a5b3"
+    },
+    {
+      "path": "strengthening/method/range_external_validation.py",
+      "bytes": 3641,
+      "sha256": "eafdd109808079c916821cb90ebf48939c2203e6133ebfa3c5d5bf80e1da2800"
+    },
+    {
+      "path": "strengthening/method/range_new_pseudo_validation.py",
+      "bytes": 1556,
+      "sha256": "34c5c33fd445aca37714fbf78b4cdf7f406c708f7af2580af68bab4747be1c18"
+    },
+    {
+      "path": "strengthening/method/render_method_figures.py",
+      "bytes": 18886,
+      "sha256": "958cef362a5961c6264eeea88a79ccdb4ade2b1c76c70f383a946670b20a5652"
+    },
+    {
+      "path": "strengthening/method/run_external_v2.py",
+      "bytes": 872,
+      "sha256": "1d19cd0028acd4348426dc0ee30f53bde8d758e55756ba9746d8225a834d5722"
+    },
+    {
+      "path": "strengthening/paths.py",
+      "bytes": 1130,
+      "sha256": "ce49354cb3909be6d173dfa0e3f01e4ebfd7409fe30b22cae5abec169270881f"
+    },
+    {
+      "path": "strengthening/reference_results/external/calendar_cohort_comparison.csv",
+      "bytes": 481,
+      "sha256": "db5ea7fdfa16931d0843070e9e3c79df287016df252db3ae6c2ac6ee579fa07d"
+    },
+    {
+      "path": "strengthening/reference_results/external/calendar_count_paired_transitions.csv",
+      "bytes": 382,
+      "sha256": "006d5711f9b07d825d10e922cad5be119b02e7b5ace86e8660ba7b30f071fe89"
+    },
+    {
+      "path": "strengthening/reference_results/external/external_calibration_quartiles.csv",
+      "bytes": 3552,
+      "sha256": "64c8c9232959c1b62ce8a5f6392aad539c5c9eae68a5c906c9cb5a5fb30f178c"
+    },
+    {
+      "path": "strengthening/reference_results/external/external_cohort_flow_counts.csv",
+      "bytes": 692,
+      "sha256": "a8e80fa79d12f671343453a9c0922ba60dc98b7f5c147f21957362502f17fd69"
+    },
+    {
+      "path": "strengthening/reference_results/external/followup_eligibility_adjusted_OR.csv",
+      "bytes": 529,
+      "sha256": "254be327745ddfb72684f3a592f2dadde107abb95c0f7cf2dad1ea4983dd01ab"
+    },
+    {
+      "path": "strengthening/reference_results/external/followup_eligibility_selection_summary.csv",
+      "bytes": 2559,
+      "sha256": "02b215f6b551c59cdae3dd7118932b84bd4a2dc5b487ac357fa7caacccce69c8"
+    },
+    {
+      "path": "strengthening/reference_results/external/independent_cohort_calibration_transfer.csv",
+      "bytes": 4478,
+      "sha256": "4a02344e360cbf69b5bed0cd74b0805b7d72401416408d423733b3788007917d"
+    },
+    {
+      "path": "strengthening/reference_results/external/initial_vs_repeat_sampled_counts.csv",
+      "bytes": 118,
+      "sha256": "be22b4a4396ed2162a2c42588b197ecf4c969c41f64edc11aab51b48fa2ed7da"
+    },
+    {
+      "path": "strengthening/reference_results/external/outside_region_calibration_factors.csv",
+      "bytes": 1707,
+      "sha256": "2aff831c86655ccc9880c8382f93ba201890c2d2601589298dbc5bff057d4578"
+    },
+    {
+      "path": "strengthening/reference_results/external/paired_information_layer_differences.csv",
+      "bytes": 6506,
+      "sha256": "24257304079c23fb6a438ed574c9e7ddfc0c98b0db57fd1e51ae0115bc9556ab"
+    },
+    {
+      "path": "strengthening/reference_results/external/schedule_sensitivity_metrics.csv",
+      "bytes": 18348,
+      "sha256": "8ccabc7cc12a26d6072fb6df79f81db12ff87f0c38ddb57f4dd8bc799345f0f7"
+    },
+    {
+      "path": "strengthening/reference_results/external/secondary_nonharmonized_state_metrics.csv",
+      "bytes": 6439,
+      "sha256": "506ae1e191b8dc07de1050fb0808bf507588e4f5fcbb6e94c78fd9b4c0691374"
+    },
+    {
+      "path": "strengthening/reference_results/external/strict_external_metrics_bootstrap.csv",
+      "bytes": 47280,
+      "sha256": "bb855f13342a3e4c0e747a795bf4e84f3226538a9a8747c7aab14df92f19db20"
+    },
+    {
+      "path": "strengthening/reference_results/external/threshold_duplicate_and_quantization_sensitivity.csv",
+      "bytes": 2899,
+      "sha256": "7ad3b42159f7f193a5c64732a7a235faa0d6b9c5ac8727d8383a204204c6fa3b"
+    },
+    {
+      "path": "strengthening/reference_results/figure_data/fig2_by_class.csv",
+      "bytes": 449,
+      "sha256": "c85dc2d4f74ba14eeb74dede04848662fee37d632c32b045d7dc68331e09bb00"
+    },
+    {
+      "path": "strengthening/reference_results/figure_data/fig2_roc.csv",
+      "bytes": 35709,
+      "sha256": "5b48a67c8702e669b04368ee9483a857ecd46b52f80134b617a314791b30fa18"
+    },
+    {
+      "path": "strengthening/reference_results/figure_data/fig2_size_curve.csv",
+      "bytes": 942,
+      "sha256": "ce0199395d371f35e67b00f316fd8b08250152135b39179c563b48bf9b755f66"
+    },
+    {
+      "path": "strengthening/reference_results/method/external_calendar_R12_B100.csv",
+      "bytes": 85586,
+      "sha256": "beb379952e0f202bbfb6db83ab033fd6c8eab65c8a758b80851dc5bd437cb6e7"
+    },
+    {
+      "path": "strengthening/reference_results/method/external_design_complete_v2.csv",
+      "bytes": 1017755,
+      "sha256": "0c6a78a2b30899fa2de392bbdf778cf106b2140fd5eb49b1baa488507ce90948"
+    },
+    {
+      "path": "strengthening/reference_results/method/external_primary_R12_B300.csv",
+      "bytes": 86747,
+      "sha256": "5cc51b01245174a0822c188cc27abe8f27da9592615178c22e67a34a3e268120"
+    },
+    {
+      "path": "strengthening/reference_results/method/range_newseeds10_14/completion_small_by_seed.csv",
+      "bytes": 129603,
+      "sha256": "b11d4882b5c4c4a840e9a64fba9099849d5685921c30293e5542c13f37d5f6dd"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/buffer_matched_metrics.csv",
+      "bytes": 1484,
+      "sha256": "8e727d9bc0ec8049580ba0caeaea6a6da4d010ccb9211407d21d87d11cf72ab3"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/burden_model_stress.csv",
+      "bytes": 5149,
+      "sha256": "f1b5745e27469a178e02f19a7c88d545cbbd7cc095a72d602fe934367c5c90a1"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/information_regime_metrics.csv",
+      "bytes": 24745,
+      "sha256": "e0f193c3cc43a04045bfe381b4ec3642968697e83a46c4be0c83b2762f71445c"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/information_regime_paired_contrasts.csv",
+      "bytes": 14036,
+      "sha256": "b187c0d84c55d1bf3b0134e137476d2d6abac027d80285c29fe53a9ae9d5f34d"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/neighbour_availability_summary.csv",
+      "bytes": 499,
+      "sha256": "aaf0f4cecc629ec512c64b3d3ad9a9665c03d955eed6c4fcb82308b43d3c287a"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/plot_roc_curves.csv",
+      "bytes": 50246,
+      "sha256": "1a1365c3e4382fba753a01db861d4f0b3b86e5a944f544cff01d2ff00ac681d4"
+    },
+    {
+      "path": "strengthening/reference_results/spatial/region_holdout/spatial_region_metrics.csv",
+      "bytes": 17831,
+      "sha256": "001cdf3b1c43189301882fe2dd644f0046f2e1b024006700bd32f48f092779b4"
+    },
+    {
+      "path": "strengthening/spatial/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "strengthening/spatial/audit_spatial_figures.py",
+      "bytes": 6718,
+      "sha256": "2c70d6ca43c61edfb233b33280dba0a52c755335b638884fae8daab3a68281d9"
+    },
+    {
+      "path": "strengthening/spatial/burden_model_stress.py",
+      "bytes": 3809,
+      "sha256": "9f7521b32249288862de5e24d1815779696cb65694c97975891bd8a8f8645166"
+    },
+    {
+      "path": "strengthening/spatial/calibration_by_outer_region.py",
+      "bytes": 3475,
+      "sha256": "1cc293abe10cad806bd67d8697caff49a045a4844bfffb9de7c2729b055ca2c0"
+    },
+    {
+      "path": "strengthening/spatial/compare_buffer.py",
+      "bytes": 1462,
+      "sha256": "e10efdb05e8e096e5912dbbe3594dd3dd393ebef5ab42392ce04abdf28d8964c"
+    },
+    {
+      "path": "strengthening/spatial/compare_information_regimes.py",
+      "bytes": 4858,
+      "sha256": "3202298d066e05c9302e91f90087bdef94a17b2370163f33b094d5245ff108ac"
+    },
+    {
+      "path": "strengthening/spatial/operational_coordinate_diagnostic.py",
+      "bytes": 2422,
+      "sha256": "01be04b021314e7c1dc06aec83761fc679047d490d19ad41903a6b46d651e9ec"
+    },
+    {
+      "path": "strengthening/spatial/render_spatial_figures.py",
+      "bytes": 12473,
+      "sha256": "ff30d5453fc17c1917e6f3ff1f1996d19d24101a8b6bd577a67686ea8895c642"
+    },
+    {
+      "path": "strengthening/spatial/spatial_coordinate_diagnostic.py",
+      "bytes": 1184,
+      "sha256": "03a668479bfb7108a9356ad5595fd7074cefee7117ba62fa84f9763d3b410732"
+    },
+    {
+      "path": "strengthening/spatial/spatial_transfer.py",
+      "bytes": 9353,
+      "sha256": "420b27f02573c1550c74faa030d640df1c09d05a6253e337f1c5b7ea14003cfe"
+    },
+    {
+      "path": "strengthening/spatial/summarize_spatial.py",
+      "bytes": 7622,
+      "sha256": "071ddbaaab6466a2c7330e86cd6b825f091966c8be242d54120fb50343c99e49"
+    },
+    {
+      "path": "strengthening/spatial/validate_spatial.py",
+      "bytes": 5074,
+      "sha256": "8ce86c31a2b189fd4af2148feb86feec1417df2a325be156547cf6552fd4244c"
+    },
+    {
+      "path": "strengthening/washington_id_provenance.json",
+      "bytes": 562,
+      "sha256": "a44e1e0b399bb9886a102250f17fa65d54df835e0da89c4b5b10cfc4781c3bb2"
+    },
+    {
+      "path": "strengthening/washington_sources.json",
+      "bytes": 1112,
+      "sha256": "750b92a920299e9c3cfba948bbbed0dc997fead726a3e643c83c2a244bc83443"
+    },
+    {
+      "path": "tests/test_strengthening_protocols.py",
+      "bytes": 7423,
+      "sha256": "967bf27438c455572f9713772a8b8a46312d2c24b7a31d2d06a26f09a69c6335"
+    }
+  ]
+}

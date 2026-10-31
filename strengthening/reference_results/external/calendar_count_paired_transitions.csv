@@ -1,0 +1,3 @@
+state,shared_systems,shared_locations,count_positive_on_shared_locations,calendar_positive_on_shared_locations,became_positive,became_negative,paired_prevalence_change,paired_change_lo,paired_change_hi,mcnemar_exact_p
+MI,171,210,23,21,2,4,-0.011695906432748537,-0.04093567251461988,0.017543859649122806,0.6875
+WA,383,467,50,53,3,0,0.007832898172323759,0.0,0.018276762402088774,0.25

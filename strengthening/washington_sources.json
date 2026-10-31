@@ -1,0 +1,30 @@
+[
+  {
+    "file": "PFAS_Downloadable_Data.csv",
+    "url": "https://doh.wa.gov/sites/default/files/Data/Auto-Uploads/PFAS/PFAS_Downloadable_Data.csv",
+    "retrieved_utc_date": "2026-10-31",
+    "bytes": 51085151,
+    "sha256": "827fd94ef26fea5a23a03ee67fdc18dadaffd5bf65d142a1a7342e6634a63f18"
+  },
+  {
+    "file": "PFAS_Data_Dictionary.csv",
+    "url": "https://doh.wa.gov/sites/default/files/Data/Auto-Uploads/PFAS/PFAS_Data_Dictionary.csv",
+    "retrieved_utc_date": "2026-10-31",
+    "bytes": 577,
+    "sha256": "407cbb727c3a4ad33f35bafe8621f46c6a7d5b5a585af3a90b5342adeb50fb18"
+  },
+  {
+    "file": "wa_general.xlsx",
+    "url": "https://doh.wa.gov/sites/default/files/2025-08/ageneral.xlsx",
+    "retrieved_utc_date": "2026-10-31",
+    "bytes": 1379953,
+    "sha256": "7c5afccab1f4a6b03212801da0542ff9462e0d250638d056fb5a5a011c003b22"
+  },
+  {
+    "file": "wa_sources.xlsx",
+    "url": "https://doh.wa.gov/sites/default/files/2023-01/combinedsources.xlsx",
+    "retrieved_utc_date": "2026-10-31",
+    "bytes": 4783380,
+    "sha256": "79250cf656ba09d93186d419a7bbc196555854a31d01aa30b0371cf509cd2b36"
+  }
+]

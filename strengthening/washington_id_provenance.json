@@ -1,0 +1,10 @@
+{
+  "agency": "US Environmental Protection Agency",
+  "title": "Community Water System Service Area Boundaries: State Dataset Summaries",
+  "date": "June 2024",
+  "page": "Washington, printed page72",
+  "url": "https://www.epa.gov/system/files/documents/2024-04/cws-service-area-boundaries-state-dataset-summaries.pdf",
+  "mapping": "Official EPA documentation explicitly maps Washington WS_ID to SDWIS PWSID by adding WA53.",
+  "verification_date": "2026-10-31",
+  "use": "Supports exact prefix-based crosswalk; names are diagnostics only, no fuzzy matching."
+}
