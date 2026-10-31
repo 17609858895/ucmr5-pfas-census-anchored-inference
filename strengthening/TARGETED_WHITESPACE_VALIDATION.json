@@ -1,0 +1,524 @@
+{
+  "date": "2026-10-31",
+  "base_commit": "13c326d8f9d8a961e1d373943173cdb2eb2fd8bb",
+  "all_checks_passed": true,
+  "scope": "Only screenshot-identified Fig1a map/zoom arrangement and main Fig7 column gutter; other11 combined figures and SI retained.",
+  "source_file_count": 4,
+  "source_files": [
+    {
+      "path": "plotting/refine_jhm_figures.py",
+      "submission_source": "legacy_support/plotting/refine_jhm_figures.py",
+      "submission_SHA256": "84498a1e61d4845cabe98745e0992c95643c3c81482e68b65b1dae1cc2893c1e",
+      "normalized_source_and_release_SHA256": "fd09e9dc4018f64d47e4ac88339f24d3543622755430f35f1fd4d8cff55ccd12",
+      "release_SHA256": "fd09e9dc4018f64d47e4ac88339f24d3543622755430f35f1fd4d8cff55ccd12",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "plotting/refine_overview_round3.py",
+      "submission_source": "legacy_support/plotting/refine_overview_round3.py",
+      "submission_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+      "normalized_source_and_release_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+      "release_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "plotting/refine_three_rows_a.py",
+      "submission_source": "legacy_support/plotting/refine_three_rows_a.py",
+      "submission_SHA256": "93ce46e229e8ef9838445f6eaa11a11a0fb9e857bf7ddab3674de9003720bfd4",
+      "normalized_source_and_release_SHA256": "19643146b8fa7e354093aa1c69ebbb32be797987d4e4caf905e03fbab5d836a5",
+      "release_SHA256": "19643146b8fa7e354093aa1c69ebbb32be797987d4e4caf905e03fbab5d836a5",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    },
+    {
+      "path": "strengthening/method/render_method_figures.py",
+      "submission_source": "strengthening/method/render_method_figures.py",
+      "submission_SHA256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81",
+      "normalized_source_and_release_SHA256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81",
+      "release_SHA256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81",
+      "AST_identical": true,
+      "adaptation": "Public LF line endings only"
+    }
+  ],
+  "Python_source_files_parsed": 97,
+  "unit_tests": {
+    "passed": 24,
+    "total": 24,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "numerical_analysis_and_aggregate_data_unchanged": true,
+  "unchanged_analysis_and_aggregate_file_count": 94,
+  "no_model_fitting_statistical_reanalysis_or_other_figure_redraw": true,
+  "source_and_frozen08_normalized_bytes_AST_identical": true,
+  "other_figure_exports_byte_identical": true,
+  "unchanged_export_file_count": 139,
+  "updated_exports": [
+    {
+      "file": "Fig_1/Fig_1.pdf",
+      "before_SHA256": "498dcda1886797e6c6dfa5de32f94c21fb65c360ed92332c7e753e7c257be803",
+      "after_SHA256": "7b283cbc6fa7bca1cc2dfa13b90ccbdb01dae13ab0918b2efb89d7c880089346"
+    },
+    {
+      "file": "Fig_1/Fig_1.png",
+      "before_SHA256": "6fbae7d7eeb0a1585d7f8123162e3043fe48123019e2a736afa22f80b1bcdba5",
+      "after_SHA256": "3c00fbbcb1361eca9829eaa2f3eea473572b207ae0f24727bad4bf65acf9b400"
+    },
+    {
+      "file": "Fig_7/Fig_7.pdf",
+      "before_SHA256": "0f39dd1d2ef9cd1cbc7256f694d67d63aa6c9a055fe13a5921b867546803c99f",
+      "after_SHA256": "803d7ebb5b97433862dc7654bc0a2efe19ce7f8e510b0d8a7600e4c2b892b88e"
+    },
+    {
+      "file": "Fig_7/Fig_7.png",
+      "before_SHA256": "a8efeec97462e229c8a3f05af4e80ca043ef46b1fd8de01351b901b1e403f704",
+      "after_SHA256": "41a7c1d8d0f813c4e48c4fe0e21834f1d73781e0cf287e2fc56008934307d3eb"
+    },
+    {
+      "file": "Fig_1/subfigures/Fig_1_a.pdf",
+      "before_SHA256": "229fea6a3d1d9b395f13ad606741492d4e21b6559760dfda32bf69b0f597de2d",
+      "after_SHA256": "7db375205570c74317ba34a94de39686018ec86c4007eccbda3d0f701c8e9031"
+    },
+    {
+      "file": "Fig_1/subfigures/Fig_1_a.png",
+      "before_SHA256": "6d6fd4794a82fe872c4301fddbcb700a518fc0abb2dca175ec44cb3b89c6cb10",
+      "after_SHA256": "e002b1c6672be37b4e1768e0c5f2b8e90103f3d60bcad394d04ef51cb544a4f5"
+    },
+    {
+      "file": "Fig_1/subfigures/Fig_1_b.pdf",
+      "before_SHA256": "4dcdeeeba4c776c71719de3733bff0800410a8b665f1a4533db1f348f67fc085",
+      "after_SHA256": "58a1f4801afd6cb81dd63bfd52398c29daa598bbeeec6dd0b79353d58cc1dfd7"
+    },
+    {
+      "file": "Fig_1/subfigures/Fig_1_c.pdf",
+      "before_SHA256": "fca80032f4bfdffd53abd31600269199e0563b970bb7695d896fb62fd111e31f",
+      "after_SHA256": "3b401d2570d247aaf586f55a65f34e2820db4c4232ccf764fea49304bb01a555"
+    }
+  ],
+  "target_family_checks": [
+    {
+      "canvas": "Fig_1",
+      "export_mm": [
+        182.28769790872914,
+        176.99602065870798
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "3c00fbbcb1361eca9829eaa2f3eea473572b207ae0f24727bad4bf65acf9b400",
+      "PDF_SHA256": "7b283cbc6fa7bca1cc2dfa13b90ccbdb01dae13ab0918b2efb89d7c880089346"
+    },
+    {
+      "canvas": "Fig_1_a",
+      "export_mm": [
+        182.37236474472948,
+        97.79019558039117
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "e002b1c6672be37b4e1768e0c5f2b8e90103f3d60bcad394d04ef51cb544a4f5",
+      "PDF_SHA256": "7db375205570c74317ba34a94de39686018ec86c4007eccbda3d0f701c8e9031"
+    },
+    {
+      "canvas": "Fig_1_b",
+      "export_mm": [
+        168.52933705867412,
+        73.1521463042926
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "34b7970a129d80b0c025dd2449371200a09452b7037e481cb4a41fca62a1d98c",
+      "PDF_SHA256": "58a1f4801afd6cb81dd63bfd52398c29daa598bbeeec6dd0b79353d58cc1dfd7"
+    },
+    {
+      "canvas": "Fig_1_c",
+      "export_mm": [
+        168.57167047667429,
+        52.23943781220896
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "845241dd90280565ac08533f3d9b9fc6b35323ee8bbcaa866b75621a89d37491",
+      "PDF_SHA256": "3b401d2570d247aaf586f55a65f34e2820db4c4232ccf764fea49304bb01a555"
+    },
+    {
+      "canvas": "Fig_7",
+      "export_mm": [
+        184.40436880873762,
+        181.9490305647278
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "41a7c1d8d0f813c4e48c4fe0e21834f1d73781e0cf287e2fc56008934307d3eb",
+      "PDF_SHA256": "803d7ebb5b97433862dc7654bc0a2efe19ce7f8e510b0d8a7600e4c2b892b88e"
+    },
+    {
+      "canvas": "Fig_7_a",
+      "export_mm": [
+        168.6986707306748,
+        92.92185251037169
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "c1b67e11e9adc84021de2b2574354ebb84170e9e79a729026ef07cec56a902eb",
+      "PDF_SHA256": "d2859066d31056c86b7c6ad2366e141a401299789ac79233b4d21c4b5c5485c0"
+    },
+    {
+      "canvas": "Fig_7_b",
+      "export_mm": [
+        168.6986707306748,
+        92.92185251037169
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "be3f1e46068f5fd313bd7a7fd1a7c7c05cb782df67fe00589bcf7f82df59f2b1",
+      "PDF_SHA256": "ddca2833d801928bcde81a74d8445de0b032ef64b3d9e48dba5003a2f1349d28"
+    },
+    {
+      "canvas": "Fig_7_c",
+      "export_mm": [
+        168.61400389467445,
+        92.92185251037169
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "6fdd1e2e07b90b40a21a7bc630f7ab2181a2493b61d192dddb761979f39e149f",
+      "PDF_SHA256": "870f7b44b907a6e8c9872dc2d2b134013bd7b1f9dc962b0edf6cf2687408c09a"
+    },
+    {
+      "canvas": "Fig_7_d",
+      "export_mm": [
+        168.61400389467445,
+        92.92185251037169
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "4af899be749a0ceaf46894fc3f526be44429cf0b4b6d5093351ccc352ed5d058",
+      "PDF_SHA256": "3165f5ae42aecdfb0cc0492cc5c29b9eb01993d661cdc9eec76a2c7e0a64da6f"
+    },
+    {
+      "canvas": "Fig_7_e",
+      "export_mm": [
+        168.65633731267462,
+        92.96418592837186
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "bc8bf0ee7fa48a4475e21ee05fcf99cb67bac2b4807ee89fcd856c6dc8fad571",
+      "PDF_SHA256": "2995438d0cdd93d2979b3c8eac7eae2709e1d1283eaaa13da077f4c0f4c78f98"
+    },
+    {
+      "canvas": "Fig_7_f",
+      "export_mm": [
+        168.65633731267462,
+        92.96418592837186
+      ],
+      "text_and_font_sizes_unchanged": true,
+      "normal_PDF_text": true,
+      "PNG600dpi": true,
+      "PNG_SHA256": "2769f4a275d6957bf5d8a162427d7f0de0643b2505dc9a0f4b4285c68bfa83e2",
+      "PDF_SHA256": "c0272d5cfbc7370eeead898dd60fd39b205c69ebc3441c3128eff96c580ee70c"
+    }
+  ],
+  "author_metadata": "CHONG LIU",
+  "target_QA": {
+    "map_final_pass": true,
+    "map_audit_SHA256": "4fed09e3dc46ad7a3b1c5352a7f7dadd2184284e0916579a581a59096f54f4b1",
+    "map_geometry_summary": {
+      "all_passed": true,
+      "canvases": [
+        {
+          "canvas": "Fig_1",
+          "native_canvas_mm_before": [
+            190.0,
+            184.0
+          ],
+          "native_canvas_mm_after": [
+            190.0,
+            184.0
+          ],
+          "main_to_zoom_horizontal_mm_before": [
+            45.968428067634335,
+            45.968428067634335,
+            45.968428067634335
+          ],
+          "main_to_zoom_horizontal_mm_after": [
+            6.607933969925341,
+            6.607933969925341,
+            6.607933969925341
+          ],
+          "equal_aspect_preserved": true,
+          "all_projected_point_arrays_sizes_colours_preserved": true,
+          "view_limits_preserved": true,
+          "pdf_visible_word_multiset_preserved": true,
+          "regular_text": true,
+          "min_font_pt": 12.0,
+          "alignment_max_residual_pt": 0.28026575723096453,
+          "overlaps": [],
+          "standalone_b_c_png_byte_identical": null,
+          "final_png_individually_opened": true
+        },
+        {
+          "canvas": "Fig_1_a",
+          "native_canvas_mm_before": [
+            195.0,
+            87.4
+          ],
+          "native_canvas_mm_after": [
+            195.0,
+            105.00000000000001
+          ],
+          "main_to_zoom_horizontal_mm_before": [
+            42.14881622719221,
+            42.14881622719221,
+            42.14881622719221
+          ],
+          "main_to_zoom_horizontal_mm_after": [
+            5.5242183694305425,
+            5.5242183694305425,
+            5.5242183694305425
+          ],
+          "equal_aspect_preserved": true,
+          "all_projected_point_arrays_sizes_colours_preserved": true,
+          "view_limits_preserved": true,
+          "pdf_visible_word_multiset_preserved": true,
+          "regular_text": true,
+          "min_font_pt": 12.0,
+          "alignment_max_residual_pt": 0.08320312614829141,
+          "overlaps": [],
+          "standalone_b_c_png_byte_identical": null,
+          "final_png_individually_opened": true
+        },
+        {
+          "canvas": "Fig_1_b",
+          "native_canvas_mm_before": [
+            180.0,
+            78.2
+          ],
+          "native_canvas_mm_after": [
+            180.0,
+            78.2
+          ],
+          "main_to_zoom_horizontal_mm_before": [],
+          "main_to_zoom_horizontal_mm_after": [],
+          "equal_aspect_preserved": true,
+          "all_projected_point_arrays_sizes_colours_preserved": true,
+          "view_limits_preserved": true,
+          "pdf_visible_word_multiset_preserved": true,
+          "regular_text": true,
+          "min_font_pt": 12.0,
+          "alignment_max_residual_pt": 0.16563687568293636,
+          "overlaps": [],
+          "standalone_b_c_png_byte_identical": true,
+          "final_png_individually_opened": true
+        },
+        {
+          "canvas": "Fig_1_c",
+          "native_canvas_mm_before": [
+            180.0,
+            55.2
+          ],
+          "native_canvas_mm_after": [
+            180.0,
+            55.2
+          ],
+          "main_to_zoom_horizontal_mm_before": [],
+          "main_to_zoom_horizontal_mm_after": [],
+          "equal_aspect_preserved": true,
+          "all_projected_point_arrays_sizes_colours_preserved": true,
+          "view_limits_preserved": true,
+          "pdf_visible_word_multiset_preserved": true,
+          "regular_text": true,
+          "min_font_pt": 12.0,
+          "alignment_max_residual_pt": 0.19047660539164651,
+          "overlaps": [],
+          "standalone_b_c_png_byte_identical": true,
+          "final_png_individually_opened": true
+        }
+      ]
+    },
+    "method_final_pass": true,
+    "method_audit_SHA256": "16c819ff57d55c331fcc05a86e03dae7fdc9731d7cf6168d5ec7a6b1a31f9bc1",
+    "method_before_gap_rows": [
+      {
+        "row": 1,
+        "left_panel": "a",
+        "right_panel": "b",
+        "full_content_gap_mm": 14.196410490648248,
+        "left_content_to_right_letter_net_gap_mm": 9.718337573981572,
+        "letter_to_own_content_mm": 2.11666666666666,
+        "between_data_axes_mm": 19.302868823981584,
+        "left_outer_bbox_mm": [
+          16.119870296509337,
+          126.27923847879951,
+          95.02614678899084,
+          176.0194493639645
+        ],
+        "right_outer_bbox_mm": [
+          109.22255727963909,
+          126.21508445409671,
+          188.1,
+          176.07650471242752
+        ],
+        "right_letter_bbox_mm": [
+          104.74448436297241,
+          172.26650471242752,
+          107.10589061297243,
+          176.07650471242752
+        ]
+      },
+      {
+        "row": 2,
+        "left_panel": "c",
+        "right_panel": "d",
+        "full_content_gap_mm": 14.169821443772904,
+        "left_content_to_right_letter_net_gap_mm": 9.691748527106213,
+        "letter_to_own_content_mm": 2.1166666666666742,
+        "between_data_axes_mm": 25.407998527106216,
+        "left_outer_bbox_mm": [
+          16.11308229172049,
+          68.65032733073163,
+          95.02614678899084,
+          118.34939759036145
+        ],
+        "right_outer_bbox_mm": [
+          109.19596823276375,
+          68.63578776665118,
+          188.1,
+          118.34939759036145
+        ],
+        "right_letter_bbox_mm": [
+          104.71789531609706,
+          114.53939759036145,
+          107.07930156609707,
+          118.34939759036145
+        ]
+      },
+      {
+        "row": 3,
+        "left_panel": "e",
+        "right_panel": "f",
+        "full_content_gap_mm": 14.19541983068541,
+        "left_content_to_right_letter_net_gap_mm": 10.888128164018724,
+        "letter_to_own_content_mm": 2.1166666666666742,
+        "between_data_axes_mm": 24.223128164018718,
+        "left_outer_bbox_mm": [
+          16.05208560358717,
+          10.942844296880928,
+          95.0261467889908,
+          60.704803967697394
+        ],
+        "right_outer_bbox_mm": [
+          109.22156661967621,
+          10.942844296880928,
+          188.1,
+          60.704803967697394
+        ],
+        "right_letter_bbox_mm": [
+          105.91427495300952,
+          56.89480396769739,
+          107.10489995300954,
+          60.704803967697394
+        ]
+      }
+    ],
+    "method_after_gap_rows": [
+      {
+        "row": 1,
+        "left_panel": "a",
+        "right_panel": "b",
+        "full_content_gap_mm": 6.612332319784315,
+        "left_content_to_right_letter_net_gap_mm": 2.134259403117653,
+        "letter_to_own_content_mm": 2.1166666666666742,
+        "between_data_axes_mm": 11.718790653117651,
+        "left_outer_bbox_mm": [
+          16.028035279610016,
+          126.21544092092782,
+          98.81826923076925,
+          176.07593678499677
+        ],
+        "right_outer_bbox_mm": [
+          105.43060155055356,
+          126.21508445409671,
+          188.1,
+          176.07650471242752
+        ],
+        "right_letter_bbox_mm": [
+          100.9525286338869,
+          172.26650471242752,
+          103.31393488388689,
+          176.07650471242752
+        ],
+        "full_gap_reduction_fraction": 0.53422505469674
+      },
+      {
+        "row": 2,
+        "left_panel": "c",
+        "right_panel": "d",
+        "full_content_gap_mm": 6.589057726849006,
+        "left_content_to_right_letter_net_gap_mm": 2.1109848101823445,
+        "letter_to_own_content_mm": 2.1166666666666742,
+        "between_data_axes_mm": 17.82723481018236,
+        "left_outer_bbox_mm": [
+          16.044298988826668,
+          68.64858395804103,
+          98.81826923076925,
+          118.34939759036145
+        ],
+        "right_outer_bbox_mm": [
+          105.40732695761825,
+          68.63578776665118,
+          188.1,
+          118.34939759036145
+        ],
+        "right_letter_bbox_mm": [
+          100.92925404095159,
+          114.53939759036145,
+          103.29066029095158,
+          118.34939759036145
+        ],
+        "full_gap_reduction_fraction": 0.5349935951560881
+      },
+      {
+        "row": 3,
+        "left_panel": "e",
+        "right_panel": "f",
+        "full_content_gap_mm": 6.611553861495324,
+        "left_content_to_right_letter_net_gap_mm": 3.304262194828638,
+        "letter_to_own_content_mm": 2.1166666666666742,
+        "between_data_axes_mm": 16.63926219482866,
+        "left_outer_bbox_mm": [
+          16.067434906702196,
+          10.942844296880928,
+          98.81826923076923,
+          60.704803967697394
+        ],
+        "right_outer_bbox_mm": [
+          105.42982309226456,
+          10.942844296880928,
+          188.1,
+          60.704803967697394
+        ],
+        "right_letter_bbox_mm": [
+          102.12253142559787,
+          56.89480396769739,
+          103.31315642559788,
+          60.704803967697394
+        ],
+        "full_gap_reduction_fraction": 0.534247388217183
+      }
+    ],
+    "method_alignment_max_residual_pt": 0.34572676645979916
+  },
+  "public_contents": "Drawing source, README, manifests and verification summary only; no raw records, manuscripts, binaries, images or system prediction frames added."
+}

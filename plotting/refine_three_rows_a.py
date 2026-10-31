@@ -21,19 +21,29 @@ def _style(ax, xlabel=None, ylabel=None):
 
 def layout1_three_rows(fig):
     """Map / monitoring-by-size / small-system composition."""
-    g=fig.add_gridspec(3,1,height_ratios=[1.45,1.0,.87],
+    g=fig.add_gridspec(3,1,height_ratios=[1.85,.80,.75],
         left=.065,right=.99,top=.985,bottom=.035,hspace=.040)
     return [g[0],g[1],g[2]]
 
 
 def small_composition4(fig,ss,ctx):
     """Fig. 1c, with a one-line key suited to the full-width third row."""
-    g=ss.subgridspec(2,1,height_ratios=[.60,1],hspace=.035)
     hs=[Patch(fc=C[f'cls{i}'],ec=INK,lw=.5,label=cls)
         for i,cls in enumerate(CLASS_ORDER)]
-    legend_strip(fig,g[0],hs,4,title='System size (people)',
-                 handlelength=1.0,columnspacing=1.1,labelspacing=.15)
-    ax=fig.add_subplot(g[1]);rows=['Frame: systems','Frame: people','UCMR5 sample: systems']
+    if ctx['standalone']:
+        # Keep the existing standalone exactly; the reallocation only concerns
+        # the combined Fig. 1 map/composition balance.
+        g=ss.subgridspec(2,1,height_ratios=[.60,1],hspace=.035)
+        legend_strip(fig,g[0],hs,4,title='System size (people)',
+                     handlelength=1.0,columnspacing=1.1,labelspacing=.15)
+        ax=fig.add_subplot(g[1])
+    else:
+        # A right-hand key frees vertical room for the unchanged bar numbers.
+        g=ss.subgridspec(1,2,width_ratios=[3.2,1.15],wspace=.07)
+        legend_strip(fig,g[1],hs,1,title='System size (people)',
+                     handlelength=1.0,labelspacing=.18)
+        ax=fig.add_subplot(g[0])
+    rows=['Frame: systems','Frame: people','UCMR5 sample: systems']
     left=np.zeros(3)
     for i,cls in enumerate(CLASS_ORDER):
         values=f1.COMP.loc[cls,rows].to_numpy()*100

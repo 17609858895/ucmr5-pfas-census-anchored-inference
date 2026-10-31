@@ -1,5 +1,5 @@
 {
-  "scope": "Portable statistical and publication source; current compact normal-weight layouts use unchanged numerical analysis and aggregate data; no raw records or manuscripts included.",
+  "scope": "Portable statistical and publication source; screenshot-targeted Fig1/Fig7 layout revision preserves numerical analysis, data, projection and other figure layouts; no raw records or manuscripts included.",
   "source_files": [
     {
       "release_path": "analysis\\project_paths.py",
@@ -204,8 +204,11 @@
       "release_path": "plotting\\refine_overview_round3.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_overview_round3.py",
       "source_sha256": "686d0ea12c611971f7f523d29a2dae54c19c71f77298a39f5c6842e781a2ae4c",
-      "release_sha256": "2f120aa232de6ed1d2c7198df0258db8b88018845d7ebf9d7ef814cd71ad0429",
-      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent."
+      "release_sha256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+      "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent.",
+      "current_targeted_whitespace_source": "legacy_support/plotting/refine_overview_round3.py",
+      "current_targeted_whitespace_source_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+      "current_adaptation": "Fig1/Fig7-only layout geometry; original numerical functions retained; public LF line endings."
     },
     {
       "release_path": "plotting\\refine_panels_round3.py",
@@ -225,11 +228,13 @@
       "release_path": "plotting\\refine_three_rows_a.py",
       "source": "WaterResearch_三行组图与公式修订_20261031\\scripts\\refine_three_rows_a.py",
       "source_sha256": "5985fc2f3fe94f67b01700b12553d93b93f62a08d167cc36ab6e7ab5354a6a4c",
-      "release_sha256": "9826e16dd4111f203eb89922fb68ad0201faea0f6522f2cede3ec856dd92343b",
+      "release_sha256": "19643146b8fa7e354093aa1c69ebbb32be797987d4e4caf905e03fbab5d836a5",
       "adaptation": "Current three-row plots; portable check paths. Illustration replaced by a labelled vector scaffold only when the optional raster is absent.",
       "current_compact_layout_source": "legacy_support/plotting/refine_three_rows_a.py",
       "current_compact_layout_source_SHA256": "57f74a7d45ce6acc23fe5efb621626b04e936acecd33309d0648b2648076cc87",
-      "current_adaptation": "Compact layout geometry and audits only; original numerical functions retained; public LF line endings."
+      "current_adaptation": "Fig1/Fig7-only layout geometry; original numerical functions retained; public LF line endings.",
+      "current_targeted_whitespace_source": "legacy_support/plotting/refine_three_rows_a.py",
+      "current_targeted_whitespace_source_SHA256": "93ce46e229e8ef9838445f6eaa11a11a0fb9e857bf7ddab3674de9003720bfd4"
     },
     {
       "release_path": "plotting\\refine_three_rows_b.py",
@@ -294,7 +299,7 @@
       "release_path": "README.md",
       "source": "release utility",
       "source_sha256": null,
-      "release_sha256": "04a2807db9a53351a78f97e9403f226a880b2f9ebd84d05f232046ea0621a812",
+      "release_sha256": "c032f0e0c1f3e8ab81243b0c7b1a6c4b78e44dcdcb201b4382df12c9f20b866a",
       "adaptation": ""
     },
     {
@@ -360,8 +365,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9794,
-      "sha256": "04a2807db9a53351a78f97e9403f226a880b2f9ebd84d05f232046ea0621a812"
+      "bytes": 10064,
+      "sha256": "c032f0e0c1f3e8ab81243b0c7b1a6c4b78e44dcdcb201b4382df12c9f20b866a"
     },
     {
       "path": "REVIEW_ANALYSES.md",
@@ -370,8 +375,8 @@
     },
     {
       "path": "STRENGTHENING.md",
-      "bytes": 14182,
-      "sha256": "e4a2200c1ef506e71c0f14286c43889e952e910c5fc26acdfc08de5260cb02ac"
+      "bytes": 14584,
+      "sha256": "b8a808ee2b1711a9d57be76b51e0a3248732e0974bf18331b9faea55f92ca939"
     },
     {
       "path": "VALIDATION.md",
@@ -580,8 +585,8 @@
     },
     {
       "path": "plotting/refine_jhm_figures.py",
-      "bytes": 3574,
-      "sha256": "820b365d831e6e0166e1a1a73cafc49a6e85968b34a211a080da0bf2b8a31792"
+      "bytes": 3675,
+      "sha256": "fd09e9dc4018f64d47e4ac88339f24d3543622755430f35f1fd4d8cff55ccd12"
     },
     {
       "path": "plotting/refine_mechanism_round3.py",
@@ -590,8 +595,8 @@
     },
     {
       "path": "plotting/refine_overview_round3.py",
-      "bytes": 8403,
-      "sha256": "2f120aa232de6ed1d2c7198df0258db8b88018845d7ebf9d7ef814cd71ad0429"
+      "bytes": 8691,
+      "sha256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca"
     },
     {
       "path": "plotting/refine_panels_round3.py",
@@ -600,8 +605,8 @@
     },
     {
       "path": "plotting/refine_three_rows_a.py",
-      "bytes": 7858,
-      "sha256": "9826e16dd4111f203eb89922fb68ad0201faea0f6522f2cede3ec856dd92343b"
+      "bytes": 8345,
+      "sha256": "19643146b8fa7e354093aa1c69ebbb32be797987d4e4caf905e03fbab5d836a5"
     },
     {
       "path": "plotting/refine_three_rows_b.py",
@@ -647,6 +652,11 @@
       "path": "strengthening/REGULAR_WEIGHT_VALIDATION.json",
       "bytes": 24981,
       "sha256": "9d0c1be979bd4fa914ee315d507c30c5ab013d0ea0f644c39838205a19c973eb"
+    },
+    {
+      "path": "strengthening/TARGETED_WHITESPACE_VALIDATION.json",
+      "bytes": 18384,
+      "sha256": "3058e9873a1757564451b452129dcae08481ff08b458bcbe5dd758dc92eb540f"
     },
     {
       "path": "strengthening/VALIDATION.json",
@@ -805,8 +815,8 @@
     },
     {
       "path": "strengthening/method/render_method_figures.py",
-      "bytes": 19138,
-      "sha256": "1ac639ea231b28cec36dcf4f5ae09432f8e96c6657fe0ca1963f03458e5a65ff"
+      "bytes": 19163,
+      "sha256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81"
     },
     {
       "path": "strengthening/method/run_external_v2.py",
@@ -1127,7 +1137,7 @@
     "validation": "strengthening/REGULAR_WEIGHT_VALIDATION.json",
     "previous_bold_tick_validation": "Historical reports are not evidence for the regular-weight revision."
   },
-  "current_compact_layout_revision": {
+  "previous_compact_layout_revision": {
     "date": "2026-10-31",
     "base_commit": "d7da984dcae7047768d486343f1e86d5a9a32e5d",
     "scope": "Compact panel and legend geometry; original numerical source/data, text sizes, normal weight and colour palette retained.",
@@ -1215,5 +1225,49 @@
       }
     ],
     "validation": "strengthening/COMPACT_LAYOUT_VALIDATION.json"
+  },
+  "current_targeted_whitespace_revision": {
+    "date": "2026-10-31",
+    "base_commit": "13c326d8f9d8a961e1d373943173cdb2eb2fd8bb",
+    "scope": "Only screenshot-identified Fig1a map/zoom arrangement and main Fig7 column gutter; all scientific quantities, projection, normal typography and other figures retained.",
+    "source_files": [
+      {
+        "path": "plotting/refine_jhm_figures.py",
+        "submission_source": "legacy_support/plotting/refine_jhm_figures.py",
+        "submission_SHA256": "84498a1e61d4845cabe98745e0992c95643c3c81482e68b65b1dae1cc2893c1e",
+        "normalized_source_and_release_SHA256": "fd09e9dc4018f64d47e4ac88339f24d3543622755430f35f1fd4d8cff55ccd12",
+        "release_SHA256": "fd09e9dc4018f64d47e4ac88339f24d3543622755430f35f1fd4d8cff55ccd12",
+        "AST_identical": true,
+        "adaptation": "Public LF line endings only"
+      },
+      {
+        "path": "plotting/refine_overview_round3.py",
+        "submission_source": "legacy_support/plotting/refine_overview_round3.py",
+        "submission_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+        "normalized_source_and_release_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+        "release_SHA256": "2baedf992c6858af6f69f8f662dd6676328c95dd7a31f4d1e15fad474e8ca2ca",
+        "AST_identical": true,
+        "adaptation": "Public LF line endings only"
+      },
+      {
+        "path": "plotting/refine_three_rows_a.py",
+        "submission_source": "legacy_support/plotting/refine_three_rows_a.py",
+        "submission_SHA256": "93ce46e229e8ef9838445f6eaa11a11a0fb9e857bf7ddab3674de9003720bfd4",
+        "normalized_source_and_release_SHA256": "19643146b8fa7e354093aa1c69ebbb32be797987d4e4caf905e03fbab5d836a5",
+        "release_SHA256": "19643146b8fa7e354093aa1c69ebbb32be797987d4e4caf905e03fbab5d836a5",
+        "AST_identical": true,
+        "adaptation": "Public LF line endings only"
+      },
+      {
+        "path": "strengthening/method/render_method_figures.py",
+        "submission_source": "strengthening/method/render_method_figures.py",
+        "submission_SHA256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81",
+        "normalized_source_and_release_SHA256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81",
+        "release_SHA256": "aebbaedbacb0ee2c0aa00abbf6afc7e762f2802c6ec99d33f82293e4d0130c81",
+        "AST_identical": true,
+        "adaptation": "Public LF line endings only"
+      }
+    ],
+    "validation": "strengthening/TARGETED_WHITESPACE_VALIDATION.json"
   }
 }

@@ -46,9 +46,15 @@ def _status(ax, region='CONUS', zoom=False):
     return bounds
 
 
+FIG1_MAP_STANDALONE_MM = (195,105)
+
+
 def coverage_map3(fig,ss,ctx):
     """All geographic points retained, with explicit AK/HI and regional viewports."""
-    g=ss.subgridspec(2,2,height_ratios=[1,.23],width_ratios=[2.75,1],wspace=.06,hspace=.055)
+    # The equal-aspect CONUS viewport needs real height to fill its column.
+    # Fig. 1's own three-row layout supplies that height; the zooms share its
+    # full map row, with a narrow physical gap rather than a vacant map column.
+    g=ss.subgridspec(2,2,height_ratios=[1,.09],width_ratios=[3.1,1],wspace=.03,hspace=.055)
     ax=fig.add_subplot(g[0,0]);xy=_status(ax)
     ax.set_xlim(xy[:,0].min()-.015,max(xy[:,0].max()+.015,.415))
     ax.set_ylim(.018,xy[:,1].max()+.01)
@@ -63,7 +69,7 @@ def coverage_map3(fig,ss,ctx):
         ia.text(.02,1.03,reg,transform=ia.transAxes,fontsize=10.5,ha='left',va='bottom')
     zoom=g[0,1].subgridspec(3,1,hspace=.25)
     for j,name in enumerate(['Northeast corridor','Carolinas–Georgia','Southern California']):
-        z=fig.add_subplot(zoom[j]);_status(z,zoom=True)
+        z=fig.add_subplot(zoom[j]);_status(z,zoom=True);z.set_anchor('W')
         x0,x1,y0,y1=fs.zoom_bbox(name);xm=(x0+x1)/2;ym=(y0+y1)/2
         width=max(x1-x0,(y1-y0)*2);height=width/2
         z.set_xlim(xm-width/2,xm+width/2);z.set_ylim(ym-height/2,ym+height/2)

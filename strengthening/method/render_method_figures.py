@@ -119,14 +119,14 @@ def main_coverage(state):
         style(ax,'Design','KG coverage\n(%)' if state=='MI' or ctx['standalone'] else None)
     return build
 
-def grid_three(fig):
-    g=fig.add_gridspec(3,2,left=.085,right=.99,bottom=.055,top=.88,wspace=.18,hspace=.16)
+def grid_three(fig,wspace=.18):
+    g=fig.add_gridspec(3,2,left=.085,right=.99,bottom=.055,top=.88,wspace=wspace,hspace=.16)
     return [g[r,c] for r in range(3) for c in range(2)]
 
 def main_grid(fig):
     head=fig.add_axes([.03,.90,.96,.055]);head.axis('off')
     head.legend(handles=policy_handles(),ncol=4,loc='center',handlelength=.7,handletextpad=.3,columnspacing=.6,borderpad=0)
-    return grid_three(fig)
+    return grid_three(fig,wspace=.08)
 
 def supplement_grid(fig):
     g=fig.add_gridspec(3,2,left=.085,right=.99,bottom=.055,top=.985,wspace=.18,hspace=.16)
