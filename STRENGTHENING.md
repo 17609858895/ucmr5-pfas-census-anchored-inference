@@ -119,3 +119,13 @@ python render_upgraded_figures.py --workdir reproduced_plots
 The control uses the strata, stratum standard deviations and integer plans of the full-schedule five-stratum Neyman references, with expected unit cost q·c_full + (1 − q)·c_R12 (q = 0.2), budgets of 100 and 300 full-schedule equivalents and 1,000 draws. Point estimates use the same two-phase difference estimator as the other designs; the variance uses the Poisson approximation with π = n_h/N_h, which is conservative for stratified selection. No external outcome forms strata or allocations. `external_schedule_systems.csv` is written by `strengthening/external/build_external_cohorts.py` from the state downloads and is not redistributed.
 
 `render_upgraded_figures.py` reads only the aggregate tables installed by `install-reference` (including the Fig. 5 burden tables and the same-depth control) and reproduces the submitted Fig. 5, Fig. 7 and graphical abstract pixel for pixel.
+
+## Figure revision (15 November 2026)
+
+```bash
+python run_strengthening.py install-reference --workdir reproduced_plots
+python render_upgraded_figures.py --workdir reproduced_plots --only 5 7
+python draw_graphical_abstract.py --outdir reproduced_plots/graphical_abstract
+```
+
+Fig. 7e is drawn from the same aggregate rows as Fig. 7a,b. The graphical abstract reads `fig5_burden.csv` and `external_primary_R12_B300.csv` from `strengthening/reference_results` and uses the contiguous-U.S. outline in `graphical_abstract_us_outline.json` (U.S. Census Bureau 2024 cartographic boundaries) as background only. Fig. 1d and Fig. 3a are drawn by the base plotting code (`run_current_figures.py --only 1 3`) and need the complete historical figure-data inputs; `analysis/f01b_cell_summary.py` regenerates the Fig. 1d cell counts from `data_derived/small_frame_anchor.parquet`.

@@ -17,6 +17,8 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
 from matplotlib.ticker import FuncFormatter, NullLocator
+from matplotlib.colors import LinearSegmentedColormap, Normalize
+from matplotlib.cm import ScalarMappable
 from scipy.stats import binomtest
 
 ap = argparse.ArgumentParser(description=__doc__)
@@ -166,8 +168,8 @@ PRIMARY = PRIMARY[~PRIMARY.coefficient.eq('one')]
 # same-depth classical control (external_neyman_two_phase.py), budget equal to 300 full schedules
 NEY2 = pd.read_csv(WORK / 'results/strengthening/method/external_neyman_two_phase.csv')
 NEY2 = NEY2[NEY2.budget_full_equivalents.eq(300)].assign(policy='neyman5_two_phase')
-PRIMARY = pd.concat([PRIMARY, NEY2[['population', 'estimand', 'policy', 'mse_ratio_to_SRS_Hajek', 'coverage_kg', 'draws']]],
-                    ignore_index=True)
+PRIMARY = pd.concat([PRIMARY, NEY2[['population', 'estimand', 'policy', 'mse_ratio_to_SRS_Hajek', 'mse_ratio_to_Neyman_full',
+                                     'coverage_kg', 'draws']]], ignore_index=True)
 DESIGNS = [('srs_full_hajek', 'SRS · full'), ('neyman5_full_difference', 'Neyman† · full'), ('pps_full_hajek', 'PPS · full'),
            ('dual_full', 'Dual · full'), ('neyman5_two_phase', 'Neyman† · 20%'), ('system_anchor_two_phase', 'System · 20%'),
            ('uniform20', 'Dual · 20%'), ('pps_two_phase_hajek', 'PPS · 20%'), ('uncorrected', 'Dual · R12 only')]
@@ -232,39 +234,69 @@ def target_handles():
             for t, l in [('systems', 'System count'), ('people', 'Service population')]]
 
 
+# Allocation x sampling-depth grid: every cell is an observed design run at the same analytical budget, expressed relative
+# to the target-specific full-schedule Neyman design. Rows change only the depth; columns change only the allocation.
+ALLOC = [('Neyman†', 'neyman5_full_difference', 'neyman5_two_phase'), ('Dual', 'dual_full', 'uniform20'),
+         ('PPS', 'pps_full_hajek', 'pps_two_phase_hajek')]
+DEPTHS = ['Full', 'R12 + 20%']
+HEAT_LIM = .8                # colour limit in log10 units (ratios 0.16-6.3)
+HEAT_GAP = .06
+HEAT_CMAP = LinearSegmentedColormap.from_list('depth_alloc', [PAL[1], 'white', PAL[0]])   # nature_new blue / coral via white
+
+
+def depth_matrix(state, target):
+    g = PRIMARY[PRIMARY.population.eq(state) & PRIMARY.estimand.eq(target)]
+    m = np.array([[float(g[g.policy.eq(p)].mse_ratio_to_Neyman_full.iloc[0]) for p in pols] for _, *pols in ALLOC])
+    return m.T                # rows: depth, columns: allocation
+
+
+def heat_colorbar(fig, ax):
+    sm = ScalarMappable(norm=Normalize(-HEAT_LIM, HEAT_LIM), cmap=HEAT_CMAP)
+    cb = fig.colorbar(sm, cax=ax, orientation='horizontal')
+    ticks = [.2, .5, 1, 2, 5]; cb.set_ticks(np.log10(ticks), labels=[f'{t:g}' for t in ticks])
+    cb.ax.tick_params(labelsize=11.5, length=3, width=.8); cb.outline.set_linewidth(.8)
+    cb.set_label('MSE / full-schedule Neyman†', fontsize=12)
+
+
+def depth_heat(fig, ss, ctx):
+    """One row per state and depth, one column per allocation, side by side for the two targets."""
+    if ctx['standalone']:
+        outer = ss.subgridspec(2, 1, height_ratios=[1, .08], hspace=.75); ss = outer[0]
+        heat_colorbar(fig, fig.add_subplot(outer[1]))
+    rows = [(st, d) for st in ['MI', 'WA'] for d in range(len(DEPTHS))]
+    g = ss.subgridspec(1, 2, wspace=HEAT_GAP)
+    for k, (target, label) in enumerate([('systems', 'System count'), ('people', 'Service population')]):
+        ax = fig.add_subplot(g[k])
+        m = np.vstack([depth_matrix(st, target) for st in ['MI', 'WA']])
+        ax.imshow(np.log10(m), cmap=HEAT_CMAP, vmin=-HEAT_LIM, vmax=HEAT_LIM, aspect='auto')
+        for i in range(m.shape[0]):
+            for j in range(m.shape[1]):
+                ax.text(j, i, f'{m[i, j]:.2f}', ha='center', va='center', fontsize=11.5, color=INK)
+        ax.set_xticks(range(len(ALLOC)), [a for a, *_ in ALLOC])
+        ax.set_yticks(range(len(rows)), [f'{st} · {DEPTHS[d].lower() if d == 0 else DEPTHS[d]}' for st, d in rows]
+                      if k == 0 else [''] * len(rows))
+        ax.tick_params(length=0, labelsize=12, pad=4)
+        for sp in ax.spines.values():
+            sp.set_linewidth(.8)
+        ax.set_title(label, fontsize=12.5, pad=6)
+        ax.set_xticks(np.arange(-.5, len(ALLOC)), minor=True); ax.set_yticks(np.arange(-.5, len(rows)), minor=True)
+        ax.grid(which='minor', color='white', lw=1.6); ax.tick_params(which='minor', length=0)
+        ax.axhline(1.5, color=INK, lw=1.0)          # separates the two state cohorts
+
+
 def layout7(fig):
-    head = fig.add_axes([.03, .945, .96, .045]); head.axis('off')
+    head = fig.add_axes([.03, .964, .96, .032]); head.axis('off')
     head.legend(handles=target_handles(), ncol=2, loc='center', handlelength=1.3, handletextpad=.4, columnspacing=1.4, borderpad=0)
-    g = fig.add_gridspec(2, 2, width_ratios=[1.36, 1], left=.045, right=.985, bottom=.06, top=.925, wspace=.05, hspace=.20)
-    return [g[0, 0], g[0, 1], g[1, 0], g[1, 1]]
+    g = fig.add_gridspec(2, 2, width_ratios=[1.36, 1], left=.045, right=.985, bottom=.318, top=.946, wspace=.05, hspace=.17)
+    h = fig.add_gridspec(1, 1, left=.045, right=.985, bottom=.075, top=.262)
+    heat_colorbar(fig, fig.add_axes([.32, .021, .40, .011]))
+    return [g[0, 0], g[0, 1], g[1, 0], g[1, 1], h[0]]
 
 
 # ----------------------------------------------------------------------------------------------- graphical abstract
 def graphical_abstract():
-    import workflow_schematic as ws        # author-drawn vector workflow, identical to Fig. 3a
-    W_mm, H_mm = 186, 100
-    fig = plt.figure(figsize=(W_mm / 25.4, H_mm / 25.4))
-    ax = fig.add_axes([.0, .34, 1., .66]); ax.axis('off')
-    ws.draw_workflow(ax, PAL, INK, kx=(.66 * H_mm) / W_mm, y0=.17, y1=.985, fs=10)
-    for x, lab in [(.128, 'Monitored larger\nsystems'), (.392, 'Risk and error\nmodels'), (.660, 'Allocation and\nsampling depth'),
-                   (.894, 'Systems and\npeople served')]:
-        ax.text(x, .055, lab, ha='center', va='center', fontsize=11, color=INK, linespacing=1.1)
-    for x0, x1 in [(.252, .271), (.535, .551), (.775, .793)]:
-        ax.annotate('', xy=(x1, .55), xytext=(x0, .55), arrowprops=dict(arrowstyle='-|>', color=INK, lw=1.0))
-    tiles = [('4,450', 'small systems estimated\nabove PFOA/PFOS MCLs'), ('1.9 M', 'people served by\nthose systems'),
-             ('≈1,900', 'affected systems missed\nby larger-system models'),
-             ('70–83%', 'less population error\nwith shorter schedules')]
-    for i, (big, small) in enumerate(tiles):
-        x0 = .012 + i * .247
-        t = fig.add_axes([x0, .025, .235, .27]); t.axis('off')
-        t.add_patch(Rectangle((0, 0), 1, 1, transform=t.transAxes, fc=[COL['assisted'], COL['systems'], COL['post'], COL['model_only']][i],
-                              ec=INK, lw=.8, alpha=.55))
-        t.text(.5, .66, big, ha='center', va='center', fontsize=17, color=INK, transform=t.transAxes)
-        t.text(.5, .26, small, ha='center', va='center', fontsize=9.5, color=INK, transform=t.transAxes, linespacing=1.15)
-    for ext in ['png', 'pdf']:
-        fig.savefig(FIG / f'Graphical_Abstract.{ext}', dpi=600, facecolor='white',
-                    metadata={'Author': 'CHONG LIU', 'Creator': 'CHONG LIU', 'Producer': 'CHONG LIU'})
-    plt.close(fig)
+    from draw_graphical_abstract import render
+    render(FIG, overwrite=True)
 
 
 if __name__ == '__main__':
@@ -273,8 +305,8 @@ if __name__ == '__main__':
         layout.save_modules([national_counts, weight_sensitivity, selection_odds, butterfly], 'Fig_5', 'Fig_5', layout5,
                             figsize_mm=(190, 196), sizes_mm=[(185, 76), (105, 85), (105, 85), (185, 88)])
     if '7' in ARGS.only:
-        layout.save_modules([ext_mse('MI'), ext_mse('WA'), ext_cov('MI'), ext_cov('WA')], 'Fig_7', 'Fig_7', layout7,
-                            figsize_mm=(190, 170), sizes_mm=[(120, 106)] * 4)
+        layout.save_modules([ext_mse('MI'), ext_mse('WA'), ext_cov('MI'), ext_cov('WA'), depth_heat],
+                            'Fig_7', 'Fig_7', layout7, figsize_mm=(190, 224), sizes_mm=[(120, 106)] * 4 + [(180, 66)])
     if 'GA' in ARGS.only:
         graphical_abstract()
     print('Rendered into', FIG)

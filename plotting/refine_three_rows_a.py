@@ -37,6 +37,55 @@ def layout1_three_rows(fig):
     return [g[0],g[2],g[4]]
 
 
+# Fig. 1 fourth row (2026-11-15): the eight working post-stratification cells. Rows a–c keep their
+# physical heights; the canvas grows by the new row so no existing panel is rescaled.
+FIG1_ROW4_MM = 31.0
+FIG1_ROW4_GAP_MM = 6.0
+FIG1_FOUR_ROW_CANVAS_MM = (190, round(FIG1_CANVAS_MM[1]+FIG1_ROW4_MM+FIG1_ROW4_GAP_MM,1))
+CELL_SOURCES = [('GW','GW'),('SW','SW')]
+CELL_SIZES = ['<=100','101-500','501-1000','1001-3300']
+
+
+def layout1_four_rows(fig):
+    old_height=184.0
+    usable=old_height*(.985-.035)
+    gap=usable*.040/(3+2*.040)
+    unit=(usable-2*gap)/(1.85+.80+.75)
+    height_mm=fig.get_figheight()*25.4
+    g=fig.add_gridspec(7,1,
+        height_ratios=[1.85*unit,gap+FIG1_AB_EXTRA_MM,.80*unit,gap,.75*unit,FIG1_ROW4_GAP_MM,FIG1_ROW4_MM],
+        left=.065,right=.99,top=1-old_height*.015/height_mm,
+        bottom=old_height*.035/height_mm,hspace=0)
+    return [g[0],g[2],g[4],g[6]]
+
+
+def cell_exceedance4(fig,ss,ctx):
+    """Fig. 1d: unweighted observed exceedance among monitored systems in the eight working cells.
+    Shading and cell text give exceeding/monitored systems; Table S3 lists each cell's monitored
+    share. No weighting or modelling."""
+    from matplotlib.colors import LinearSegmentedColormap
+    t=pd.read_csv(FD/'fig1_cell_summary.csv')
+    g=ss.subgridspec(1,2,width_ratios=[1,.022],wspace=.03)
+    ax=fig.add_subplot(g[0]);cax=fig.add_subplot(g[1])
+    cmap=LinearSegmentedColormap.from_list('cell_exceedance',['white',C['systems']])
+    cell=lambda s,z:t[(t.source==s)&(t.size_band==z)].iloc[0]
+    m=np.array([[float(cell(s,z).observed_exceedance_percent) for z in CELL_SIZES] for s,_ in CELL_SOURCES])
+    im=ax.imshow(m,cmap=cmap,vmin=0,vmax=22,aspect='auto')
+    for i,(s,_) in enumerate(CELL_SOURCES):
+        for j,z in enumerate(CELL_SIZES):
+            r=cell(s,z)
+            ax.text(j,i,f'{r.observed_exceedance_percent:.1f}% ({int(r.observed_exceeding)}/{int(r.observed_systems)})',
+                    ha='center',va='center',fontsize=11,color=INK)
+    ax.set_xticks(range(4),CLASS_ORDER);ax.set_yticks(range(2),['Groundwater','Surface water'])
+    ax.set_xticks(np.arange(-.5,4),minor=True);ax.set_yticks(np.arange(-.5,2),minor=True)
+    ax.grid(which='minor',color='white',lw=1.6);ax.tick_params(which='minor',length=0)
+    ax.tick_params(length=0,labelsize=10.5,pad=3)
+    for sp in ax.spines.values():sp.set_linewidth(.8)
+    ax.set_xlabel('System size (people)',fontsize=11.5,labelpad=3)
+    cb=fig.colorbar(im,cax=cax);cb.outline.set_linewidth(.6);cb.set_ticks([0,10,20])
+    cb.ax.tick_params(labelsize=10,length=2.5,width=.6,pad=2);cb.set_label('Exceeding (%)',fontsize=10.5,labelpad=3)
+
+
 def small_composition4(fig,ss,ctx):
     """Fig. 1c, with a one-line key suited to the full-width third row."""
     hs=[Patch(fc=C[f'cls{i}'],ec=INK,lw=.5,label=cls)

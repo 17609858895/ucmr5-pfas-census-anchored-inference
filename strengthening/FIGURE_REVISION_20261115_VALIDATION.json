@@ -1,0 +1,98 @@
+{
+ "date": "2026-11-15",
+ "base_commit": "89c1f494dbe8329a609c1f2141e579bd03f7eec4",
+ "scope": "Figure-only revision: Fig. 1d cell heatmap, Fig. 3a vector scene shared with the graphical abstract, Fig. 7e allocation x depth grid, graphical-abstract script. Numerical analysis code and results unchanged.",
+ "checks": {
+  "unit_tests": "python -m pytest tests: 24 passed",
+  "pixel_identity_with_submitted_figures": {
+   "Fig_7": "identical",
+   "Fig_7_e": "identical",
+   "Graphical_Abstract": "identical",
+   "Fig_1": "identical",
+   "Fig_1_d": "identical",
+   "Fig_3": "identical",
+   "Fig_3_a": "identical"
+  },
+  "renders": "Fig. 7 and graphical abstract from install-reference outputs; Figs. 1 and 3 by run_current_figures.py with the frozen maintenance inputs",
+  "new_lines_scanned_for_private_paths_and_tool_names": true
+ },
+ "files": [
+  {
+   "path": "pictorial_scene.py",
+   "submission_source": "pictorial_scene.py",
+   "submission_SHA256": "176ebb392dc02d9c4e6bd4b230a7b634acd14f79b54eefed2ef86c3f7df4e0fa",
+   "release_SHA256": "176ebb392dc02d9c4e6bd4b230a7b634acd14f79b54eefed2ef86c3f7df4e0fa",
+   "adaptation": "LF only"
+  },
+  {
+   "path": "draw_graphical_abstract.py",
+   "submission_source": "draw_graphical_abstract.py",
+   "submission_SHA256": "379fb1404166db61118d59219da26643058ecbec10c172bc4e838c24c414afff",
+   "release_SHA256": "159e095f3c0e6ea76e6b6256405c5e5ef199cd882bb55bb8a97e20657f1d3819",
+   "adaptation": "LF only (reads strengthening/reference_results when no submission package exists)"
+  },
+  {
+   "path": "graphical_abstract_us_outline.json",
+   "submission_source": "graphical_abstract_us_outline.json",
+   "submission_SHA256": "ec1780fcf6609143b017e035e4c71b3f727ad4816415ad7581c52d6e908db5d5",
+   "release_SHA256": "ec1780fcf6609143b017e035e4c71b3f727ad4816415ad7581c52d6e908db5d5",
+   "adaptation": "LF only"
+  },
+  {
+   "path": "render_upgraded_figures.py",
+   "submission_source": "render_upgraded_figures.py",
+   "submission_SHA256": "0755e45e7cfa8b99b161d8a403c91c7ff55c69145880e2deb8ad60967d913dd6",
+   "release_SHA256": "51b7adff68022b56eac8cee2f59767f639342e4bd61e505cdb9a65ca5ec3b220",
+   "adaptation": "LF only"
+  },
+  {
+   "path": "analysis/f01b_cell_summary.py",
+   "submission_source": "legacy_support/analysis/f01b_cell_summary.py",
+   "submission_SHA256": "944fb8beaa9b584db00a341394c133ce5f44cf25c7337bf12f98504887a1988c",
+   "release_SHA256": "944fb8beaa9b584db00a341394c133ce5f44cf25c7337bf12f98504887a1988c",
+   "adaptation": "flat repository layout (Source_Code root = repository root); LF"
+  },
+  {
+   "path": "plotting/refine_three_rows_a.py",
+   "submission_source": "legacy_support/plotting/refine_three_rows_a.py",
+   "submission_SHA256": "df60c4b75483683edf76726528ec42e6484ce32ba692b11e778e2b5d448a896e",
+   "release_SHA256": "0a2fd9d571cce437df7fa03f2b08cdafdd9f502c93f6e79c2597928e18df8896",
+   "adaptation": "flat repository layout (Source_Code root = repository root); LF"
+  },
+  {
+   "path": "plotting/refine_jhm_figures.py",
+   "submission_source": "legacy_support/plotting/refine_jhm_figures.py",
+   "submission_SHA256": "c54e9df6b5e92d316764b0da5465fe4cbc40f74508ac58b4c164bd2cfe1f66fa",
+   "release_SHA256": "b4e7915d4ad2ffb09d466f0c8f23c182cbba16c5c1a14ec595f1e83a104d6456",
+   "adaptation": "flat repository layout (Source_Code root = repository root); LF"
+  },
+  {
+   "path": "plotting/refine_mechanism_round3.py",
+   "submission_source": "legacy_support/plotting/refine_mechanism_round3.py",
+   "submission_SHA256": "c179ec6d3278986f572b16fec48da0d9d529708d6d0b8aa233f2f3b13517f63a",
+   "release_SHA256": "b20cdd716cc1bfc7821e4ae595689dbfb259e8d6bc436cacd86a12be7fa9626b",
+   "adaptation": "pictorial_scene import path; flat repository layout (Source_Code root = repository root); LF"
+  },
+  {
+   "path": "plotting/generate_refined_figures.py",
+   "submission_source": "legacy_support/plotting/generate_refined_figures.py",
+   "submission_SHA256": "acbea4999476daafd9a5d0028497feaf770d6548e5ebf0962ccc7664011dbc47",
+   "release_SHA256": "f434dbea2e4f24abcfa4f22e68ad23fc4927c0cd308eafd7ab1dbcb25f5c38db",
+   "adaptation": "workflow import path; flat repository layout (Source_Code root = repository root); LF"
+  },
+  {
+   "path": "strengthening/reference_results/figure_data/fig1_cell_summary.csv",
+   "submission_source": "strengthening/reference_results/figure_data/fig1_cell_summary.csv",
+   "submission_SHA256": "d0defad1d1d4c5418ec8fcce97b108414acd62ffb57882dc978fa0358a5a896f",
+   "release_SHA256": "5d9e8f028ed466ed34bc2a15e1a54f687abb093bfa9c1c0879019d2808d29397",
+   "adaptation": "aggregate cell counts; LF"
+  },
+  {
+   "path": "FIGURE_NUMBERING.md",
+   "submission_source": "FIGURE_NUMBERING.md",
+   "submission_SHA256": "769e42e6caa4e48fe075d7dda2cbd785e6eda4d00a8d00e6b8afcb5007ea5a73",
+   "release_SHA256": "a12377110d043fc3dfb32f32d32c70140948ee0bffcc7b56daa7bdf5ff2d5637",
+   "adaptation": "repository paths; LF"
+  }
+ ]
+}

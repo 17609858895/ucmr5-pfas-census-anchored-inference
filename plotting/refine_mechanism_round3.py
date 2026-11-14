@@ -62,18 +62,12 @@ def layout2_round3(fig):
 
 def workflow3(fig,ss,ctx):
     ax=fig.add_subplot(ss);ax.axis('off');ax.set_gid('schematic')
-    # Author-drawn vector workflow (no raster or generated artwork); proportions follow the panel's physical aspect.
+    # Author-drawn vector scene shared with the graphical abstract (no raster or generated artwork);
+    # framework labels replace its headline numbers, and equal aspect keeps the glyph proportions.
     import sys as _sys;_sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-    import workflow_schematic as _ws
-    bb=ax.get_position();W,Hh=fig.get_size_inches()
-    _ws.draw_workflow(ax,PAL,INK,kx=(bb.height*Hh)/(bb.width*W),fs=10)
-    for x,label in [(.128,'Monitored larger\nsystems'),(.392,'Risk and error\nmodels'),
-                    (.660,'Allocation +\nsampling depth'),(.894,'Systems +\npeople served')]:
-        ax.text(x,.06,label,ha='center',va='center',fontsize=10.5,linespacing=1.1)
-    for x0,x1 in [(.252,.271),(.535,.551),(.775,.793)]:
-        ax.annotate('',xy=(x1,.55),xytext=(x0,.55),
-                    arrowprops=dict(arrowstyle='-|>',color=INK,lw=.9))
-    ax.set_xlim(0,1);ax.set_ylim(0,1)
+    import pictorial_scene as _ps
+    _ps.draw_scene(ax,_ps.FIGURE_LABELS)
+    ax.set_aspect('equal',anchor='C')
 
 
 def equation3(fig,ss,ctx):
